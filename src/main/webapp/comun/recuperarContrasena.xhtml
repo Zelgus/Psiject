@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Recuperar Contraseña</title>‏
+</h:head>
+<h:body>
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/cabecera.xhtml" />
+
+	<f:metadata>
+		<f:viewParam name="correo" value="#{loginMB.recuUsuario}" />
+	</f:metadata>
+	<h:form>
+		<p:panelGrid styleClass="formularioRecuperarContrasena">
+			<p:row>
+				<p:column style="text-align: right;">
+					<h:outputLabel for="clave" value="Código de validación:"
+						styleClass="recuperarContrasenaLabel" />
+				</p:column>
+				<p:column>
+					<p:inputText id="clave" value="#{loginMB.codigoValidacion}"
+						size="30" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column style="text-align: right;">
+					<h:outputLabel for="nuevaContrasena" value="Nueva contraseña:"
+						styleClass="recuperarContrasenaLabel" />
+				</p:column>
+				<p:column style="text-align: center;">
+					<p:password id="nuevaContrasena" feedback="true"
+						promptLabel="Introduzca su nueva contraseña" weakLabel="Débil"
+						goodLabel="Normal" strongLabel="Fuerte"
+						value="#{loginMB.recuNuevaContrasena}" size="30" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column style="text-align: right;">
+					<h:outputLabel for="repetirNuevaContrasena"
+						value="Repita la contraseña:"
+						styleClass="recuperarContrasenaLabel" />
+				</p:column>
+				<p:column style="text-align: center;">
+					<p:password id="repetirNuevaContrasena"
+						value="#{loginMB.recuRepetirContrasena}" size="30">
+					</p:password>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" style="text-align: right;">
+					<p:commandButton id="restablecerContrasena" icon="ui-icon-check"
+						value="Restablecer contraseña" title="Restablecer contraseña"
+						onclick="mostrarMosca();"
+						action="#{loginMB.restablecerContrasena}"
+						styleClass="botonConTexto" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,495 @@
+/*
+---------------------------------------------------------------------------
+---------------------------- GENERAL --------------------------------------
+---------------------------------------------------------------------------
+*/
+body {
+	margin: 0px;
+}
+
+.ui-panelgrid .ui-panelgrid-cell {
+	border-style: hidden;
+	background-color: #ffffff;
+}
+
+.ui-widget-content {
+	color: #000000 !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default,
+	.ui-widget-header, .ui-widget-header .ui-state-default, .ui-menu,
+	.ui-menu .ui-menu-child {
+	background-color: #e5ffba !important;
+	border-color: #7f9e49 !important;
+	color: #000000 !important;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
+	.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+	{
+	background: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0)) repeat scroll 0 0 #ffffff !important;
+	box-shadow: 0 0 8px #ffffff !important;
+}
+
+.ui-state-hover {
+	box-shadow: 0 0 8px #ffffff, 0 1px 0 #fff inset;
+}
+
+/*
+---------------------------------------------------------------------------
+---------------------------- SUGERENCIAS ----------------------------------
+---------------------------------------------------------------------------
+*/
+
+#feedback {
+    bottom: 5px;
+    cursor: pointer;
+    height: 40px;
+    position: fixed;
+    right: 5px;
+    width: 140px;
+    z-index: 2000;
+}
+
+#feedback img {
+	height: 40px;
+	width: 140px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------- MOSCA -------------------------------------
+---------------------------------------------------------------------------
+*/
+#mosca {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 2000;
+}
+
+#mosca div {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	height: 100px;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -50px;
+	position: fixed;
+	top: 50%;
+	width: 200px;
+}
+
+#mosca div img {
+	height: 64px;
+	left: 50%;
+	margin-left: -32px;
+	margin-top: -32px;
+	position: fixed;
+	top: 50%;
+	width: 64px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------ ALERTAS ------------------------------------
+---------------------------------------------------------------------------
+*/
+.ui-messages {
+	left: 35%;
+    position: fixed;
+    text-align: center;
+    z-index: 2000;
+}
+
+.ui-messages ul {
+	margin: 10px 25px;
+}
+
+.ui-messages-info, .ui-messages-warn, .ui-messages-error {
+	border: 2px solid;
+    box-shadow: 0 3px 7px;
+    margin: 0;
+    min-height: 40px;
+    width: 400px;
+}
+
+.ui-messages-info .ui-messages-info-summary, 
+.ui-messages-warn .ui-messages-warn-summary,
+.ui-messages-error .ui-messages-error-summary {
+	display: none;
+}
+
+/*
+---------------------------------------------------------------------------
+----------------------------- TEXT AREAS ----------------------------------
+---------------------------------------------------------------------------
+*/
+.textAreaFijo {
+	resize: none;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------ BOTONES ------------------------------------
+---------------------------------------------------------------------------
+*/
+.botonConTexto {
+	width: 275px;
+	height: 35px;
+}
+
+.botonSinTexto {
+	width: 35px;
+	height: 35px;
+}
+
+/*
+---------------------------------------------------------------------------
+--------------------------- PLACEHOLDERS ----------------------------------
+---------------------------------------------------------------------------
+*/
+::-webkit-input-placeholder {
+	opacity: 0;
+}
+
+:-moz-placeholder {
+	opacity: 0;
+}
+
+::-moz-placeholder {
+	opacity: 0;
+}
+
+:-ms-input-placeholder {
+	opacity: 0;
+}
+
+/*
+---------------------------------------------------------------------------
+---------------------------- REGISTRO -------------------------------------
+---------------------------------------------------------------------------
+*/
+.formularioRegistro {
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.registroLabel {
+	color: #000000;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/*
+---------------------------------------------------------------------------
+----------------------- RECUPERAR CONTRASEÑA ------------------------------
+---------------------------------------------------------------------------
+*/
+.formularioRecuperarContrasena {
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.RecuperarContrasenaLabel {
+	color: #000000;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------ LOGIN --------------------------------------
+---------------------------------------------------------------------------
+*/
+.formularioLogin {
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loginLabel {
+	color: #000000;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.loginInput {
+	height: 35px;
+	width: 350px;
+}
+
+.loginLink {
+	text-decoration: underline;
+	color: blue !important;
+	font-size: 12px !important;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------ PANEL DE USUARIO ---------------------------------
+---------------------------------------------------------------------------
+*/
+.panelUsuario {
+	width: 100%;
+}
+
+.panelUsuario .ui-widget-content {
+	border: none;
+}
+
+.panelUsuarioHome {
+	float: left;
+	height: 160px;
+}
+
+.panelUsuarioImagen {
+	width: 300px;
+}
+
+.panelUsuarioUser {
+	float: right;
+	height: 160px;
+	margin-right: 20px;
+	background-color: none;
+}
+
+.panelUsuarioUser a {
+	text-decoration: none;
+}
+
+.panelUsuarioTextoUser {
+	background-color: #36FF35;
+	border-radius: 20px 20px 20px 20px;
+	color: #FFFFFF;
+	float: right;
+	font-family: Georgia;
+	font-size: 25px;
+	font-weight: bold;
+	margin-top: 10px;
+	padding: 0px 15px;
+	box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
+	-moz-box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
+	-webkit-box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
+}
+
+.panelUsuarioTextoUser:hover {
+	background-color: #E5FFBA;
+	color: #000000;
+}
+
+.panelUsuarioTextoNombre {
+	font-family: Georgia;
+	font-size: 20px;
+	font-style: oblique;
+	float: right;
+	margin-top: 10px;
+}
+
+.panelUsuarioMenu {
+	float: right;
+}
+
+.panelUsuarioMenu button {
+	height: 35px;
+	width: 35px;
+	margin-top: 10px !important;
+}
+
+.panelUsuario .ui-widget-content, .panelUsuario .panelUsuarioUser,
+	.panelUsuario .panelUsuarioHome {
+	background: #f8ffe8;
+	background: -moz-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8ffe8),
+		color-stop(100%, #ffffff));
+	background: -webkit-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
+	background: linear-gradient(to bottom, #f8ffe8 0%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ffe8',
+		endColorstr='#ffffff', GradientType=0);
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------ PANEL DE ACCIONES --------------------------------
+---------------------------------------------------------------------------
+*/
+.panelAcciones {
+	border-style: hidden;
+	background-color: #ffffff;
+}
+
+/*
+---------------------------------------------------------------------------
+--------------------------- EXPEDIENTE ------------------------------------
+---------------------------------------------------------------------------
+*/
+.tituloExpediente {
+	color: #000000;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/*
+---------------------------------------------------------------------------
+---------------------- TABLA DE EXPEDIENTES -------------------------------
+---------------------------------------------------------------------------
+*/
+.tablaExpedientes {
+	border: none !important;
+	padding: 0px !important;
+	margin-bottom: 20px;
+}
+
+.tablaExpedientes ul {
+	background-color: #FFFFFF !important;
+	border: none !important;
+}
+
+.tablaExpedientes ul .ui-state-default {
+	background-color: #E5FFBA !important;
+}
+
+.tablaExpedientes ul .ui-state-default:hover {
+	background-color: #36FF35 !important;
+}
+
+.tablaExpedientes ul .ui-state-active {
+	background-color: #FFFFFF !important;
+}
+
+.tablaExpedientes ul .ui-state-active:hover {
+	background-color: #FFFFFF !important;
+}
+
+.tablaExpedientes ul a {
+	color: #000000 !important;
+}
+
+.tablaExpedientes .ui-tabs-panels, .tablaExpedientes .ui-tabs-panel,
+	.tablaExpedientes .ui-tabs {
+	padding: 0px !important;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------ TAREA --------------------------------------
+---------------------------------------------------------------------------
+*/
+.tituloTarea {
+	color: #000000;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.iconoTareaImportante {
+	width: 20px;
+	height: 20px;
+}
+
+.iconoNuevaTarea {
+	width: 30px;
+	height: 30px;
+}
+
+.iconoNuevoComentario {
+	width: 30px;
+	height: 30px;
+}
+
+.iconoNuevoComentarioTabla {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------- TABLA DE TAREAS ---------------------------------
+---------------------------------------------------------------------------
+*/
+.tablaTareas {
+	border: none !important;
+	padding: 0px !important;
+	margin-bottom: 20px;
+}
+
+.tablaTareas ul {
+	background-color: #FFFFFF !important;
+	border: none !important;
+}
+
+.tablaTareas ul .ui-state-default {
+	background-color: #E5FFBA !important;
+}
+
+.tablaTareas ul .ui-state-default:hover {
+	background-color: #36FF35 !important;
+}
+
+.tablaTareas ul .ui-state-active {
+	background-color: #FFFFFF !important;
+}
+
+.tablaTareas ul .ui-state-active:hover {
+	background-color: #FFFFFF !important;
+}
+
+.tablaTareas ul a {
+	color: #000000 !important;
+}
+
+.tablaTareas .ui-tabs-panels, .tablaTareas .ui-tabs-panel, .tablaTareas .ui-tabs
+	{
+	padding: 0px !important;
+}
+
+.tablaTareas .colorTareaImportante {
+	background-color: #FFB0B0 !important;
+}
+
+/*
+---------------------------------------------------------------------------
+---------------------- TABLA DE COMENTARIOS -------------------------------
+---------------------------------------------------------------------------
+*/
+.tablaComentarios {
+	display: table-cell;
+	min-width: 220px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7f9e49
+}
+
+.tablaComentarios tbody tr {
+	height: 100px;
+}
+
+.tablaComentarios tbody tr td span {
+	display: block;
+	font-size: 12px;
+	font-style: italic;
+	margin-left: 5px;
+	max-height: 97px;
+	overflow: auto;
+}
+
+/*
+---------------------------------------------------------------------------
+---------------------- WIZARD PARA COMENTAR -------------------------------
+---------------------------------------------------------------------------
+*/
+.ui-wizard-content {
+	margin: 15px 0;
+	text-align: center;
+}

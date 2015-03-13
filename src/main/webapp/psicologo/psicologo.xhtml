@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Página principal de #{sessionMB.usuarioEnSesion.usuario}</title>
+</h:head>
+<h:body>
+	#{sessionMB.psicologoLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+	
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<h:form>
+					<p:tabView id="tabView" styleClass="tablaExpedientes">
+						<p:tab id="tab0" title="Expedientes Creados">
+							<p:dataTable emptyMessage="No hay registros"
+								id="expedientesCreados" var="expediente"
+								value="#{expedienteMB.expedientesCreadosList}">
+								<p:column headerText="Apellidos" style="width:24%">
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePacienteEnExpediente(expediente)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText value="#{expediente.apellidos}" />
+								</p:column>
+								<p:column headerText="Nombre" style="width:24%">
+									<h:outputText value="#{expediente.nombre}" />
+								</p:column>
+								<p:column headerText="Usuario" style="width:24%">
+									<h:outputText value="#{expediente.usuario.usuario}" />
+								</p:column>
+								<p:column headerText="Editar"
+									style="width:4%; text-align:center;">
+									<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
+										title="Editar Expediente" onclick="mostrarMosca();"
+										action="#{navegacionMB.toEditarExpediente}"
+										rendered="#{renderingMB.botonEditarExpediente(expediente)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{expediente}"
+											target="#{sessionMB.expedienteSeleccionado}" />
+									</p:commandButton>
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarExpediente" icon="ui-icon-search"
+										title="Consultar Expediente" onclick="mostrarMosca();"
+										action="#{navegacionMB.toExpediente}"
+										rendered="#{renderingMB.botonConsultarExpediente(expediente)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{expediente}"
+											target="#{sessionMB.expedienteSeleccionado}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+
+						<p:tab id="tab1" title="Expedientes Accesibles">
+							<p:dataTable emptyMessage="No hay registros"
+								id="expedientesAccesibles" var="expediente"
+								value="#{expedienteMB.expedientesAccesiblesList}">
+								<p:column headerText="Apellidos" style="width:24%">
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePacienteEnExpediente(expediente)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText value="#{expediente.apellidos}" />
+								</p:column>
+								<p:column headerText="Nombre" style="width:24%">
+									<h:outputText value="#{expediente.nombre}" />
+								</p:column>
+								<p:column headerText="Usuario" style="width:24%">
+									<h:outputText value="#{expediente.usuario.usuario}" />
+								</p:column>
+								<p:column headerText="Creador" style="width:24%">
+									<h:outputText value="#{expediente.usuarioCreador.usuario}" />
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarExpediente" icon="ui-icon-search"
+										title="Consultar Expediente" onclick="mostrarMosca();"
+										action="#{navegacionMB.toExpediente}"
+										rendered="#{renderingMB.botonConsultarExpediente(expediente)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{expediente}"
+											target="#{sessionMB.expedienteSeleccionado}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+
+						<p:tab id="tab2" title="Expedientes Cerrados">
+							<p:dataTable emptyMessage="No hay registros"
+								id="expedientesCerrados" var="expediente"
+								value="#{expedienteMB.expedientesCerradosList}">
+								<p:column headerText="Apellidos" style="width:24%">
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePacienteEnExpediente(expediente)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText value="#{expediente.apellidos}" />
+								</p:column>
+								<p:column headerText="Nombre" style="width:24%">
+									<h:outputText value="#{expediente.nombre}" />
+								</p:column>
+								<p:column headerText="Usuario" style="width:24%">
+									<h:outputText value="#{expediente.usuario.usuario}" />
+								</p:column>
+								<p:column headerText="Creador" style="width:24%">
+									<h:outputText value="#{expediente.usuarioCreador.usuario}" />
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarExpediente" icon="ui-icon-search"
+										title="Consultar Expediente" onclick="mostrarMosca();"
+										action="#{navegacionMB.toExpediente}"
+										rendered="#{renderingMB.botonConsultarExpediente(expediente)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{expediente}"
+											target="#{sessionMB.expedienteSeleccionado}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+					</p:tabView>
+					<p:commandButton id="altaExpediente" icon="ui-icon-document"
+						value="Crear nuevo Expediente" title="Crear nuevo Expediente"
+						onclick="mostrarMosca();"
+						action="#{navegacionMB.toAltaExpediente}"
+						rendered="#{renderingMB.botonAltaExpediente}"
+						styleClass="botonConTexto" />
+					<p:commandButton id="altaCampo" icon="ui-icon-document-b"
+						value="Gestion de campos" title="Gestion de campos"
+						onclick="mostrarMosca();" action="#{navegacionMB.toEditarCampos}"
+						rendered="#{renderingMB.botonGestionCampos}"
+						styleClass="botonConTexto" />
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+
+</html>

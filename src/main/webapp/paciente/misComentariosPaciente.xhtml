@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Comentarios de #{sessionMB.usuarioEnSesion.usuario}</title>
+</h:head>
+<h:body>
+	#{sessionMB.misComentariosPacienteLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+	<ui:include src="/dialogos/dialogoEditarComentario.xhtml" />
+	<ui:include src="/dialogos/dialogoBorrarComentario.xhtml" />
+	<ui:include src="/dialogos/dialogoComentarPaciente.xhtml" />
+	
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<h:form style="width: 100%; height: 100%; overflow: auto;">
+					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
+						<p:dataTable id="comentariosDe#{campo.idCampo}"
+							emptyMessage="No hay registros"
+							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
+							var="comentario" styleClass="tablaComentarios">
+							<p:column headerText="#{campo.nombre}">
+								<h:outputText value="#{comentario.comentario}"
+									title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
+								<p:commandButton id="editarComentario" icon="ui-icon-pencil"
+									title="Editar Comentario"
+									oncomplete="PF('dialogoEditarComentario').show();"
+									rendered="#{renderingMB.botonEditarComentario(comentario)}"
+									update=":dialogoEditarComentario" styleClass="botonSinTexto">
+									<f:setPropertyActionListener value="#{comentario}"
+										target="#{sessionMB.comentarioSeleccionado}" />
+								</p:commandButton>
+								<p:commandButton id="borrarComentario" icon="ui-icon-trash"
+									title="Borrar Comentario"
+									oncomplete="PF('dialogoBorrarComentario').show();"
+									rendered="#{renderingMB.botonBorrarComentario(comentario)}"
+									update=":dialogoBorrarComentario" styleClass="botonSinTexto">
+									<f:setPropertyActionListener value="#{comentario}"
+										target="#{sessionMB.comentarioSeleccionado}" />
+								</p:commandButton>
+							</p:column>
+						</p:dataTable>
+					</c:forEach>
+					<p:commandButton id="nuevoComentario" icon="ui-icon-comment"
+						value="Añadir comentarios" title="Añadir comentarios"
+						oncomplete="PF('dialogoComentarPaciente').show();
+						PF('wiz').loadStep(PF('wiz').cfg.steps[0], true);"
+						rendered="#{renderingMB.botonComentarPaciente}"
+						update=":dialogoComentarPaciente" styleClass="botonConTexto" />
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toTareaPaciente}"
+						styleClass="botonConTexto" />
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+
+</html>

@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<p:dialog id="dialogoCerrarExpediente" header="Cerrar Expediente"
+		widgetVar="dialogoCerrarExpediente" modal="true">
+		<h:form>
+			<h:outputText
+				value="¿Estas seguro que desea cerrar el expediente de #{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}?" />
+			<br />
+			<h:outputText value="Podrá reabrirlo en un futuro." />
+			<br />
+			<br />
+			<p:commandButton id="cerrarExpediente"
+				icon="ui-icon-folder-collapsed" value="Cerrar Expediente"
+				title="Cerrar Expediente" onclick="mostrarMosca();"
+				action="#{expedienteMB.cerrarExpediente}"
+				rendered="#{renderingMB.botonCerrarExpediente}"
+				styleClass="botonConTexto" />
+		</h:form>
+	</p:dialog>
+
+</ui:composition>

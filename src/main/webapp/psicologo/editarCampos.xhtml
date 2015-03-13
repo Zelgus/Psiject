@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Gestión de Campos</title>
+</h:head>
+<h:body>
+	#{sessionMB.editarCamposLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+	<ui:include src="/dialogos/dialogoNuevoCampo.xhtml" />
+
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<h:form>
+					<p:dataTable emptyMessage="No hay registros" id="camposCreados"
+						var="campo" value="#{campoMB.camposList}"
+						rowKey="#{campo.idCampo}"
+						selection="#{sessionMB.campoSeleccionado}">>
+						<p:column selectionMode="single" style="width:5%" />
+						<p:column headerText="Nombre" style="width:24%">
+							<h:outputText value="#{campo.nombre}" />
+						</p:column>
+						<p:column headerText="Descripción" style="width:24%">
+							<h:outputText value="#{campo.descripcion}" />
+						</p:column>
+
+						<f:facet name="footer">
+							<p:commandButton id="borrarCampo" icon="ui-icon-trash"
+								value="Borrar Campo" title="Borrar Campo"
+								onclick="mostrarMosca();"
+								actionListener="#{campoMB.borrarCampo}" update="camposCreados"
+								rendered="#{renderingMB.botonGestionCampos}"
+								styleClass="botonConTexto" />
+							<p:commandButton id="nuevoCampo" icon="ui-icon-plusthick"
+								value="Nuevo Campo" title="Nuevo Campo"
+								oncomplete="PF('dialogoNuevoCampo').show()"
+								rendered="#{renderingMB.botonGestionCampos}"
+								styleClass="botonConTexto" />
+						</f:facet>
+					</p:dataTable>
+				</h:form>
+				<h:form>
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toPsicologo}" styleClass="botonConTexto" />
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+
+</html>

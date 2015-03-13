@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<p:dialog id="dialogoReabrirExpediente" header="Reabrir Expediente"
+		widgetVar="dialogoReabrirExpediente" modal="true">
+		<h:form>
+			<h:outputText value="¿Desea reabrir este expediente?" />
+			<br />
+			<br />
+			<p:commandButton id="reabrirExpediente" icon="ui-icon-folder-open"
+				value="Reabrir Expediente" title="Reabrir Expediente"
+				onclick="mostrarMosca();" action="#{expedienteMB.reabrirExpediente}"
+				rendered="#{renderingMB.botonReabrirExpediente}"
+				styleClass="botonConTexto" />
+		</h:form>
+	</p:dialog>
+
+</ui:composition>

@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Login</title>‏
+</h:head>
+<h:body>
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/cabecera.xhtml" />
+	<ui:include src="/dialogos/dialogoRecuperarContrasena.xhtml" />
+
+	<h:form>
+		<p:panelGrid styleClass="formularioLogin">
+			<p:row>
+				<p:column style="text-align: right;">
+					<h:outputLabel for="usuario" value="Usuario o Correo:"
+						styleClass="loginLabel" />
+				</p:column>
+				<p:column style="text-align: center;">
+					<p:inputText id="usuario" value="#{loginMB.usuario}"
+						placeholder="Usuario o Correo" styleClass="loginInput" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column style="text-align: right;">
+					<h:outputLabel for="pass" value="Contraseña:"
+						styleClass="loginLabel" />
+				</p:column>
+				<p:column style="text-align: center;">
+					<p:password id="pass" value="#{loginMB.contrasena}"
+						placeholder="Contraseña" feedback="false" styleClass="loginInput" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" style="text-align: right;">
+					<p:commandLink
+						oncomplete="PF('dialogoRecuperarContrasena').show();"
+						value="¿Has olvidado tu contraseña?" styleClass="loginLink" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2" style="text-align: right;">
+					<p:commandButton id="iniciarSesion" icon="ui-icon-power"
+						value="Iniciar Sesión" title="Iniciar Sesión"
+						onclick="mostrarMosca();" action="#{loginMB.iniciarSesion}"
+						styleClass="botonConTexto" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

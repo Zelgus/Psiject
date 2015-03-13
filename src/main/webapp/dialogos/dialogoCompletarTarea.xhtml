@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<p:dialog id="dialogoCompletarTarea" header="Completar Tarea"
+		widgetVar="dialogoCompletarTarea" modal="true">
+		<h:form>
+			<h:outputText
+				value="Va a completar la tarea '#{sessionMB.tareaSeleccionada.titulo}'." />
+			<br />
+			<br />
+			<h:outputText
+				value="Si lo desea, puede escribir las conclusiones obtenidas tras la realización de la tarea:" />
+			<br />
+			<br />
+			<p:panelGrid>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="conclusionesPaciente"
+							value="Conclusiones para el paciente: " style="font-weight:bold" />
+					</p:column>
+					<p:column>
+						<h:outputLabel for="conclusionesPsicologo"
+							value="Conclusiones para el psicólogo: " style="font-weight:bold" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:inputTextarea id="conclusionesPaciente"
+							value="#{sessionMB.tareaSeleccionada.conclusionesPaciente}"
+							rows="5" cols="25" autoResize="false" styleClass="textAreaFijo" />
+					</p:column>
+					<p:column>
+						<p:inputTextarea id="conclusionesPsicologo"
+							value="#{sessionMB.tareaSeleccionada.conclusionesPsicologo}"
+							rows="5" cols="25" autoResize="false" styleClass="textAreaFijo" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<br />
+			<p:commandButton id="completarTarea" icon="ui-icon-check"
+				value="Completar Tarea" title="Completar Tarea"
+				onclick="mostrarMosca();" action="#{tareaMB.completarTarea}"
+				rendered="#{renderingMB.botonCompletarTarea}"
+				styleClass="botonConTexto" />
+		</h:form>
+	</p:dialog>
+
+</ui:composition>

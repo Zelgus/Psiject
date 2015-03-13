@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<p:dialog id="dialogoTransferirExpediente"
+		header="Transferir Expediente" widgetVar="dialogoTransferirExpediente"
+		modal="true">
+		<h:form>
+			<h:outputText
+				value="Expediente de #{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}." />
+			<br />
+			<h:outputText
+				value="Selecciona el psicologo al que desea transferirle el control total sobre este expediente:" />
+			<br />
+			<br />
+			<h:outputText
+				value="Psicologo creador: #{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}" />
+			<br />
+			<br />
+			<h:outputText value="Psicologo al que transferir:" />
+			<h:selectOneMenu id="psicologoCreador"
+				value="#{expedienteMB.nuevoPsicologoCreador}">
+				<f:selectItem itemLabel="Seleccione el nuevo Psicologo" itemValue="" />
+				<f:selectItems value="#{expedienteMB.psicologos}" />
+			</h:selectOneMenu>
+			<br />
+			<br />
+			<p:commandButton id="transferir" icon="ui-icon-arrowreturnthick-1-e"
+				value="Transferir Expediente" title="Transferir Expediente"
+				onclick="mostrarMosca();" action="#{expedienteMB.transferir}"
+				rendered="#{renderingMB.botonTransferir}" styleClass="botonConTexto" />
+		</h:form>
+	</p:dialog>
+
+</ui:composition>

@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Cuenta de #{sessionMB.usuarioEnSesion.usuario}</title>
+</h:head>
+<h:body>
+	#{sessionMB.configurarCuentaLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<h:form id="form">
+					<p:panelGrid>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="nombreCuenta" value="Nombre de usuario:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nombreCuenta"
+									value="#{sessionMB.usuarioEnSesion.usuario}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="correoCuenta" value="Correo electrónico:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="correoCuenta"
+									value="#{sessionMB.usuarioEnSesion.correo}">
+								</p:inputText>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="Cambiar la contraseña"
+									style="text-decoration:underline; font-weight:bold;" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="contrasenaActualCuenta"
+									value="Contraseña actual:" />
+							</p:column>
+							<p:column>
+								<p:password id="contrasenaActualCuenta"
+									value="#{usuarioMB.contrasena}" feedback="false" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="nuevaContrasenaCuenta"
+									value="Nueva contraseña:" />
+							</p:column>
+							<p:column>
+								<p:password id="nuevaContrasenaCuenta" feedback="true"
+									promptLabel="Introduzca su contraseña" weakLabel="Débil"
+									goodLabel="Normal" strongLabel="Fuerte"
+									value="#{usuarioMB.nuevaContrasena}">
+								</p:password>
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="repetirContrasenaCuenta"
+									value="Repita la contraseña:" />
+							</p:column>
+							<p:column>
+								<p:password id="repetirContrasenaCuenta"
+									value="#{usuarioMB.repetirContrasena}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:commandButton id="editarCuenta" icon="ui-icon-pencil"
+									value="Editar Cuenta" title="Editar Cuenta"
+									onclick="mostrarMosca();" action="#{usuarioMB.editarCuenta}"
+									styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+				</h:form>
+				<h:form>
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{usuarioMB.volverInicio}" styleClass="botonConTexto"
+						validateClient="true" />
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+
+</html>

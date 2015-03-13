@@ -1,0 +1,117 @@
+
+<!-- 
+
+  @author Iván
+  @since 1 Nov 2013
+  @version 1.0.0
+ 
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/tx 
+		        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		        http://www.springframework.org/schema/context 
+		        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Beans Declaration -->
+	<bean id="Campo" class="com.psiject.entidades.Campo"/>
+	<bean id="Comentario" class="com.psiject.entidades.Comentario"/>
+	<bean id="ExpedientePsicologo" class="com.psiject.entidades.ExpedientePsicologo"/>
+	<bean id="Expediente" class="com.psiject.entidades.Expediente"/>
+	<bean id="TareaCampo" class="com.psiject.entidades.TareaCampo"/>
+	<bean id="Tarea" class="com.psiject.entidades.Tarea"/>
+	<bean id="Usuario" class="com.psiject.entidades.Usuario"/>
+
+	<!-- Service Declaration -->
+	<bean id="UsuarioService" class="com.psiject.services.UsuarioService">
+		<property name="UsuarioDAO" ref="UsuarioDAO" />
+	</bean>
+	<bean id="ExpedienteService" class="com.psiject.services.ExpedienteService">
+		<property name="ExpedienteDAO" ref="ExpedienteDAO" />
+	</bean>
+	<bean id="ExpedientePsicologoService" class="com.psiject.services.ExpedientePsicologoService">
+		<property name="ExpedientePsicologoDAO" ref="ExpedientePsicologoDAO" />
+	</bean>
+	<bean id="TareaService" class="com.psiject.services.TareaService">
+		<property name="TareaDAO" ref="TareaDAO" />
+	</bean>
+	<bean id="CampoService" class="com.psiject.services.CampoService">
+		<property name="CampoDAO" ref="CampoDAO" />
+		<property name="tareaCampoService" ref="TareaCampoService" />
+	</bean>
+	<bean id="TareaCampoService" class="com.psiject.services.TareaCampoService">
+		<property name="TareaCampoDAO" ref="TareaCampoDAO" />
+		<property name="campoService" ref="CampoService" />
+		<property name="comentarioService" ref="ComentarioService" />
+	</bean>
+	<bean id="ComentarioService" class="com.psiject.services.ComentarioService">
+		<property name="ComentarioDAO" ref="ComentarioDAO" />
+		<property name="tareaCampoService" ref="TareaCampoService" />
+		<property name="campoService" ref="CampoService" />
+	</bean>
+
+	<!-- DAO Declarations -->
+	<bean id="CampoDAO" class="com.psiject.dao.CampoDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	<bean id="ComentarioDAO" class="com.psiject.dao.ComentarioDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	<bean id="ExpedientePsicologoDAO" class="com.psiject.dao.ExpedientePsicologoDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	<bean id="ExpedienteDAO" class="com.psiject.dao.ExpedienteDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	<bean id="TareaCampoDAO" class="com.psiject.dao.TareaCampoDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	<bean id="TareaDAO" class="com.psiject.dao.TareaDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+	<bean id="UsuarioDAO" class="com.psiject.dao.UsuarioDAO">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+
+	<!-- Data Source Declaration -->
+	<bean id="DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/psiject" />
+		<property name="user" value="psiject" />
+		<property name="password" value="psiject" />
+		<property name="maxPoolSize" value="10" />
+		<property name="maxStatements" value="0" />
+		<property name="minPoolSize" value="5" />
+
+	</bean>
+
+	<!-- Session Factory Declaration -->
+	<bean id="SessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="DataSource" />
+
+		<property name="packagesToScan" value="com.psiject.entidades" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Enable the configuration of transactional behavior based on annotations -->
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<!-- Transaction Manager is defined -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="SessionFactory" />
+	</bean>
+
+</beans>

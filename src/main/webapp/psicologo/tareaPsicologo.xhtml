@@ -1,0 +1,148 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Tarea</title>
+</h:head>
+<h:body>
+	#{sessionMB.tareaPsicologoLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+	<ui:include src="/dialogos/dialogoModificarCampos.xhtml" />
+	<ui:include src="/dialogos/dialogoCompletarTarea.xhtml" />
+	<ui:include src="/dialogos/dialogoEditarTarea.xhtml" />
+	<ui:include src="/dialogos/dialogoConclusionesPsicologo.xhtml" />
+	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
+
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<p:panelGrid>
+					<p:row>
+						<p:column colspan="3">
+							<h:graphicImage library="images" name="importante.png"
+								title="Tarea Importante"
+								rendered="#{sessionMB.tareaSeleccionada.importante}"
+								styleClass="iconoTareaImportante" />
+							<h:outputText styleClass="tituloTarea"
+								value="#{sessionMB.tareaSeleccionada.titulo}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="3">
+							<h:outputText value="#{sessionMB.tareaSeleccionada.descripcion}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<h:outputText value="Creada por: " />
+						</p:column>
+						<p:column colspan="2">
+							<h:outputText
+								value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<h:outputText value="Asignada a: " />
+						</p:column>
+						<p:column colspan="2">
+							<h:outputText
+								value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="3">
+							<h:form>
+								<p:commandLink
+									oncomplete="PF('dialogoConclusionesPsicologo').show();"
+									value="Conclusiones"
+									style="text-decoration:underline; color:blue;"
+									rendered="#{renderingMB.botonConclusionesPsicologo}" />
+							</h:form>
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:column>
+			<p:column>
+				<h:form>
+					<p:panelGrid styleClass="panelAcciones">
+						<p:row>
+							<p:column>
+								<p:commandButton id="editarTarea" icon="ui-icon-pencil"
+									value="Editar Tarea" title="Editar Tarea"
+									oncomplete="PF('dialogoEditarTarea').show();"
+									rendered="#{renderingMB.botonEditarTarea}"
+									styleClass="botonConTexto" />
+							</p:column>
+							<p:column>
+								<p:commandButton id="modificarCampos" icon="ui-icon-document-b"
+									value="Modificar Campos" title="Modificar Campos"
+									oncomplete="PF('dialogoModificarCampos').show();"
+									rendered="#{renderingMB.botonModificarCampos}"
+									styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:commandButton id="completarTarea" icon="ui-icon-check"
+									value="Completar Tarea" title="Completar Tarea"
+									oncomplete="PF('dialogoCompletarTarea').show();"
+									rendered="#{renderingMB.botonCompletarTarea}"
+									styleClass="botonConTexto" />
+								<p:commandButton id="reabrirTarea" icon="ui-icon-check"
+									value="Reabrir Tarea" title="Reabrir Tarea"
+									onclick="mostrarMosca();" action="#{tareaMB.reabrirTarea}"
+									rendered="#{renderingMB.botonReabrirTarea}"
+									styleClass="botonConTexto" />
+							</p:column>
+							<p:column>
+								<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+									value="Volver" title="Volver" onclick="mostrarMosca();"
+									action="#{navegacionMB.toExpediente}"
+									styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column colspan="2">
+				<h:form style="width: 100%; height: 100%; overflow: auto;">
+					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
+						<p:dataTable id="comentariosDe#{campo.idCampo}"
+							emptyMessage="No hay registros"
+							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
+							var="comentario" styleClass="tablaComentarios">
+							<p:column headerText="#{campo.nombre}">
+								<h:graphicImage library="images" name="nuevoComentario.png"
+									title="Nuevo comentario" rendered="#{!comentario.visto}"
+									styleClass="iconoNuevoComentarioTabla" />
+								<h:outputText value="#{comentario.comentario}"
+									title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
+							</p:column>
+						</p:dataTable>
+					</c:forEach>
+					<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
+						value="Añadir comentario" title="Añadir comentario"
+						oncomplete="PF('dialogoComentarPsicologo').show();"
+						rendered="#{renderingMB.botonComentarPsicologo}"
+						styleClass="botonConTexto" />
+					<p:commandButton id="verMisComentarios" icon="ui-icon-search"
+						value="Ver mis comentarios" title="Ver mis comentarios"
+						onclick="mostrarMosca();"
+						action="#{navegacionMB.toMisComentariosPsicologo}"
+						rendered="#{renderingMB.botonMisComentariosPsicologo}"
+						styleClass="botonConTexto" />
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+
+</html>

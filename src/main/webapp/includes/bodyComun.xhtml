@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<ui:include src="/dialogos/dialogoSugerencia.xhtml" />
+	<div id="feedback">
+		<h:graphicImage library="images" name="boton_sugerencias.png"
+			onclick="PF('dialogoSugerencia').show();" />
+	</div>
+	<script>
+		function mostrarMosca() {
+			$('#mosca').css('display', 'block');
+		}
+	</script>
+	<div id="mosca">
+		<div>
+			<img src="../resources/images/mosca.gif" />
+		</div>
+	</div>
+	<p:messages id="messages" showDetail="true" autoUpdate="true"
+		closable="true" />
+
+</ui:composition>

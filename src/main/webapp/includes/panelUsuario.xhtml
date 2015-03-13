@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<h:form>
+		<p:idleMonitor timeout="600000">
+			<p:ajax event="idle" listener="#{sessionMB.timeOut}" />
+		</p:idleMonitor>
+		<p:panelGrid styleClass="panelUsuario">
+			<p:row>
+				<p:column styleClass="panelUsuarioHome">
+					<p:commandLink id="home" onclick="mostrarMosca();"
+						action="#{usuarioMB.volverInicio}">
+						<h:graphicImage library="images" name="logo.png"
+							title="Volver a Inicio" styleClass="panelUsuarioImagen" />
+					</p:commandLink>
+				</p:column>
+				<p:column styleClass="panelUsuarioUser">
+					<p:commandLink id="editAccount" onclick="mostrarMosca();"
+						action="#{navegacionMB.toConfigurarCuenta}">
+						<h:outputText value="#{sessionMB.usuarioEnSesion.usuario}"
+							title="Editar cuenta" styleClass="panelUsuarioTextoUser" />
+					</p:commandLink>
+					<br />
+					<h:outputText rendered="#{renderingMB.nombreYApellidosPanel}"
+						value="#{expedienteMB.nombreYApellidos}"
+						styleClass="panelUsuarioTextoNombre" />
+					<br />
+					<p:menuButton value="" styleClass="panelUsuarioMenu">
+						<p:menuitem id="editarCuenta" icon="ui-icon-pencil"
+							value="Editar cuenta" title="Editar cuenta"
+							onclick="mostrarMosca();"
+							action="#{navegacionMB.toConfigurarCuenta}" />
+						<p:menuitem id="cerrarSesion" icon="ui-icon-power"
+							value="Cerrar sesión" title="Cerrar sesión"
+							onclick="mostrarMosca();" action="#{sessionMB.cerrarSesion}" />
+					</p:menuButton>
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+
+</ui:composition>

@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Página principal de #{sessionMB.usuarioEnSesion.usuario}</title>
+</h:head>
+<h:body>
+	#{sessionMB.pacienteLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+	<ui:include src="/dialogos/dialogoComentarPaciente.xhtml" />
+
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<h:form>
+					<h:outputText styleClass="tituloExpediente" value="Tus tareas" />
+					<p:tabView styleClass="tablaTareas">
+						<p:tab title="En proceso">
+							<p:dataTable emptyMessage="No hay registros" var="tarea"
+								value="#{tareaMB.tareasPendientesDelExpedienteList}"
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
+								<p:column headerText="Título" style="width:24%">
+									<h:graphicImage library="images" name="nuevaTarea.png"
+										title="Nueva tarea" rendered="#{!tarea.vista}"
+										styleClass="iconoNuevaTarea" />
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePsicologo(tarea)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText
+										title="Creada por #{tarea.usuarioCreador.usuario}"
+										value="#{tarea.titulo}" />
+								</p:column>
+								<p:column headerText="Descripción" style="width:24%">
+									<h:outputText value="#{tarea.descripcion}" />
+								</p:column>
+								<p:column headerText="Comentar"
+									style="width:4%; text-align:center;">
+									<p:commandButton id="nuevoComentario" icon="ui-icon-comment"
+										title="Añadir comentarios"
+										oncomplete="PF('dialogoComentarPaciente').show();
+										PF('wiz').loadStep(PF('wiz').cfg.steps[0], true);"
+										rendered="#{renderingMB.botonComentarPaciente(tarea)}"
+										update=":dialogoComentarPaciente" styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarTarea" icon="ui-icon-search"
+										title="Consultar Tarea" onclick="mostrarMosca();"
+										action="#{tareaMB.consultarTareaPaciente}"
+										rendered="#{renderingMB.botonConsultarTareaPaciente(tarea)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+						<p:tab title="Concluidas">
+							<p:dataTable emptyMessage="No hay registros" var="tarea"
+								value="#{tareaMB.tareasCompletadasDelExpedienteList}"
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
+								<p:column headerText="Título" style="width:24%">
+									<h:graphicImage library="images" name="nuevaTarea.png"
+										title="Nueva tarea" rendered="#{!tarea.vista}"
+										styleClass="iconoNuevaTarea" />
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePsicologo(tarea)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText
+										title="Creada por #{tarea.usuarioCreador.usuario}"
+										value="#{tarea.titulo}" />
+								</p:column>
+								<p:column headerText="Descripción" style="width:24%">
+									<h:outputText value="#{tarea.descripcion}" />
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarTarea" icon="ui-icon-search"
+										title="Consultar Tarea" onclick="mostrarMosca();"
+										action="#{tareaMB.consultarTareaPaciente}"
+										rendered="#{renderingMB.botonConsultarTareaPaciente(tarea)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+					</p:tabView>
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+</h:body>
+
+</html>

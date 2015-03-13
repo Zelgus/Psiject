@@ -1,0 +1,260 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<ui:include src="/includes/headComun.xhtml" />
+	<title>Expediente de #{sessionMB.expedienteSeleccionado.nombre}
+		#{sessionMB.expedienteSeleccionado.apellidos}</title>
+</h:head>
+<h:body>
+	#{sessionMB.expedienteLoad()}
+	<ui:include src="/includes/bodyComun.xhtml" />
+	<ui:include src="/includes/panelUsuario.xhtml" />
+	<ui:include src="/dialogos/dialogoTransferirExpediente.xhtml" />
+	<ui:include src="/dialogos/dialogoModificarPermisos.xhtml" />
+	<ui:include src="/dialogos/dialogoCerrarExpediente.xhtml" />
+	<ui:include src="/dialogos/dialogoReabrirExpediente.xhtml" />
+	<ui:include src="/dialogos/dialogoAbandonarExpediente.xhtml" />
+	<ui:include src="/dialogos/dialogoCompletarTarea.xhtml" />
+	<ui:include src="/dialogos/dialogoEditarTarea.xhtml" />
+	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
+	
+	<p:panelGrid>
+		<p:row>
+			<p:column>
+				<p:panelGrid>
+					<p:row>
+						<p:column colspan="3">
+							<h:outputText styleClass="tituloExpediente"
+								value="Informacion Personal" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="3">
+							<h:outputText
+								value="#{sessionMB.expedienteSeleccionado.apellidos}" />,
+					<h:outputText value="#{sessionMB.expedienteSeleccionado.nombre}" />
+					(<h:outputText
+								value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />)
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="3">
+							<h:outputText
+								value="#{sessionMB.expedienteSeleccionado.usuario.correo}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="3">
+							<h:outputText styleClass="tituloExpediente" value="Psicologos" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<h:outputText value="Creador: " />
+						</p:column>
+						<p:column colspan="2">
+							<h:outputText
+								value="#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<h:outputText value="Con acceso: " />
+						</p:column>
+						<p:column>
+							<h:outputText value="#{expedienteMB.psicologosConAcceso}" />
+						</p:column>
+						<p:column>
+							<h:form>
+								<p:commandButton id="modifPermisos" icon="ui-icon-person"
+									title="Modificar Permisos"
+									oncomplete="PF('dialogoModificarPermisos').show();"
+									rendered="#{renderingMB.botonModificarPermisos}"
+									styleClass="botonSinTexto" />
+							</h:form>
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:column>
+			<p:column>
+				<h:form>
+					<p:panelGrid styleClass="panelAcciones">
+						<p:row>
+							<p:column>
+								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
+									value="Editar Expediente" title="Editar Expediente"
+									onclick="mostrarMosca();"
+									action="#{navegacionMB.toEditarExpediente}"
+									rendered="#{renderingMB.botonEditarExpediente}"
+									styleClass="botonConTexto" />
+							</p:column>
+							<p:column>
+								<p:commandButton id="transferirExpediente"
+									icon="ui-icon-arrowreturnthick-1-e"
+									value="Transferir Expediente" title="Transferir Expediente"
+									oncomplete="PF('dialogoTransferirExpediente').show();"
+									rendered="#{renderingMB.botonTransferir}"
+									styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<p:commandButton id="cerrarExpediente"
+									icon="ui-icon-folder-collapsed" value="Cerrar Expediente"
+									title="Cerrar Expediente"
+									oncomplete="PF('dialogoCerrarExpediente').show();"
+									rendered="#{renderingMB.botonCerrarExpediente}"
+									styleClass="botonConTexto" />
+								<p:commandButton id="reabrirExpediente"
+									icon="ui-icon-folder-open" value="Reabrir Expediente"
+									title="Reabrir Expediente"
+									oncomplete="PF('dialogoReabrirExpediente').show();"
+									rendered="#{renderingMB.botonReabrirExpediente}"
+									styleClass="botonConTexto" />
+							</p:column>
+							<p:column>
+								<p:commandButton id="abandonarExpediente"
+									icon="ui-icon-closethick" value="Abandonar Expediente"
+									title="Abandonar Expediente"
+									oncomplete="PF('dialogoAbandonarExpediente').show();"
+									rendered="#{renderingMB.botonAbandonar}"
+									styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="3">
+								<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+									value="Volver" title="Volver" onclick="mostrarMosca();"
+									action="#{navegacionMB.toPsicologo}" styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column colspan="2">
+				<h:form>
+					<h:outputText styleClass="tituloExpediente"
+						value="Tareas del expediente" />
+					<p:tabView styleClass="tablaTareas">
+						<p:tab title="En proceso">
+							<p:dataTable emptyMessage="No hay registros" var="tarea"
+								value="#{tareaMB.tareasPendientesDelExpedienteList}"
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
+								<p:column headerText="Título" style="width:24%">
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText title="#{tarea.descripcion}"
+										value="#{tarea.titulo}" />
+								</p:column>
+								<p:column headerText="Creador" style="width:24%">
+									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
+								</p:column>
+								<p:column headerText="Editar"
+									style="width:4%; text-align:center;">
+									<p:commandButton id="editarTarea" icon="ui-icon-pencil"
+										title="Editar Tarea"
+										oncomplete="PF('dialogoEditarTarea').show();"
+										rendered="#{renderingMB.botonEditarTarea(tarea)}"
+										update=":dialogoEditarTarea" styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+								<p:column headerText="Completar"
+									style="width:4%; text-align:center;">
+									<p:commandButton id="completarTarea" icon="ui-icon-check"
+										title="Completar Tarea"
+										oncomplete="PF('dialogoCompletarTarea').show();"
+										rendered="#{renderingMB.botonCompletarTarea(tarea)}"
+										update=":dialogoCompletarTarea" styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+								<p:column headerText="Comentar"
+									style="width:4%; text-align:center;">
+									<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
+										title="Añadir comentario"
+										oncomplete="PF('dialogoComentarPsicologo').show();"
+										rendered="#{renderingMB.botonComentarPsicologo(tarea)}"
+										update=":dialogoComentarPsicologo" styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarTarea" icon="ui-icon-search"
+										title="Consultar Tarea" onclick="mostrarMosca();"
+										action="#{navegacionMB.toTareaPsicologo}"
+										rendered="#{renderingMB.botonConsultarTarea(tarea)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+						<p:tab title="Concluidas">
+							<p:dataTable emptyMessage="No hay registros" var="tarea"
+								value="#{tareaMB.tareasCompletadasDelExpedienteList}"
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
+								<p:column headerText="Título" style="width:24%">
+									<h:graphicImage library="images" name="nuevoComentario.png"
+										title="Nuevo comentario"
+										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
+										styleClass="iconoNuevoComentario" />
+									<h:outputText title="#{tarea.descripcion}"
+										value="#{tarea.titulo}" />
+								</p:column>
+								<p:column headerText="Creador" style="width:24%">
+									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
+								</p:column>
+								<p:column headerText="Reabrir"
+									style="width:4%; text-align:center;">
+									<p:commandButton id="reabrirTarea" icon="ui-icon-check"
+										title="Reabrir Tarea" onclick="mostrarMosca();"
+										action="#{tareaMB.reabrirTarea}"
+										rendered="#{renderingMB.botonReabrirTarea(tarea)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+								<p:column headerText="Ver" style="width:4%; text-align:center;">
+									<p:commandButton id="consultarTarea" icon="ui-icon-search"
+										title="Consultar Tarea" onclick="mostrarMosca();"
+										action="#{navegacionMB.toTareaPsicologo}"
+										rendered="#{renderingMB.botonConsultarTarea(tarea)}"
+										styleClass="botonSinTexto">
+										<f:setPropertyActionListener value="#{tarea}"
+											target="#{sessionMB.tareaSeleccionada}" />
+									</p:commandButton>
+								</p:column>
+							</p:dataTable>
+						</p:tab>
+					</p:tabView>
+					<p:commandButton id="nuevaTarea" icon="ui-icon-plusthick"
+						value="Añadir nueva Tarea" title="Añadir nueva Tarea"
+						onclick="mostrarMosca();" action="#{navegacionMB.toNuevaTarea}"
+						rendered="#{renderingMB.botonCrearNuevaTarea}"
+						styleClass="botonConTexto">
+						<f:setPropertyActionListener
+							value="#{sessionMB.expedienteSeleccionado}"
+							target="#{sessionMB.expedienteSeleccionado}" />
+					</p:commandButton>
+				</h:form>
+			</p:column>
+		</p:row>
+	</p:panelGrid>
+
+</h:body>
+
+</html>
