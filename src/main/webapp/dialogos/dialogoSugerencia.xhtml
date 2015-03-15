@@ -5,21 +5,17 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoSugerencia" header="Envíanos tu opinión"
-		widgetVar="dialogoSugerencia" modal="true" resizable="false" draggable="false">
+	<p:dialog id="dialogoSugerencia" styleClass="dialogoPsiject"
+		header="Envíanos tu opinión" widgetVar="dialogoSugerencia"
+		modal="true" resizable="false" draggable="false">
 		<h:form>
-			<h:outputText
-				value="¿Algún error? ¿Algo que mejorar? ¿Alguna sugerencia?" />
-			<br />
-			<br />
-			<h:outputText
-				value="Puedes ayudarnos enviándonos un correo con tu opinión:" />
-			<br />
+			<p>¿Algún error? ¿Algo que mejorar? ¿Alguna sugerencia?...</p>
+			<p>Puedes ayudarnos enviándonos un correo con tu opinión:</p>
 			<p:panelGrid>
 				<p:row>
 					<p:column>
 						<p:inputTextarea id="sugerencias" value="#{sessionMB.sugerencia}"
-							rows="10" cols="50" autoResize="false" styleClass="textAreaFijo" />
+							autoResize="false" styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

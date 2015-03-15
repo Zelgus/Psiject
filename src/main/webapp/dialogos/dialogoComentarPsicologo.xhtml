@@ -5,16 +5,17 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoComentarPsicologo" header="Comentario"
-		widgetVar="dialogoComentarPsicologo" modal="true" resizable="false" draggable="true">
+	<p:dialog id="dialogoComentarPsicologo" styleClass="dialogoPsiject"
+		header="Comentario" widgetVar="dialogoComentarPsicologo" modal="true"
+		resizable="false" draggable="true">
 		<h:form>
-			<h:outputText value="Comentario:" />
+			<p>Comentario:</p>
 			<br />
 			<p:panelGrid>
 				<p:row>
 					<p:column>
 						<p:inputTextarea id="comentarioTA" value="#{wizardMB.comentario}"
-							cols="50" rows="5" />
+							styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

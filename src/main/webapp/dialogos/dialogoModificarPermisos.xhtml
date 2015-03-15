@@ -5,15 +5,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoModificarPermisos" header="Modificar permisos"
+	<p:dialog id="dialogoModificarPermisos" styleClass="dialogoPsiject" header="Modificar permisos"
 		widgetVar="dialogoModificarPermisos" modal="true" resizable="false" draggable="true">
 		<h:form>
-			<h:outputText
-				value="Expediente de #{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}." />
-			<br />
-			<br />
-			<h:outputText
-				value="Modifica las listas para decidir qué psicologos tendrán acceso a los datos del expediente." />
+			<p>Expediente de #{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}.</p>
+			<p>Modifica las listas para decidir qué psicologos tendrán acceso a los datos del expediente.</p>
 			<br />
 			<br />
 			<p:pickList id="psicologos"

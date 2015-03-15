@@ -5,8 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoNuevoCampo" header="Añadir Campo"
-		widgetVar="dialogoNuevoCampo" modal="true" resizable="false" draggable="true">
+	<p:dialog id="dialogoNuevoCampo" styleClass="dialogoPsiject"
+		header="Añadir Campo" widgetVar="dialogoNuevoCampo" modal="true"
+		resizable="false" draggable="true">
 		<h:form>
 			<p:panelGrid>
 				<p:row>
@@ -23,8 +24,8 @@
 					</p:column>
 					<p:column>
 						<p:inputTextarea id="descripcionCampo"
-							value="#{campoMB.descripcion}" rows="5" cols="50"
-							autoResize="false" styleClass="textAreaFijo" />
+							value="#{campoMB.descripcion}" autoResize="false"
+							styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

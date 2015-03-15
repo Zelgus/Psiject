@@ -5,15 +5,14 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoCompletarTarea" header="Completar Tarea"
-		widgetVar="dialogoCompletarTarea" modal="true" resizable="false" draggable="true">
+	<p:dialog id="dialogoCompletarTarea" styleClass="dialogoPsiject"
+		header="Completar Tarea" widgetVar="dialogoCompletarTarea"
+		modal="true" resizable="false" draggable="true">
 		<h:form>
-			<h:outputText
-				value="Va a completar la tarea '#{sessionMB.tareaSeleccionada.titulo}'." />
-			<br />
-			<br />
-			<h:outputText
-				value="Si lo desea, puede escribir las conclusiones obtenidas tras la realización de la tarea:" />
+			<p>Va a completar la tarea
+				'#{sessionMB.tareaSeleccionada.titulo}'</p>
+			<p>Si lo desea, puede escribir las conclusiones obtenidas tras la
+				realización de la tarea:</p>
 			<br />
 			<br />
 			<p:panelGrid>
@@ -31,12 +30,12 @@
 					<p:column>
 						<p:inputTextarea id="conclusionesPaciente"
 							value="#{sessionMB.tareaSeleccionada.conclusionesPaciente}"
-							rows="5" cols="25" autoResize="false" styleClass="textAreaFijo" />
+							autoResize="false" styleClass="textAreaPequeño" />
 					</p:column>
 					<p:column>
 						<p:inputTextarea id="conclusionesPsicologo"
 							value="#{sessionMB.tareaSeleccionada.conclusionesPsicologo}"
-							rows="5" cols="25" autoResize="false" styleClass="textAreaFijo" />
+							autoResize="false" styleClass="textAreaPequeño" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>
