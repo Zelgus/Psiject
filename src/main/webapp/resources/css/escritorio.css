@@ -12,22 +12,21 @@ body {
 .ui-panelgrid .ui-panelgrid-cell {
 	border-style: hidden;
 	background-color: #ffffff;
+	padding: 10px;
 }
 
 .ui-widget-content {
 	color: #000000 !important;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default,
-	.ui-widget-header, .ui-widget-header .ui-state-default, .ui-menu,
-	.ui-menu .ui-menu-child {
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header,.ui-widget-header .ui-state-default,.ui-menu,.ui-menu .ui-menu-child
+	{
 	background-color: #e5ffba !important;
 	border-color: #7f9e49 !important;
 	color: #000000 !important;
 }
 
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
-	.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus
 	{
 	background: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.6),
 		rgba(255, 255, 255, 0)) repeat scroll 0 0 #ffffff !important;
@@ -317,8 +316,8 @@ body {
 	margin-top: 10px !important;
 }
 
-.panelUsuario .ui-widget-content, .panelUsuario .panelUsuarioUser,
-	.panelUsuario .panelUsuarioHome {
+.panelUsuario .ui-widget-content,.panelUsuario .panelUsuarioUser,.panelUsuario .panelUsuarioHome
+	{
 	background: #f8ffe8;
 	background: -moz-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8ffe8),
@@ -402,8 +401,8 @@ body {
 	color: #000000 !important;
 }
 
-.tablaExpedientes .ui-tabs-panels, .tablaExpedientes .ui-tabs-panel,
-	.tablaExpedientes .ui-tabs {
+.tablaExpedientes .ui-tabs-panels,.tablaExpedientes .ui-tabs-panel,.tablaExpedientes .ui-tabs
+	{
 	padding: 0px !important;
 }
 
@@ -476,7 +475,7 @@ body {
 	color: #000000 !important;
 }
 
-.tablaTareas .ui-tabs-panels, .tablaTareas .ui-tabs-panel, .tablaTareas .ui-tabs
+.tablaTareas .ui-tabs-panels,.tablaTareas .ui-tabs-panel,.tablaTareas .ui-tabs
 	{
 	padding: 0px !important;
 }

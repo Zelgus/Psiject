@@ -21,7 +21,7 @@
 	<ui:include src="/dialogos/dialogoCompletarTarea.xhtml" />
 	<ui:include src="/dialogos/dialogoEditarTarea.xhtml" />
 	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
-	
+
 	<p:panelGrid>
 		<p:row>
 			<p:column>
@@ -146,7 +146,7 @@
 							<p:dataTable emptyMessage="Sin tareas pendientes." var="tarea"
 								value="#{tareaMB.tareasPendientesDelExpedienteList}"
 								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título" style="width:24%">
+								<p:column headerText="Título" style="width:33%">
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
@@ -154,7 +154,7 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador" style="width:24%">
+								<p:column headerText="Creador" style="width:9%">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
 								<p:column headerText="Editar"
@@ -169,7 +169,7 @@
 									</p:commandButton>
 								</p:column>
 								<p:column headerText="Completar"
-									style="width:4%; text-align:center;">
+									style="width:7%; text-align:center;">
 									<p:commandButton id="completarTarea" icon="ui-icon-check"
 										title="Completar Tarea"
 										oncomplete="PF('dialogoCompletarTarea').show();"
@@ -180,7 +180,7 @@
 									</p:commandButton>
 								</p:column>
 								<p:column headerText="Comentar"
-									style="width:4%; text-align:center;">
+									style="width:6%; text-align:center;">
 									<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
 										title="Añadir comentario"
 										oncomplete="PF('dialogoComentarPsicologo').show();"
@@ -190,7 +190,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver" style="width:4%; text-align:center;">
+								<p:column headerText="Ver" style="width:3%; text-align:center;">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{navegacionMB.toTareaPsicologo}"
@@ -214,7 +214,7 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador" style="width:24%">
+								<p:column headerText="Creador" style="width:4%">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
 								<p:column headerText="Reabrir"
@@ -228,7 +228,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver" style="width:4%; text-align:center;">
+								<p:column headerText="Ver" style="width:2%; text-align:center;">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{navegacionMB.toTareaPsicologo}"
