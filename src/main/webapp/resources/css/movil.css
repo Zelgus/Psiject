@@ -45,7 +45,7 @@ body {
 	bottom: 5px;
 	cursor: pointer;
 	height: 40px;
-	position: fixed;
+	position: absolute;
 	right: 5px;
 	width: 140px;
 	z-index: 2000;
