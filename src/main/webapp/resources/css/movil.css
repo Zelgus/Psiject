@@ -280,23 +280,13 @@ body {
 }
 
 .panelUsuarioTextoUser {
-	background-color: #36FF35;
-	border-radius: 20px 20px 20px 20px;
-	color: #FFFFFF;
+	color: #000000;
 	float: right;
 	font-family: Georgia;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: bold;
 	margin-top: 10px;
 	padding: 0px 15px;
-	box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
-	-moz-box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
-	-webkit-box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
-}
-
-.panelUsuarioTextoUser:hover {
-	background-color: #E5FFBA;
-	color: #000000;
 }
 
 .panelUsuarioTextoNombre {
@@ -312,11 +302,6 @@ body {
 	float: right;
 }
 
-.panelUsuarioMenu button {
-	height: 35px;
-	width: 35px;
-	margin-top: 10px !important;
-}
 
 .panelUsuario .ui-widget-content, .panelUsuario .panelUsuarioUser,
 	.panelUsuario .panelUsuarioHome {

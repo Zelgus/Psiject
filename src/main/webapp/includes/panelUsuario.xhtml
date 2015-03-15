@@ -19,25 +19,20 @@
 					</p:commandLink>
 				</p:column>
 				<p:column styleClass="panelUsuarioUser">
-					<p:commandLink id="editAccount" onclick="mostrarMosca();"
-						action="#{navegacionMB.toConfigurarCuenta}">
-						<h:outputText value="#{sessionMB.usuarioEnSesion.usuario}"
-							title="Editar cuenta" styleClass="panelUsuarioTextoUser" />
-					</p:commandLink>
+					<h:outputText value="#{sessionMB.usuarioEnSesion.usuario}"
+						styleClass="panelUsuarioTextoUser" />
 					<br />
 					<h:outputText rendered="#{renderingMB.nombreYApellidosPanel}"
 						value="#{expedienteMB.nombreYApellidos}"
 						styleClass="panelUsuarioTextoNombre" />
 					<br />
-					<p:menuButton value="" styleClass="panelUsuarioMenu">
-						<p:menuitem id="editarCuenta" icon="ui-icon-pencil"
-							value="Editar cuenta" title="Editar cuenta"
-							onclick="mostrarMosca();"
-							action="#{navegacionMB.toConfigurarCuenta}" />
-						<p:menuitem id="cerrarSesion" icon="ui-icon-power"
-							value="Cerrar sesión" title="Cerrar sesión"
-							onclick="mostrarMosca();" action="#{sessionMB.cerrarSesion}" />
-					</p:menuButton>
+					<p:commandButton styleClass="panelUsuarioMenu" id="editarCuenta"
+						icon="ui-icon-pencil" title="Editar cuenta"
+						onclick="mostrarMosca();"
+						action="#{navegacionMB.toConfigurarCuenta}" />
+					<p:commandButton styleClass="panelUsuarioMenu" id="cerrarSesion"
+						icon="ui-icon-power" title="Cerrar sesión"
+						onclick="mostrarMosca();" action="#{sessionMB.cerrarSesion}" />
 				</p:column>
 			</p:row>
 		</p:panelGrid>

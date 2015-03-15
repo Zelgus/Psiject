@@ -270,32 +270,17 @@ body {
 .panelUsuarioUser {
 	float: right;
 	height: 160px;
-	margin-right: 20px;
 	background-color: none;
 }
 
-.panelUsuarioUser a {
-	text-decoration: none;
-}
-
 .panelUsuarioTextoUser {
-	background-color: #36FF35;
-	border-radius: 20px 20px 20px 20px;
-	color: #FFFFFF;
 	float: right;
 	font-family: Georgia;
-	font-size: 25px;
+	font-size: 36px;
 	font-weight: bold;
-	margin-top: 10px;
+	margin-top: 30px;
 	padding: 0px 15px;
-	box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
-	-moz-box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
-	-webkit-box-shadow: 2px 3px 0 0 #000000, 5px 6px 4px 0 #555555;
-}
-
-.panelUsuarioTextoUser:hover {
-	background-color: #E5FFBA;
-	color: #000000;
+	margin-right: 10px;
 }
 
 .panelUsuarioTextoNombre {
@@ -304,30 +289,12 @@ body {
 	font-style: oblique;
 	float: right;
 	margin-top: 10px;
+	margin-right: 20px;
 }
 
 .panelUsuarioMenu {
-	float: right;
-}
-
-.panelUsuarioMenu button {
-	height: 35px;
-	width: 35px;
-	margin-top: 10px !important;
-}
-
-.panelUsuario .ui-widget-content,.panelUsuario .panelUsuarioUser,.panelUsuario .panelUsuarioHome
-	{
-	background: #f8ffe8;
-	background: -moz-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8ffe8),
-		color-stop(100%, #ffffff));
-	background: -webkit-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: -o-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: -ms-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: linear-gradient(to bottom, #f8ffe8 0%, #ffffff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ffe8',
-		endColorstr='#ffffff', GradientType=0);
+	margin-top: 20px;
+	margin-right: 10px
 }
 
 /*
