@@ -249,17 +249,16 @@ body {
 
 .panelUsuarioHome {
 	float: left;
-	height: 160px;
+	width: 150px;
 }
 
 .panelUsuarioImagen {
-	width: 300px;
+	width: 150px;
 }
 
 .panelUsuarioUser {
 	float: right;
-	height: 160px;
-	margin-right: 20px;
+	width: 100px;
 	background-color: none;
 }
 
@@ -273,7 +272,7 @@ body {
 	color: #FFFFFF;
 	float: right;
 	font-family: Georgia;
-	font-size: 25px;
+	font-size: 15px;
 	font-weight: bold;
 	margin-top: 10px;
 	padding: 0px 15px;
@@ -289,10 +288,11 @@ body {
 
 .panelUsuarioTextoNombre {
 	font-family: Georgia;
-	font-size: 20px;
+	font-size: 12px;
 	font-style: oblique;
 	float: right;
 	margin-top: 10px;
+	text-align: right;
 }
 
 .panelUsuarioMenu {
@@ -305,18 +305,10 @@ body {
 	margin-top: 10px !important;
 }
 
-.panelUsuario .ui-widget-content, .panelUsuario .panelUsuarioUser,
-	.panelUsuario .panelUsuarioHome {
-	background: #f8ffe8;
-	background: -moz-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8ffe8),
-		color-stop(100%, #ffffff));
-	background: -webkit-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: -o-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: -ms-linear-gradient(top, #f8ffe8 0%, #ffffff 100%);
-	background: linear-gradient(to bottom, #f8ffe8 0%, #ffffff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8ffe8',
-		endColorstr='#ffffff', GradientType=0);
+.panelUsuario .ui-widget-content,
+.panelUsuario .panelUsuarioUser,
+.panelUsuario .panelUsuarioHome {
+	background: #E5FFBA;
 }
 
 /*
@@ -421,14 +413,13 @@ body {
 ---------------------------------------------------------------------------
 */
 .tablaTareas {
-	border: none !important;
-	padding: 0px !important;
+	border: none;
+	padding: 0px;
 	margin-bottom: 20px;
 }
 
 .tablaTareas ul {
 	background-color: #FFFFFF !important;
-	border: none !important;
 }
 
 .tablaTareas ul .ui-state-default {
@@ -451,9 +442,25 @@ body {
 	color: #000000 !important;
 }
 
-.tablaTareas .ui-tabs-panels, .tablaTareas .ui-tabs-panel, .tablaTareas .ui-tabs
-	{
+.tablaTareas .ui-tabs-panels, 
+.tablaTareas .ui-tabs-panel, 
+.tablaTareas .ui-tabs{
 	padding: 0px !important;
+}
+
+.tablaTareas .ui-tabs-panels thead{
+	display: none;
+}
+
+.tablaTareas .ui-tabs-panels tbody td{
+	border-top: 1px solid #A8A8A8;
+	border-bottom: 1px solid #A8A8A8;
+	border-left: none;
+	border-right: none;
+}
+
+.tablaTareasDescripcion {
+	display: none;
 }
 
 .tablaTareas .colorTareaImportante {

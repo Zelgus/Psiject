@@ -143,7 +143,7 @@
 						value="Tareas del expediente" />
 					<p:tabView styleClass="tablaTareas">
 						<p:tab title="En proceso">
-							<p:dataTable emptyMessage="No hay registros" var="tarea"
+							<p:dataTable emptyMessage="Sin tareas pendientes." var="tarea"
 								value="#{tareaMB.tareasPendientesDelExpedienteList}"
 								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
 								<p:column headerText="Título" style="width:24%">
@@ -203,7 +203,7 @@
 							</p:dataTable>
 						</p:tab>
 						<p:tab title="Concluidas">
-							<p:dataTable emptyMessage="No hay registros" var="tarea"
+							<p:dataTable emptyMessage="Sin tareas concluidas." var="tarea"
 								value="#{tareaMB.tareasCompletadasDelExpedienteList}"
 								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
 								<p:column headerText="Título" style="width:24%">

@@ -19,7 +19,7 @@
 				<h:form>
 					<p:tabView id="tabView" styleClass="tablaExpedientes">
 						<p:tab id="tab0" title="Expedientes Creados">
-							<p:dataTable emptyMessage="No hay registros"
+							<p:dataTable emptyMessage="Ningún expediente creado."
 								id="expedientesCreados" var="expediente"
 								value="#{expedienteMB.expedientesCreadosList}">
 								<p:column headerText="Apellidos" style="width:24%">
@@ -60,7 +60,7 @@
 						</p:tab>
 
 						<p:tab id="tab1" title="Expedientes Accesibles">
-							<p:dataTable emptyMessage="No hay registros"
+							<p:dataTable emptyMessage="Ningún expediente accesible."
 								id="expedientesAccesibles" var="expediente"
 								value="#{expedienteMB.expedientesAccesiblesList}">
 								<p:column headerText="Apellidos" style="width:24%">
@@ -93,7 +93,7 @@
 						</p:tab>
 
 						<p:tab id="tab2" title="Expedientes Cerrados">
-							<p:dataTable emptyMessage="No hay registros"
+							<p:dataTable emptyMessage="Ningún expediente cerrado."
 								id="expedientesCerrados" var="expediente"
 								value="#{expedienteMB.expedientesCerradosList}">
 								<p:column headerText="Apellidos" style="width:24%">

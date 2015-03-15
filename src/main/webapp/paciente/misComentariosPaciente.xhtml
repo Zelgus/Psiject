@@ -22,7 +22,7 @@
 				<h:form style="width: 100%; height: 100%; overflow: auto;">
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
 						<p:dataTable id="comentariosDe#{campo.idCampo}"
-							emptyMessage="No hay registros"
+							emptyMessage="Ningún comentario enviado."
 							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
 							var="comentario" styleClass="tablaComentarios">
 							<p:column headerText="#{campo.nombre}">
