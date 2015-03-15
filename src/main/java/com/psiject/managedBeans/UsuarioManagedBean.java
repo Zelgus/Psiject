@@ -65,15 +65,18 @@ public class UsuarioManagedBean implements Serializable {
 			this.usuarioService.anadirUsuario(this.usuario,
 					this.nuevaContrasena, this.correo, true);
 			Mensajes.mostrarMensajeExito(Mensajes.EXITO_ANADIR_USUARIO);
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final ConstraintViolationException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ANADIR_USUARIO_EXISTE,
 					e);
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ANADIR_USUARIO, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void editarCuenta() {
@@ -102,10 +105,12 @@ public class UsuarioManagedBean implements Serializable {
 				if (!contrasenaEncriptada.equals(this.sessionMB
 						.getUsuarioEnSesion().getContrasena())) {
 					Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_EDITAR_USUARIO_NO_CONTRASENA);
+					navegacionMB.refrescar();
 				} else {
 					if (!this.getNuevaContrasena().equals(
 							this.getRepetirContrasena())) {
 						Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_EDITAR_USUARIO_CONTRASENA);
+						navegacionMB.refrescar();
 					} else {
 						// Encriptado de la nueva contraseña
 						String nuevaContrasenaEncriptada = Utilidades
@@ -128,13 +133,15 @@ public class UsuarioManagedBean implements Serializable {
 			}
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final ConstraintViolationException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_EDITAR_USUARIO_EXISTE,
 					e);
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_EDITAR_USUARIO, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void enviarSugerencia() {
@@ -144,10 +151,11 @@ public class UsuarioManagedBean implements Serializable {
 			NotificacionUtil.notificacionNuevaSugerencia(
 					"ivanom90@hotmail.com", sessionMB.getSugerencia());
 			Mensajes.mostrarMensajeExito(Mensajes.EXITO_MENSAJE_ENVIADO);
+			navegacionMB.refrescar();
 		} catch (MessagingException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_NOTIFICACION, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	/*

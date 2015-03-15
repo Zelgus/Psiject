@@ -177,15 +177,18 @@ public class TareaManagedBean implements Serializable {
 				navegacionMB.toExpediente();
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_CREAR_NUEVA_TAREA);
+				navegacionMB.refrescar();
 			}
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final MessagingException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_NOTIFICACION, e);
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_CREAR_NUEVA_TAREA, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void editarTarea() {
@@ -207,12 +210,14 @@ public class TareaManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_EDITAR_TAREA);
 			}
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_EDITAR_TAREA, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void editarCamposTarea() {
@@ -224,10 +229,11 @@ public class TareaManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_EDITAR_CAMPOS_TAREA);
 			}
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_EDITAR_CAMPOS_TAREA, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void completarTarea() {
@@ -241,10 +247,11 @@ public class TareaManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_COMPLETAR_TAREA);
 			}
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_COMPLETAR_TAREA, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void reabrirTarea() {
@@ -257,10 +264,11 @@ public class TareaManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_REABRIR_TAREA);
 			}
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_REABRIR_TAREA, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void consultarTareaPaciente() {
@@ -278,8 +286,8 @@ public class TareaManagedBean implements Serializable {
 			}
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_CONSULTAR_TAREA, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void anadirCampoPsicologo(final Tarea t) throws Exception {

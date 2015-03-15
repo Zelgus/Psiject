@@ -184,10 +184,11 @@ public class ExpedienteManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_CERRAR_EXPEDIENTE);
 			}
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_CERRAR_EXPEDIENTE, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void reabrirExpediente() {
@@ -200,10 +201,11 @@ public class ExpedienteManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_REABRIR_EXPEDIENTE);
 			}
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_REABRIR_EXPEDIENTE, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void transferir() {
@@ -225,11 +227,12 @@ public class ExpedienteManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_TRANSFERIR_EXPEDIENTE);
 			}
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_TRANSFERIR_EXPEDIENTE,
 					e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void abandonarExpediente() {
@@ -255,11 +258,12 @@ public class ExpedienteManagedBean implements Serializable {
 				navegacionMB.toPsicologo();
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_ABANDONAR_EXPEDIENTE);
+				navegacionMB.refrescar();
 			}
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ABANDONAR_EXPEDIENTE, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void altaExpediente() {
@@ -303,16 +307,18 @@ public class ExpedienteManagedBean implements Serializable {
 			navegacionMB.toExpediente();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final MessagingException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_NOTIFICACION, e);
+			navegacionMB.refrescar();
 		} catch (final ConstraintViolationException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ALTA_EXPEDIENTE_EXISTE,
 					e);
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ALTA_EXPEDIENTE, e);
+			navegacionMB.refrescar();
 		}
-
-		navegacionMB.refrescar();
 	}
 
 	public void editarExpediente() {
@@ -331,13 +337,15 @@ public class ExpedienteManagedBean implements Serializable {
 				navegacionMB.toExpediente();
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_EDITAR_EXPEDIENTE);
+				navegacionMB.refrescar();
 			}
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_EDITAR_EXPEDIENTE, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void modificarPsicologosDelExpediente() throws Exception {

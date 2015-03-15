@@ -178,12 +178,14 @@ public class ComentarioManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_COMENTAR_PACIENTE);
 			}
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_COMENTAR_PACIENTE, e);
+			navegacionMB.refrescar();
 		}
-		this.navegacionMB.refrescar();
 	}
 
 	public void comentarPsicologo() {
@@ -220,14 +222,17 @@ public class ComentarioManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_COMENTAR_PSICOLOGO);
 			}
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final MessagingException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_NOTIFICACION, e);
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_COMENTAR_PACIENTE, e);
+			navegacionMB.refrescar();
 		}
-		this.navegacionMB.refrescar();
 	}
 
 	public void editarComentario() {
@@ -243,12 +248,14 @@ public class ComentarioManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_EDITAR_COMENTARIO);
 			}
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_EDITAR_COMENTARIO, e);
+			navegacionMB.refrescar();
 		}
-		this.navegacionMB.refrescar();
 	}
 
 	public void borrarComentario() {
@@ -268,10 +275,11 @@ public class ComentarioManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_BORRAR_COMENTARIO);
 			}
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_BORRAR_COMENTARIO, e);
+			navegacionMB.refrescar();
 		}
-		this.navegacionMB.refrescar();
 	}
 
 	/*
