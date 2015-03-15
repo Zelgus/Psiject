@@ -15,6 +15,8 @@
 						<h:outputLabel for="tituloTarea" value="Título: "
 							style="font-weight:bold" />
 					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputText id="tituloTarea"
 							value="#{sessionMB.tareaSeleccionada.titulo}" />
@@ -25,6 +27,8 @@
 						<h:outputLabel for="descripcionTarea" value="Descripción: "
 							style="font-weight:bold" />
 					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputTextarea id="descripcionTarea"
 							value="#{sessionMB.tareaSeleccionada.descripcion}"
@@ -35,8 +39,6 @@
 					<p:column>
 						<h:outputLabel for="importante" value="¿Importante? "
 							style="font-weight:bold" />
-					</p:column>
-					<p:column>
 						<h:selectBooleanCheckbox id="importante"
 							value="#{sessionMB.tareaSeleccionada.importante}" />
 					</p:column>

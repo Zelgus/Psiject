@@ -12,20 +12,25 @@
 			<p:panelGrid>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="tituloCampo" value="Nombre:" />
+						<h:outputLabel for="tituloCampo" value="Nombre:"
+							style="font-weight:bold" />
 					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputText id="tituloCampo" value="#{campoMB.nombre}" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="descripcionCampo" value="Descripción:" />
+						<h:outputLabel for="descripcionCampo" value="Descripción:"
+							style="font-weight:bold" />
 					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputTextarea id="descripcionCampo"
-							value="#{campoMB.descripcion}" autoResize="false"
-							styleClass="textAreaGrande" />
+							value="#{campoMB.descripcion}" styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

@@ -10,32 +10,34 @@
 		modal="true" resizable="false" draggable="true">
 		<h:form>
 			<p>Va a completar la tarea
-				'#{sessionMB.tareaSeleccionada.titulo}'</p>
+				'#{sessionMB.tareaSeleccionada.titulo}'.</p>
 			<p>Si lo desea, puede escribir las conclusiones obtenidas tras la
 				realización de la tarea:</p>
-			<br />
-			<br />
 			<p:panelGrid>
 				<p:row>
 					<p:column>
 						<h:outputLabel for="conclusionesPaciente"
-							value="Conclusiones para el paciente: " style="font-weight:bold" />
-					</p:column>
-					<p:column>
-						<h:outputLabel for="conclusionesPsicologo"
-							value="Conclusiones para el psicólogo: " style="font-weight:bold" />
+							value="Conclusiones para el paciente:" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
 						<p:inputTextarea id="conclusionesPaciente"
 							value="#{sessionMB.tareaSeleccionada.conclusionesPaciente}"
-							autoResize="false" styleClass="textAreaPequeño" />
+							styleClass="textAreaGrande" />
 					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="conclusionesPsicologo"
+							value="Conclusiones para el psicólogo:" />
+					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputTextarea id="conclusionesPsicologo"
 							value="#{sessionMB.tareaSeleccionada.conclusionesPsicologo}"
-							autoResize="false" styleClass="textAreaPequeño" />
+							styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

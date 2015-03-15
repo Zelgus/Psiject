@@ -8,10 +8,8 @@
 	<p:dialog id="dialogoModificarCampos" styleClass="dialogoPsiject" header="Modificar campos"
 		widgetVar="dialogoModificarCampos" modal="true" resizable="false" draggable="true">
 		<h:form>
-			<p>Tarea: #{sessionMB.tareaSeleccionada.titulo}"</p>
+			<p>Tarea '#{sessionMB.tareaSeleccionada.titulo}'</p>
 			<p>Modifica las listas para decidir los campos de esta tarea.</p>
-			<br />
-			<br />
 			<p:pickList id="campos" value="#{tareaMB.camposEnTarea}" var="campos"
 				itemLabel="#{campos}" itemValue="#{campos}"
 				itemDisabled="#{tareaMB.fijarEnLista(campos)}">

@@ -9,9 +9,9 @@
 		header="Transferir Expediente" widgetVar="dialogoTransferirExpediente"
 		modal="true" resizable="false" draggable="true">
 		<h:form>
-			<p>Expediente de #{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}.</p>
+			<p>Expediente de '#{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}'.</p>
 			<p>Selecciona el psicologo al que desea transferirle el control total sobre este expediente:</p>
-			<p>Psicologo creador: #{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}</p>
+			<p>Psicologo creador: '#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}'</p>
 			<p>Psicologo al que transferir:</p>
 			<h:selectOneMenu id="psicologoCreador"
 				value="#{expedienteMB.nuevoPsicologoCreador}">

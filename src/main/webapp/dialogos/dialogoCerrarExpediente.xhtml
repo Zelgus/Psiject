@@ -5,10 +5,13 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoCerrarExpediente" styleClass="dialogoPsiject" header="Cerrar Expediente"
-		widgetVar="dialogoCerrarExpediente" modal="true" resizable="false" draggable="true">
+	<p:dialog id="dialogoCerrarExpediente" styleClass="dialogoPsiject"
+		header="Cerrar Expediente" widgetVar="dialogoCerrarExpediente"
+		modal="true" resizable="false" draggable="true">
 		<h:form>
-			<p>¿Estas seguro que desea cerrar el expediente de #{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}?</p>
+			<p>¿Estas seguro que desea cerrar el expediente de
+				'#{sessionMB.expedienteSeleccionado.nombre}
+				#{sessionMB.expedienteSeleccionado.apellidos}'?</p>
 			<p>Podrá reabrirlo en un futuro.</p>
 			<br />
 			<br />

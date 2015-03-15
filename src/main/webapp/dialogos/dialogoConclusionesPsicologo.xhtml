@@ -11,29 +11,31 @@
 		<h:form>
 			<p>Conclusiones de la tarea
 				'#{sessionMB.tareaSeleccionada.titulo}'.</p>
-			<br />
-			<br />
 			<p:panelGrid>
 				<p:row>
 					<p:column>
 						<h:outputLabel for="conclusionesPaciente"
-							value="Conclusiones para el paciente: " style="font-weight:bold" />
-					</p:column>
-					<p:column>
-						<h:outputLabel for="conclusionesPsicologo"
-							value="Conclusiones para el psicólogo: " style="font-weight:bold" />
+							value="Conclusiones para el paciente:" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
 						<p:inputTextarea id="conclusionesPaciente"
 							value="#{sessionMB.tareaSeleccionada.conclusionesPaciente}"
-							autoResize="false" styleClass="textAreaPequeño" />
+							styleClass="textAreaGrande" />
 					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="conclusionesPsicologo"
+							value="Conclusiones para el psicólogo:" />
+					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputTextarea id="conclusionesPsicologo"
 							value="#{sessionMB.tareaSeleccionada.conclusionesPsicologo}"
-							autoResize="false" styleClass="textAreaPequeño" />
+							styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

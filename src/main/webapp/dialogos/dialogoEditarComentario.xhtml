@@ -12,13 +12,14 @@
 			<p:panelGrid>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="comentario" value="Comentario: "
-							style="font-weight:bold" />
+						<h:outputLabel for="comentario" value="Comentario:" />
 					</p:column>
+				</p:row>
+				<p:row>
 					<p:column>
 						<p:inputTextarea id="comentario"
 							value="#{sessionMB.comentarioSeleccionado.comentario}"
-							autoResize="false" styleClass="textAreaGrande" />
+							styleClass="textAreaGrande" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

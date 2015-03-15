@@ -10,7 +10,6 @@
 		resizable="false" draggable="true">
 		<h:form>
 			<p>Comentario:</p>
-			<br />
 			<p:panelGrid>
 				<p:row>
 					<p:column>
@@ -21,8 +20,8 @@
 			</p:panelGrid>
 			<br />
 			<br />
-			<p:commandButton icon="ui-icon-comment" value="Añadir comentario"
-				title="Añadir comentario" onclick="mostrarMosca();"
+			<p:commandButton icon="ui-icon-comment" value="Enviar comentario"
+				title="Enviar comentario" onclick="mostrarMosca();"
 				action="#{comentarioMB.comentarPsicologo}"
 				rendered="#{renderingMB.botonComentarPsicologo}"
 				styleClass="botonConTexto" />

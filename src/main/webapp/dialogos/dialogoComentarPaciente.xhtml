@@ -15,10 +15,7 @@
 				<c:forEach var="campo" varStatus="status"
 					items="#{tareaMB.camposDeLaTareaList}">
 					<p:tab id="campo#{campo.idCampo}" title="#{campo.nombre}">
-						<br />
-						<h:outputText value="#{campo.descripcion}" />
-						<br />
-						<br />
+						<p>#{campo.descripcion}</p>
 						<p:panelGrid>
 							<p:row>
 								<p:column>

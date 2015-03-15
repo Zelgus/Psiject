@@ -141,6 +141,7 @@ body {
 .dialogoPsiject {
 	width: auto !important;
 	max-width: 500px;
+	text-align: justify;
 }
 
 /*
