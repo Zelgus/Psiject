@@ -103,6 +103,7 @@ body {
 */
 .ui-messages {
 	left: 35%;
+	top: 25%;
     position: fixed;
     text-align: center;
     z-index: 2000;
