@@ -19,14 +19,16 @@ body {
 	color: #000000 !important;
 }
 
-.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header,.ui-widget-header .ui-state-default,.ui-menu,.ui-menu .ui-menu-child
-	{
+.ui-state-default, .ui-widget-content .ui-state-default,
+	.ui-widget-header, .ui-widget-header .ui-state-default, .ui-menu,
+	.ui-menu .ui-menu-child {
 	background-color: #e5ffba !important;
 	border-color: #7f9e49 !important;
 	color: #000000 !important;
 }
 
-.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
+	.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
 	{
 	background: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.6),
 		rgba(255, 255, 255, 0)) repeat scroll 0 0 #ffffff !important;
@@ -46,7 +48,7 @@ body {
 	bottom: 5px;
 	cursor: pointer;
 	height: 40px;
-	position: absolute;
+	position: fixed;
 	right: 5px;
 	width: 140px;
 	z-index: 2000;
@@ -265,32 +267,20 @@ body {
 
 .panelUsuarioUser {
 	float: right;
+	text-align: right;
 	height: 160px;
-	background-color: none;
 }
 
 .panelUsuarioTextoUser {
-	float: right;
 	font-family: Georgia;
 	font-size: 36px;
 	font-weight: bold;
-	margin-top: 30px;
-	padding: 0px 15px;
-	margin-right: 10px;
 }
 
 .panelUsuarioTextoNombre {
 	font-family: Georgia;
 	font-size: 20px;
 	font-style: oblique;
-	float: right;
-	margin-top: 10px;
-	margin-right: 20px;
-}
-
-.panelUsuarioMenu {
-	margin-top: 20px;
-	margin-right: 10px
 }
 
 /*
@@ -364,8 +354,8 @@ body {
 	color: #000000 !important;
 }
 
-.tablaExpedientes .ui-tabs-panels,.tablaExpedientes .ui-tabs-panel,.tablaExpedientes .ui-tabs
-	{
+.tablaExpedientes .ui-tabs-panels, .tablaExpedientes .ui-tabs-panel,
+	.tablaExpedientes .ui-tabs {
 	padding: 0px !important;
 }
 
@@ -438,7 +428,7 @@ body {
 	color: #000000 !important;
 }
 
-.tablaTareas .ui-tabs-panels,.tablaTareas .ui-tabs-panel,.tablaTareas .ui-tabs
+.tablaTareas .ui-tabs-panels, .tablaTareas .ui-tabs-panel, .tablaTareas .ui-tabs
 	{
 	padding: 0px !important;
 }

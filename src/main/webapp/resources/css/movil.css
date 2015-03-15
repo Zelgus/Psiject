@@ -45,7 +45,7 @@ body {
 	bottom: 5px;
 	cursor: pointer;
 	height: 40px;
-	position: absolute;
+	position: fixed;
 	right: 5px;
 	width: 140px;
 	z-index: 2000;
@@ -258,7 +258,6 @@ body {
 
 .panelUsuarioHome {
 	float: left;
-	width: 150px;
 }
 
 .panelUsuarioImagen {
@@ -268,7 +267,7 @@ body {
 .panelUsuarioUser {
 	float: right;
 	width: 100px;
-	background-color: none;
+	text-align: right;
 }
 
 .panelUsuarioUser a {
@@ -276,28 +275,16 @@ body {
 }
 
 .panelUsuarioTextoUser {
-	color: #000000;
-	float: right;
 	font-family: Georgia;
 	font-size: 20px;
 	font-weight: bold;
-	margin-top: 10px;
-	padding: 0px 15px;
 }
 
 .panelUsuarioTextoNombre {
 	font-family: Georgia;
 	font-size: 12px;
 	font-style: oblique;
-	float: right;
-	margin-top: 10px;
-	text-align: right;
 }
-
-.panelUsuarioMenu {
-	float: right;
-}
-
 
 .panelUsuario .ui-widget-content, .panelUsuario .panelUsuarioUser,
 	.panelUsuario .panelUsuarioHome {

@@ -26,13 +26,16 @@
 						value="#{expedienteMB.nombreYApellidos}"
 						styleClass="panelUsuarioTextoNombre" />
 					<br />
-					<p:commandButton styleClass="panelUsuarioMenu" id="editarCuenta"
-						icon="ui-icon-gear" title="Editar cuenta"
-						onclick="mostrarMosca();"
-						action="#{navegacionMB.toConfigurarCuenta}" />
-					<p:commandButton styleClass="panelUsuarioMenu" id="cerrarSesion"
-						icon="ui-icon-power" title="Cerrar sesión"
-						onclick="mostrarMosca();" action="#{sessionMB.cerrarSesion}" />
+					<p:commandButton id="editarCuenta" icon="ui-icon-gear"
+						title="Editar cuenta" onclick="mostrarMosca();"
+						action="#{navegacionMB.toConfigurarCuenta}"
+						rendered="#{renderingMB.botonEditarCuenta}"
+						styleClass="botonSinTexto" />
+					<p:commandButton id="cerrarSesion" icon="ui-icon-power"
+						title="Cerrar sesión" onclick="mostrarMosca();"
+						action="#{sessionMB.cerrarSesion}"
+						rendered="#{renderingMB.botonCerrarSesion}"
+						styleClass="botonSinTexto" />
 				</p:column>
 			</p:row>
 		</p:panelGrid>
