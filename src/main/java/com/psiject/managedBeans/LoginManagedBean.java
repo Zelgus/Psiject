@@ -103,15 +103,18 @@ public class LoginManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_USUARIO_NO_ENCONTRADO);
 			}
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeError(e.getMessage(), e);
+			navegacionMB.refrescar();
 		} catch (final MessagingException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_NOTIFICACION, e);
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_USUARIO_NO_ENCONTRADO,
 					e);
+			navegacionMB.refrescar();
 		}
-		this.navegacionMB.refrescar();
 	}
 
 	private String generarCodigo(final Usuario u) throws Exception {

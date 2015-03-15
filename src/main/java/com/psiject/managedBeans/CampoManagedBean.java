@@ -59,14 +59,17 @@ public class CampoManagedBean implements Serializable {
 			this.campoService.anadirCampo(this.getNombre(),
 					this.getDescripcion());
 			Mensajes.mostrarMensajeExito(Mensajes.EXITO_ANADIR_CAMPO);
+			navegacionMB.refrescar();
 		} catch (final DataFormatException e) {
 			Mensajes.mostrarMensajeAlerta(e.getMessage());
+			navegacionMB.refrescar();
 		} catch (final AssertionFailure e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ANADIR_CAMPO_EXISTE, e);
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_ANADIR_CAMPO, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	public void borrarCampo() {
@@ -78,10 +81,11 @@ public class CampoManagedBean implements Serializable {
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_BORRAR_CAMPO);
 			}
+			navegacionMB.refrescar();
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_BORRAR_CAMPO, e);
+			navegacionMB.refrescar();
 		}
-		navegacionMB.refrescar();
 	}
 
 	/*
