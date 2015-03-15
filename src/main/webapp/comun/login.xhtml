@@ -16,9 +16,9 @@
 	<h:form>
 		<p:panelGrid styleClass="formularioLogin">
 			<p:row>
-				<p:column style="text-align: right;">
+				<p:column styleClass="loginLabel" style="text-align: right;">
 					<h:outputLabel for="usuario" value="Usuario o Correo:"
-						styleClass="loginLabel" />
+						styleClass="loginLabelText" />
 				</p:column>
 				<p:column style="text-align: center;">
 					<p:inputText id="usuario" value="#{loginMB.usuario}"
@@ -26,9 +26,9 @@
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column style="text-align: right;">
+				<p:column styleClass="loginLabel" style="text-align: right;">
 					<h:outputLabel for="pass" value="Contraseña:"
-						styleClass="loginLabel" />
+						styleClass="loginLabelText" />
 				</p:column>
 				<p:column style="text-align: center;">
 					<p:password id="pass" value="#{loginMB.contrasena}"
