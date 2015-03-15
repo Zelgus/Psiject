@@ -16,16 +16,14 @@ body {
 	color: #000000 !important;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default,
-	.ui-widget-header, .ui-widget-header .ui-state-default, .ui-menu,
-	.ui-menu .ui-menu-child {
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header,.ui-widget-header .ui-state-default,.ui-menu,.ui-menu .ui-menu-child
+	{
 	background-color: #e5ffba !important;
 	border-color: #7f9e49 !important;
 	color: #000000 !important;
 }
 
-.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
-	.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus
 	{
 	background: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.6),
 		rgba(255, 255, 255, 0)) repeat scroll 0 0 #ffffff !important;
@@ -41,15 +39,14 @@ body {
 ---------------------------- SUGERENCIAS ----------------------------------
 ---------------------------------------------------------------------------
 */
-
 #feedback {
-    bottom: 5px;
-    cursor: pointer;
-    height: 40px;
-    position: fixed;
-    right: 5px;
-    width: 140px;
-    z-index: 2000;
+	bottom: 5px;
+	cursor: pointer;
+	height: 40px;
+	position: fixed;
+	right: 5px;
+	width: 140px;
+	z-index: 2000;
 }
 
 #feedback img {
@@ -62,38 +59,37 @@ body {
 ------------------------------- MOSCA -------------------------------------
 ---------------------------------------------------------------------------
 */
-
 #mosca {
 	display: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    height: 100%;
-    position: fixed;
-    width: 100%;
-    z-index: 2000;
+	background-color: rgba(0, 0, 0, 0.8);
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 2000;
 }
 
 #mosca div {
 	background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 6px 6px 6px 6px;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-    height: 60px;
-    left: 50%;
-    margin-left: -60px;
-    margin-top: -30px;
-    position: fixed;
-    top: 50%;
-    width: 120px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	height: 60px;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: -30px;
+	position: fixed;
+	top: 50%;
+	width: 120px;
 }
 
-#mosca div img{
+#mosca div img {
 	height: 40px;
-    left: 50%;
-    margin-left: -20px;
-    margin-top: -20px;
-    position: fixed;
-    top: 50%;
-    width: 40px;
+	left: 50%;
+	margin-left: -20px;
+	margin-top: -20px;
+	position: fixed;
+	top: 50%;
+	width: 40px;
 }
 
 /*
@@ -101,29 +97,19 @@ body {
 ------------------------------ ALERTAS ------------------------------------
 ---------------------------------------------------------------------------
 */
-.ui-messages {
-	left: 35%;
-	top: 25%;
-    position: fixed;
-    text-align: center;
-    z-index: 2000;
+.ui-growl {
+	text-align: center;
 }
 
-.ui-messages ul {
-	margin: 10px 25px;
-}
-
-.ui-messages-info, .ui-messages-warn, .ui-messages-error {
+.ui-growl-item-container {
+	opacity: none;
 	border: 2px solid;
-    box-shadow: 0 3px 7px;
-    margin: 0;
-    min-height: 40px;
-    width: 400px;
+	box-shadow: 0 3px 7px;
+	background-color: #E5FFBA;
+	filter: none;
 }
 
-.ui-messages-info .ui-messages-info-summary, 
-.ui-messages-warn .ui-messages-warn-summary,
-.ui-messages-error .ui-messages-error-summary {
+.ui-growl-title {
 	display: none;
 }
 
@@ -157,20 +143,23 @@ body {
 ---------------------------------------------------------------------------
 */
 ::-webkit-input-placeholder {
-    color: #777777;
-    opacity:  1;
+	color: #777777;
+	opacity: 1;
 }
+
 :-moz-placeholder {
-    color: #777777;
-    opacity:  1;
+	color: #777777;
+	opacity: 1;
 }
+
 ::-moz-placeholder {
-    color: #777777;
-    opacity:  1;
+	color: #777777;
+	opacity: 1;
 }
+
 :-ms-input-placeholder {
-    color: #777777;
-    opacity:  1;
+	color: #777777;
+	opacity: 1;
 }
 
 /*
@@ -224,8 +213,8 @@ body {
 
 .loginInput {
 	font-size: 25px !important;
-    height: 50px;
-    width: 275px;
+	height: 50px;
+	width: 275px;
 }
 
 .loginLink {
@@ -305,9 +294,8 @@ body {
 	margin-top: 10px !important;
 }
 
-.panelUsuario .ui-widget-content,
-.panelUsuario .panelUsuarioUser,
-.panelUsuario .panelUsuarioHome {
+.panelUsuario .ui-widget-content,.panelUsuario .panelUsuarioUser,.panelUsuario .panelUsuarioHome
+	{
 	background: #E5FFBA;
 }
 
@@ -369,8 +357,8 @@ body {
 	color: #000000 !important;
 }
 
-.tablaExpedientes .ui-tabs-panels, .tablaExpedientes .ui-tabs-panel,
-	.tablaExpedientes .ui-tabs {
+.tablaExpedientes .ui-tabs-panels,.tablaExpedientes .ui-tabs-panel,.tablaExpedientes .ui-tabs
+	{
 	padding: 0px !important;
 }
 
@@ -442,17 +430,16 @@ body {
 	color: #000000 !important;
 }
 
-.tablaTareas .ui-tabs-panels, 
-.tablaTareas .ui-tabs-panel, 
-.tablaTareas .ui-tabs{
+.tablaTareas .ui-tabs-panels,.tablaTareas .ui-tabs-panel,.tablaTareas .ui-tabs
+	{
 	padding: 0px !important;
 }
 
-.tablaTareas .ui-tabs-panels thead{
+.tablaTareas .ui-tabs-panels thead {
 	display: none;
 }
 
-.tablaTareas .ui-tabs-panels tbody td{
+.tablaTareas .ui-tabs-panels tbody td {
 	border-top: 1px solid #A8A8A8;
 	border-bottom: 1px solid #A8A8A8;
 	border-left: none;
