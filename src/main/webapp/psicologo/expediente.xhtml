@@ -28,8 +28,7 @@
 				<p:panelGrid>
 					<p:row>
 						<p:column colspan="3">
-							<h:outputText styleClass="tituloExpediente"
-								value="Informacion Personal" />
+							<h:outputText value="Informacion Personal" styleClass="titulo" />
 						</p:column>
 					</p:row>
 					<p:row>
@@ -49,12 +48,12 @@
 					</p:row>
 					<p:row>
 						<p:column colspan="3">
-							<h:outputText styleClass="tituloExpediente" value="Psicologos" />
+							<h:outputText value="Psicologos" styleClass="titulo" />
 						</p:column>
 					</p:row>
 					<p:row>
 						<p:column>
-							<h:outputText value="Creador: " />
+							<h:outputText value="Creador:" styleClass="subtitulo" />
 						</p:column>
 						<p:column colspan="2">
 							<h:outputText
@@ -63,7 +62,7 @@
 					</p:row>
 					<p:row>
 						<p:column>
-							<h:outputText value="Con acceso: " />
+							<h:outputText value="Con acceso:" styleClass="subtitulo" />
 						</p:column>
 						<p:column>
 							<h:outputText value="#{expedienteMB.psicologosConAcceso}" />
@@ -82,7 +81,7 @@
 			</p:column>
 			<p:column>
 				<h:form>
-					<p:panelGrid styleClass="panelAcciones">
+					<p:panelGrid>
 						<p:row>
 							<p:column>
 								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
@@ -139,14 +138,13 @@
 		<p:row>
 			<p:column colspan="2">
 				<h:form>
-					<h:outputText styleClass="tituloExpediente"
-						value="Tareas del expediente" />
+					<h:outputText value="Tareas del expediente" styleClass="titulo" />
 					<p:tabView styleClass="tablaTareas">
 						<p:tab title="En proceso">
 							<p:dataTable emptyMessage="Sin tareas pendientes." var="tarea"
 								value="#{tareaMB.tareasPendientesDelExpedienteList}"
 								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título" style="width:33%">
+								<p:column headerText="Título">
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
@@ -154,11 +152,10 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador" style="width:9%">
+								<p:column headerText="Creador">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
-								<p:column headerText="Editar"
-									style="width:4%; text-align:center;">
+								<p:column headerText="Editar">
 									<p:commandButton id="editarTarea" icon="ui-icon-pencil"
 										title="Editar Tarea"
 										oncomplete="PF('dialogoEditarTarea').show();"
@@ -168,8 +165,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Completar"
-									style="width:7%; text-align:center;">
+								<p:column headerText="Completar">
 									<p:commandButton id="completarTarea" icon="ui-icon-check"
 										title="Completar Tarea"
 										oncomplete="PF('dialogoCompletarTarea').show();"
@@ -179,8 +175,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Comentar"
-									style="width:6%; text-align:center;">
+								<p:column headerText="Comentar">
 									<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
 										title="Añadir comentario"
 										oncomplete="PF('dialogoComentarPsicologo').show();"
@@ -190,7 +185,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver" style="width:3%; text-align:center;">
+								<p:column headerText="Ver">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{navegacionMB.toTareaPsicologo}"
@@ -206,7 +201,7 @@
 							<p:dataTable emptyMessage="Sin tareas concluidas." var="tarea"
 								value="#{tareaMB.tareasCompletadasDelExpedienteList}"
 								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título" style="width:24%">
+								<p:column headerText="Título">
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
@@ -214,11 +209,10 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador" style="width:4%">
+								<p:column headerText="Creador">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
-								<p:column headerText="Reabrir"
-									style="width:4%; text-align:center;">
+								<p:column headerText="Reabrir">
 									<p:commandButton id="reabrirTarea" icon="ui-icon-check"
 										title="Reabrir Tarea" onclick="mostrarMosca();"
 										action="#{tareaMB.reabrirTarea}"
@@ -228,7 +222,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver" style="width:2%; text-align:center;">
+								<p:column headerText="Ver">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{navegacionMB.toTareaPsicologo}"

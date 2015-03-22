@@ -14,36 +14,34 @@
 	<ui:include src="/dialogos/dialogoRecuperarContrasena.xhtml" />
 
 	<h:form>
-		<p:panelGrid styleClass="formularioLogin">
+		<p:panelGrid>
 			<p:row>
-				<p:column styleClass="loginLabel" style="text-align: right;">
-					<h:outputLabel for="usuario" value="Usuario o Correo:"
-						styleClass="loginLabelText" />
+				<p:column>
+					<h:outputLabel for="usuario" value="Usuario o Email:" />
 				</p:column>
-				<p:column style="text-align: center;">
+				<p:column>
 					<p:inputText id="usuario" value="#{loginMB.usuario}"
-						placeholder="Usuario o Correo" styleClass="loginInput" />
+						placeholder="Usuario o Email" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column styleClass="loginLabel" style="text-align: right;">
-					<h:outputLabel for="pass" value="Contraseña:"
-						styleClass="loginLabelText" />
+				<p:column>
+					<h:outputLabel for="pass" value="Contraseña:" />
 				</p:column>
-				<p:column style="text-align: center;">
+				<p:column>
 					<p:password id="pass" value="#{loginMB.contrasena}"
-						placeholder="Contraseña" feedback="false" styleClass="loginInput" />
+						placeholder="Contraseña" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column colspan="2" style="text-align: right;">
+				<p:column colspan="2">
 					<p:commandLink
 						oncomplete="PF('dialogoRecuperarContrasena').show();"
-						value="¿Has olvidado tu contraseña?" styleClass="loginLink" />
+						value="¿Has olvidado tu contraseña?" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column colspan="2" style="text-align: right;">
+				<p:column colspan="2">
 					<p:commandButton id="iniciarSesion" icon="ui-icon-power"
 						value="Iniciar Sesión" title="Iniciar Sesión"
 						onclick="mostrarMosca();" action="#{loginMB.iniciarSesion}"

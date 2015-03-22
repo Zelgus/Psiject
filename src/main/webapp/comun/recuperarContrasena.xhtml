@@ -16,43 +16,41 @@
 		<f:viewParam name="correo" value="#{loginMB.recuUsuario}" />
 	</f:metadata>
 	<h:form>
-		<p:panelGrid styleClass="formularioRecuperarContrasena">
+		<p:panelGrid>
 			<p:row>
-				<p:column style="text-align: right;">
-					<h:outputLabel for="clave" value="Código de validación:"
-						styleClass="recuperarContrasenaLabel" />
+				<p:column>
+					<h:outputLabel for="clave" value="Código de validación:" />
 				</p:column>
 				<p:column>
 					<p:inputText id="clave" value="#{loginMB.codigoValidacion}"
-						size="30" />
+						placeholder="Código de validación" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column style="text-align: right;">
-					<h:outputLabel for="nuevaContrasena" value="Nueva contraseña:"
-						styleClass="recuperarContrasenaLabel" />
+				<p:column>
+					<h:outputLabel for="nuevaContrasena" value="Nueva contraseña:" />
 				</p:column>
-				<p:column style="text-align: center;">
-					<p:password id="nuevaContrasena" feedback="true"
-						promptLabel="Introduzca su nueva contraseña" weakLabel="Débil"
-						goodLabel="Normal" strongLabel="Fuerte"
-						value="#{loginMB.recuNuevaContrasena}" size="30" />
+				<p:column>
+					<p:password id="nuevaContrasena"
+						value="#{loginMB.recuNuevaContrasena}"
+						placeholder="Nueva contraseña" feedback="true"
+						promptLabel="Seguiridad de la contraseña" weakLabel="Débil"
+						goodLabel="Normal" strongLabel="Fuerte" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column style="text-align: right;">
+				<p:column>
 					<h:outputLabel for="repetirNuevaContrasena"
-						value="Repita la contraseña:"
-						styleClass="recuperarContrasenaLabel" />
+						value="Repita la contraseña:" />
 				</p:column>
-				<p:column style="text-align: center;">
+				<p:column>
 					<p:password id="repetirNuevaContrasena"
-						value="#{loginMB.recuRepetirContrasena}" size="30">
-					</p:password>
+						value="#{loginMB.recuRepetirContrasena}"
+						placeholder="Repita la contraseña" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column colspan="2" style="text-align: right;">
+				<p:column colspan="2">
 					<p:commandButton id="restablecerContrasena" icon="ui-icon-check"
 						value="Restablecer contraseña" title="Restablecer contraseña"
 						onclick="mostrarMosca();"

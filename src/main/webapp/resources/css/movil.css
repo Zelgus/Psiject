@@ -10,10 +10,12 @@ body {
 .ui-panelgrid .ui-panelgrid-cell {
 	border-style: hidden;
 	background-color: #ffffff;
+	padding: 5px 2px;
 }
 
 .ui-widget-content {
 	color: #000000 !important;
+	border: none;
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default,
@@ -38,119 +40,38 @@ body {
 
 /*
 ---------------------------------------------------------------------------
----------------------------- SUGERENCIAS ----------------------------------
+----------------------------- TÍTULOS -------------------------------------
 ---------------------------------------------------------------------------
 */
-#feedback {
-	bottom: 5px;
-	cursor: pointer;
-	height: 40px;
-	position: fixed;
-	right: 5px;
-	width: 140px;
-	z-index: 2000;
+.titulo {
+	color: #000000;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
-#feedback img {
-	height: 40px;
-	width: 140px;
+.subtitulo {
+	color: #000000;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 /*
 ---------------------------------------------------------------------------
-------------------------------- MOSCA -------------------------------------
+------------------------------ LABELS -------------------------------------
 ---------------------------------------------------------------------------
 */
-#mosca {
-	background-color: rgba(0, 0, 0, 0.8);
-	display: none;
-	height: 100%;
-	left: 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 2000;
-}
-
-#mosca div {
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	border-radius: 6px 6px 6px 6px;
-	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-	height: 60px;
-	left: 50%;
-	margin-left: -60px;
-	margin-top: -30px;
-	position: fixed;
-	top: 50%;
-	width: 120px;
-}
-
-#mosca div img {
-	height: 40px;
-	left: 50%;
-	margin-left: -20px;
-	margin-top: -20px;
-	position: fixed;
-	top: 50%;
-	width: 40px;
-}
-
-/*
----------------------------------------------------------------------------
------------------------------- ALERTAS ------------------------------------
----------------------------------------------------------------------------
-*/
-.ui-growl {
-	text-align: center;
-}
-
-.ui-growl-item-container {
-	opacity: 1;
-	border: 2px solid;
-	box-shadow: 0 3px 7px;
-	background-color: #E5FFBA;
-	filter: none;
-}
-
-.ui-growl-title {
+label {
 	display: none;
 }
 
 /*
 ---------------------------------------------------------------------------
------------------------------ TEXT AREAS ----------------------------------
+---------------------------- COMENTARIOS ----------------------------------
 ---------------------------------------------------------------------------
 */
-.textArea {
-	resize: none;
-	width: 250px;
-}
-
-/*
----------------------------------------------------------------------------
------------------------------- DIALOGOS -----------------------------------
----------------------------------------------------------------------------
-*/
-.dialogoPsiject {
-	width: 100% !important;
-	max-width: 500px;
-	text-align: justify;
-}
-
-/*
----------------------------------------------------------------------------
------------------------------- BOTONES ------------------------------------
----------------------------------------------------------------------------
-*/
-.botonConTexto {
-	width: 275px;
-	height: 35px;
-}
-
-.botonSinTexto {
-	width: 35px;
-	height: 35px;
+.textComentarios {
+	font-style: italic;
 }
 
 /*
@@ -180,64 +101,46 @@ body {
 
 /*
 ---------------------------------------------------------------------------
----------------------------- REGISTRO -------------------------------------
+------------------------------ INPUTS -------------------------------------
 ---------------------------------------------------------------------------
 */
-.formularioRegistro {
-	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.registroLabel {
-	color: #000000;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-/*
----------------------------------------------------------------------------
------------------------ RECUPERAR CONTRASEÑA ------------------------------
----------------------------------------------------------------------------
-*/
-.formularioRecuperarContrasena {
-	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.RecuperarContrasenaLabel {
-	color: #000000;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-/*
----------------------------------------------------------------------------
------------------------------- LOGIN --------------------------------------
----------------------------------------------------------------------------
-*/
-.formularioLogin {
-	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.formularioLogin .ui-widget-content {
-	border: none;
-}
-
-.loginLabel, .loginLabelText {
-	display: none;
-}
-
-.loginInput {
+input {
 	font-size: 25px !important;
 	height: 50px;
 	width: 275px;
 }
 
-.loginLink {
+/*
+---------------------------------------------------------------------------
+----------------------------- TEXT AREAS ----------------------------------
+---------------------------------------------------------------------------
+*/
+textarea {
+	resize: none;
+	width: 250px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------ BOTONES ------------------------------------
+---------------------------------------------------------------------------
+*/
+.botonConTexto {
+	width: 275px;
+	height: 35px;
+}
+
+.botonSinTexto {
+	width: 35px;
+	height: 35px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------- LINKS -------------------------------------
+---------------------------------------------------------------------------
+*/
+a {
 	text-decoration: underline;
 	color: blue !important;
 	font-size: 20px !important;
@@ -245,11 +148,41 @@ body {
 
 /*
 ---------------------------------------------------------------------------
+------------------------------ DIALOGOS -----------------------------------
+---------------------------------------------------------------------------
+*/
+.dialogoPsiject {
+	width: 100% !important;
+	max-width: 500px;
+	text-align: justify;
+}
+
+/*
+---------------------------------------------------------------------------
+-------------------------- FORMULARIOS ------------------------------------
+---------------------------------------------------------------------------
+*/
+form {
+	margin-top: 30px;
+}
+
+form table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+---------------------------------------------------------------------------
 ------------------------ PANEL DE USUARIO ---------------------------------
 ---------------------------------------------------------------------------
 */
+.panelUsuarioForm{
+	margin: 0px;
+}
+
 .panelUsuario {
 	width: 100%;
+	margin: 0px;
 }
 
 .panelUsuario .ui-widget-content {
@@ -296,6 +229,10 @@ body {
 ---------------------------- CABECERA -------------------------------------
 ---------------------------------------------------------------------------
 */
+.cabeceraForm {
+	margin: 0px;
+}
+
 .cabecera {
 	width: 100%;
 }
@@ -312,18 +249,6 @@ body {
 .panelAcciones {
 	border-style: hidden;
 	background-color: #ffffff;
-}
-
-/*
----------------------------------------------------------------------------
---------------------------- EXPEDIENTE ------------------------------------
----------------------------------------------------------------------------
-*/
-.tituloExpediente {
-	color: #000000;
-	font-size: 24px;
-	font-weight: bold;
-	text-decoration: underline;
 }
 
 /*
@@ -464,6 +389,12 @@ body {
 ---------------------- TABLA DE COMENTARIOS -------------------------------
 ---------------------------------------------------------------------------
 */
+.tablaComentariosForm {
+	width: 100%; 
+	height: 100%; 
+	overflow: auto;
+}
+
 .tablaComentarios {
 	display: table-cell;
 	min-width: 220px;
@@ -493,4 +424,85 @@ body {
 .ui-wizard-content {
 	margin: 15px 0;
 	text-align: center;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------- MOSCA -------------------------------------
+---------------------------------------------------------------------------
+*/
+#mosca {
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2000;
+}
+
+#mosca div {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	height: 60px;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: -30px;
+	position: fixed;
+	top: 50%;
+	width: 120px;
+}
+
+#mosca div img {
+	height: 40px;
+	left: 50%;
+	margin-left: -20px;
+	margin-top: -20px;
+	position: fixed;
+	top: 50%;
+	width: 40px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------ ALERTAS ------------------------------------
+---------------------------------------------------------------------------
+*/
+.ui-growl {
+	text-align: center;
+}
+
+.ui-growl-item-container {
+	opacity: 1;
+	border: 2px solid;
+	box-shadow: 0 3px 7px;
+	background-color: #E5FFBA;
+	filter: none;
+}
+
+.ui-growl-title {
+	display: none;
+}
+
+/*
+---------------------------------------------------------------------------
+---------------------------- SUGERENCIAS ----------------------------------
+---------------------------------------------------------------------------
+*/
+#feedback {
+	bottom: 5px;
+	cursor: pointer;
+	height: 40px;
+	position: fixed;
+	right: 5px;
+	width: 140px;
+	z-index: 2000;
+}
+
+#feedback img {
+	height: 40px;
+	width: 140px;
 }

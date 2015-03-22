@@ -22,11 +22,11 @@
 						var="campo" value="#{campoMB.camposList}"
 						rowKey="#{campo.idCampo}"
 						selection="#{sessionMB.campoSeleccionado}">>
-						<p:column selectionMode="single" style="width:5%" />
-						<p:column headerText="Nombre" style="width:24%">
+						<p:column selectionMode="single"/>
+						<p:column headerText="Nombre">
 							<h:outputText value="#{campo.nombre}" />
 						</p:column>
-						<p:column headerText="Descripción" style="width:24%">
+						<p:column headerText="Descripción">
 							<h:outputText value="#{campo.descripcion}" />
 						</p:column>
 

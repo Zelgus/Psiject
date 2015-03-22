@@ -14,14 +14,8 @@
 			<p:panelGrid>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="conclusionesPaciente" value="Conclusiones:" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>
-						<h:outputLabel id="conclusionesPaciente"
-							value="#{sessionMB.tareaSeleccionada.conclusionesPaciente}"
-							style="font-style: italic;" />
+						<p class="textoComentario">
+							'#{sessionMB.tareaSeleccionada.conclusionesPaciente}'</p>
 					</p:column>
 				</p:row>
 			</p:panelGrid>

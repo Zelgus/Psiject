@@ -12,33 +12,30 @@
 			<p:panelGrid>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="tituloTarea" value="Título: "
-							style="font-weight:bold" />
+						<h:outputLabel for="tituloTarea" value="Título:" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
 						<p:inputText id="tituloTarea"
-							value="#{sessionMB.tareaSeleccionada.titulo}" />
+							value="#{sessionMB.tareaSeleccionada.titulo}"
+							placeholder="Título" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="descripcionTarea" value="Descripción: "
-							style="font-weight:bold" />
+						<h:outputLabel for="descripcionTarea" value="Descripción:" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
 						<p:inputTextarea id="descripcionTarea"
-							value="#{sessionMB.tareaSeleccionada.descripcion}"
-							autoResize="false" styleClass="textArea" />
+							value="#{sessionMB.tareaSeleccionada.descripcion}" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="importante" value="¿Importante? "
-							style="font-weight:bold" />
+						<h:outputLabel for="importante" value="¿Importante?" />
 						<h:selectBooleanCheckbox id="importante"
 							value="#{sessionMB.tareaSeleccionada.importante}" />
 					</p:column>

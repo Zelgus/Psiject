@@ -19,7 +19,7 @@
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<h:form style="width: 100%; height: 100%; overflow: auto;">
+				<h:form styleClass="tablaComentariosForm">
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
 						<p:dataTable id="comentariosDe#{campo.idCampo}"
 							emptyMessage="Ningún comentario enviado."

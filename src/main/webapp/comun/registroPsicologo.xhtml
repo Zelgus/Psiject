@@ -13,50 +13,49 @@
 	<ui:include src="/includes/cabecera.xhtml" />
 
 	<h:form>
-		<p:panelGrid styleClass="formularioRegistro">
+		<p:panelGrid>
 			<p:row>
-				<p:column style="text-align: right;">
-					<h:outputLabel for="usuario" value="Usuario:"
-						styleClass="registroLabel" />
+				<p:column>
+					<h:outputLabel for="usuario" value="Nombre de Usuario:" />
 				</p:column>
 				<p:column>
-					<p:inputText id="usuario" value="#{usuarioMB.usuario}" size="30" />
+					<p:inputText id="usuario" value="#{usuarioMB.usuario}"
+						placeholder="Nombre de Usuario" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column style="text-align: right;">
-					<h:outputLabel for="contrasena" value="Contraseña:"
-						styleClass="registroLabel" />
+				<p:column>
+					<h:outputLabel for="contrasena" value="Contraseña:" />
 				</p:column>
-				<p:column style="text-align: center;">
-					<p:password id="contrasena" feedback="true"
-						promptLabel="Introduzca su contraseña" weakLabel="Débil"
-						goodLabel="Normal" strongLabel="Fuerte"
-						value="#{usuarioMB.nuevaContrasena}" size="30" />
+				<p:column>
+					<p:password id="contrasena" value="#{usuarioMB.nuevaContrasena}"
+						placeholder="Contraseña" feedback="true"
+						promptLabel="Seguiridad de la contraseña" weakLabel="Débil"
+						goodLabel="Normal" strongLabel="Fuerte" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column style="text-align: right;">
+				<p:column>
 					<h:outputLabel for="repetirContrasena"
-						value="Repita la contraseña:" styleClass="registroLabel" />
+						value="Repita la contraseña:" />
 				</p:column>
-				<p:column style="text-align: center;">
+				<p:column>
 					<p:password id="repetirContrasena"
-						value="#{usuarioMB.repetirContrasena}" size="30">
-					</p:password>
+						value="#{usuarioMB.repetirContrasena}"
+						placeholder="Repita la contraseña" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column style="text-align: right;">
-					<h:outputLabel for="email" value="Email:"
-						styleClass="registroLabel" />
+				<p:column>
+					<h:outputLabel for="email" value="Email:" />
 				</p:column>
-				<p:column style="text-align: center;">
-					<p:inputText id="email" value="#{usuarioMB.correo}" size="30" />
+				<p:column>
+					<p:inputText id="email" value="#{usuarioMB.correo}"
+						placeholder="Email" />
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column colspan="2" style="text-align: right;">
+				<p:column colspan="2">
 					<p:commandButton id="anadirUsuario" icon="ui-icon-plusthick"
 						value="Añadir" title="Añadir" onclick="mostrarMosca();"
 						action="#{usuarioMB.anadirUsuario}" styleClass="botonConTexto" />

@@ -25,22 +25,22 @@
 								<p:panelGrid>
 									<p:row>
 										<p:column>
-											<h:outputLabel for="nombreExp" value="Nombre: "
-												style="font-weight:bold" />
+											<h:outputLabel for="nombreExp" value="Nombre:" />
 										</p:column>
 										<p:column>
-											<p:inputText id="nombreExp" size="30"
-												value="#{sessionMB.expedienteSeleccionado.nombre}" />
+											<p:inputText id="nombreExp"
+												value="#{sessionMB.expedienteSeleccionado.nombre}"
+												placeholder="Nombre" />
 										</p:column>
 									</p:row>
 									<p:row>
 										<p:column>
-											<h:outputLabel for="apellidoExp" value="Apellidos: "
-												style="font-weight:bold" />
+											<h:outputLabel for="apellidoExp" value="Apellidos:" />
 										</p:column>
 										<p:column>
-											<p:inputText id="apellidoExp" size="30"
-												value="#{sessionMB.expedienteSeleccionado.apellidos}" />
+											<p:inputText id="apellidoExp"
+												value="#{sessionMB.expedienteSeleccionado.apellidos}"
+												placeholder="Apellidos" />
 										</p:column>
 									</p:row>
 								</p:panelGrid>

@@ -22,21 +22,21 @@
 							<p:dataTable emptyMessage="Ningún expediente creado."
 								id="expedientesCreados" var="expediente"
 								value="#{expedienteMB.expedientesCreadosList}">
-								<p:column headerText="Apellidos" style="width:24%">
+								<p:column headerText="Apellidos" >
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePacienteEnExpediente(expediente)}"
 										styleClass="iconoNuevoComentario" />
 									<h:outputText value="#{expediente.apellidos}" />
 								</p:column>
-								<p:column headerText="Nombre" style="width:24%">
+								<p:column headerText="Nombre">
 									<h:outputText value="#{expediente.nombre}" />
 								</p:column>
-								<p:column headerText="Usuario" style="width:24%">
+								<p:column headerText="Usuario" >
 									<h:outputText value="#{expediente.usuario.usuario}" />
 								</p:column>
 								<p:column headerText="Editar"
-									style="width:4%; text-align:center;">
+									>
 									<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
 										title="Editar Expediente" onclick="mostrarMosca();"
 										action="#{navegacionMB.toEditarExpediente}"
@@ -46,7 +46,7 @@
 											target="#{sessionMB.expedienteSeleccionado}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver" style="width:4%; text-align:center;">
+								<p:column headerText="Ver" >
 									<p:commandButton id="consultarExpediente" icon="ui-icon-search"
 										title="Consultar Expediente" onclick="mostrarMosca();"
 										action="#{navegacionMB.toExpediente}"
@@ -63,23 +63,23 @@
 							<p:dataTable emptyMessage="Ningún expediente accesible."
 								id="expedientesAccesibles" var="expediente"
 								value="#{expedienteMB.expedientesAccesiblesList}">
-								<p:column headerText="Apellidos" style="width:24%">
+								<p:column headerText="Apellidos" >
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePacienteEnExpediente(expediente)}"
 										styleClass="iconoNuevoComentario" />
 									<h:outputText value="#{expediente.apellidos}" />
 								</p:column>
-								<p:column headerText="Nombre" style="width:24%">
+								<p:column headerText="Nombre" >
 									<h:outputText value="#{expediente.nombre}" />
 								</p:column>
-								<p:column headerText="Usuario" style="width:24%">
+								<p:column headerText="Usuario" >
 									<h:outputText value="#{expediente.usuario.usuario}" />
 								</p:column>
-								<p:column headerText="Creador" style="width:24%">
+								<p:column headerText="Creador" >
 									<h:outputText value="#{expediente.usuarioCreador.usuario}" />
 								</p:column>
-								<p:column headerText="Ver" style="width:4%; text-align:center;">
+								<p:column headerText="Ver" >
 									<p:commandButton id="consultarExpediente" icon="ui-icon-search"
 										title="Consultar Expediente" onclick="mostrarMosca();"
 										action="#{navegacionMB.toExpediente}"
@@ -96,23 +96,23 @@
 							<p:dataTable emptyMessage="Ningún expediente cerrado."
 								id="expedientesCerrados" var="expediente"
 								value="#{expedienteMB.expedientesCerradosList}">
-								<p:column headerText="Apellidos" style="width:24%">
+								<p:column headerText="Apellidos">
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePacienteEnExpediente(expediente)}"
 										styleClass="iconoNuevoComentario" />
 									<h:outputText value="#{expediente.apellidos}" />
 								</p:column>
-								<p:column headerText="Nombre" style="width:24%">
+								<p:column headerText="Nombre">
 									<h:outputText value="#{expediente.nombre}" />
 								</p:column>
-								<p:column headerText="Usuario" style="width:24%">
+								<p:column headerText="Usuario">
 									<h:outputText value="#{expediente.usuario.usuario}" />
 								</p:column>
-								<p:column headerText="Creador" style="width:24%">
+								<p:column headerText="Creador">
 									<h:outputText value="#{expediente.usuarioCreador.usuario}" />
 								</p:column>
-								<p:column headerText="Ver" style="width:4%; text-align:center;">
+								<p:column headerText="Ver">
 									<p:commandButton id="consultarExpediente" icon="ui-icon-search"
 										title="Consultar Expediente" onclick="mostrarMosca();"
 										action="#{navegacionMB.toExpediente}"

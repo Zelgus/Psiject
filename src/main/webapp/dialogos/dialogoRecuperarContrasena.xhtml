@@ -5,18 +5,20 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoRecuperarContrasena" styleClass="dialogoPsiject" header="Recuperar contraseña"
-		widgetVar="dialogoRecuperarContrasena" modal="true" resizable="false" draggable="true">
+	<p:dialog id="dialogoRecuperarContrasena" styleClass="dialogoPsiject"
+		header="Recuperar contraseña" widgetVar="dialogoRecuperarContrasena"
+		modal="true" resizable="false" draggable="true">
 		<h:form>
-			<p>Escribe tu nombre de Usuario o tu Correo y te enviaremos un email para que puedas reestablecer tu contraseña.</p>
+			<p>Escribe tu nombre de Usuario o tu Correo y te enviaremos un
+				email para que puedas reestablecer tu contraseña.</p>
 			<p:panelGrid>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="recuperarContrasena"
-							value="Usuario o Correo: " style="font-weight:bold" />
+						<h:outputLabel for="recuperarContrasena" value="Usuario o Email:" />
 					</p:column>
 					<p:column>
-						<p:inputText id="recuperarContrasena" value="#{loginMB.recuperar}" />
+						<p:inputText id="recuperarContrasena" value="#{loginMB.recuperar}"
+							placeholder="Usuario o Email" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>
@@ -27,5 +29,5 @@
 				action="#{loginMB.recuperarContrasena}" styleClass="botonConTexto" />
 		</h:form>
 	</p:dialog>
-	
+
 </ui:composition>

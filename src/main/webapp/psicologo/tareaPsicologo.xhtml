@@ -28,8 +28,8 @@
 								title="Tarea Importante"
 								rendered="#{sessionMB.tareaSeleccionada.importante}"
 								styleClass="iconoTareaImportante" />
-							<h:outputText styleClass="tituloTarea"
-								value="#{sessionMB.tareaSeleccionada.titulo}" />
+							<h:outputText value="#{sessionMB.tareaSeleccionada.titulo}"
+								styleClass="titulo" />
 						</p:column>
 					</p:row>
 					<p:row>
@@ -39,7 +39,7 @@
 					</p:row>
 					<p:row>
 						<p:column>
-							<h:outputText value="Creada por: " />
+							<h:outputText value="Creada por:" styleClass="subtitulo" />
 						</p:column>
 						<p:column colspan="2">
 							<h:outputText
@@ -48,7 +48,7 @@
 					</p:row>
 					<p:row>
 						<p:column>
-							<h:outputText value="Asignada a: " />
+							<h:outputText value="Asignada a:" styleClass="subtitulo" />
 						</p:column>
 						<p:column colspan="2">
 							<h:outputText
@@ -61,7 +61,6 @@
 								<p:commandLink
 									oncomplete="PF('dialogoConclusionesPsicologo').show();"
 									value="Conclusiones"
-									style="text-decoration:underline; color:blue;"
 									rendered="#{renderingMB.botonConclusionesPsicologo}" />
 							</h:form>
 						</p:column>
@@ -70,7 +69,7 @@
 			</p:column>
 			<p:column>
 				<h:form>
-					<p:panelGrid styleClass="panelAcciones">
+					<p:panelGrid>
 						<p:row>
 							<p:column>
 								<p:commandButton id="editarTarea" icon="ui-icon-pencil"
@@ -113,7 +112,7 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="2">
-				<h:form style="width: 100%; height: 100%; overflow: auto;">
+				<h:form styleClass="tablaComentariosForm">
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
 						<p:dataTable id="comentariosDe#{campo.idCampo}"
 							emptyMessage="Sin comentarios."

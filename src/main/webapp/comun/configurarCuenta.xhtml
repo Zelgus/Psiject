@@ -16,31 +16,36 @@
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<h:form id="form">
+				<h:form>
 					<p:panelGrid>
 						<p:row>
-							<p:column>
-								<h:outputLabel for="nombreCuenta" value="Nombre de usuario:" />
-							</p:column>
-							<p:column>
-								<p:inputText id="nombreCuenta"
-									value="#{sessionMB.usuarioEnSesion.usuario}" />
+							<p:column colspan="2">
+								<h:outputText value="Datos de la cuenta" styleClass="titulo" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputLabel for="correoCuenta" value="Correo electrónico:" />
+								<h:outputLabel for="nombreCuenta" value="Nombre de Usuario:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="nombreCuenta"
+									value="#{sessionMB.usuarioEnSesion.usuario}"
+									placeholder="Nombre de Usuario" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="correoCuenta" value="Email:" />
 							</p:column>
 							<p:column>
 								<p:inputText id="correoCuenta"
-									value="#{sessionMB.usuarioEnSesion.correo}">
-								</p:inputText>
+									value="#{sessionMB.usuarioEnSesion.correo}" placeholder="Email" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column colspan="2">
-								<h:outputText value="Cambiar la contraseña"
-									style="text-decoration:underline; font-weight:bold;" />
+								<h:outputText value="Modificar tu contraseña"
+									styleClass="titulo" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -50,7 +55,7 @@
 							</p:column>
 							<p:column>
 								<p:password id="contrasenaActualCuenta"
-									value="#{usuarioMB.contrasena}" feedback="false" />
+									value="#{usuarioMB.contrasena}" placeholder="Contraseña actual" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -59,11 +64,11 @@
 									value="Nueva contraseña:" />
 							</p:column>
 							<p:column>
-								<p:password id="nuevaContrasenaCuenta" feedback="true"
-									promptLabel="Introduzca su contraseña" weakLabel="Débil"
-									goodLabel="Normal" strongLabel="Fuerte"
-									value="#{usuarioMB.nuevaContrasena}">
-								</p:password>
+								<p:password id="nuevaContrasenaCuenta"
+									value="#{usuarioMB.nuevaContrasena}"
+									placeholder="Nueva contraseña" feedback="true"
+									promptLabel="Seguiridad de la contraseña" weakLabel="Débil"
+									goodLabel="Normal" strongLabel="Fuerte" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -73,7 +78,8 @@
 							</p:column>
 							<p:column>
 								<p:password id="repetirContrasenaCuenta"
-									value="#{usuarioMB.repetirContrasena}" />
+									value="#{usuarioMB.repetirContrasena}"
+									placeholder="Repita la contraseña" />
 							</p:column>
 						</p:row>
 						<p:row>

@@ -24,15 +24,14 @@
 									<p:panelGrid>
 										<p:row>
 											<p:column>
-												<h:outputLabel for="tituloTarea" value="Título: "
-													style="font-weight:bold" />
+												<h:outputLabel for="tituloTarea" value="Título:" />
 											</p:column>
 											<p:column>
-												<p:inputText id="tituloTarea" value="#{tareaMB.titulo}" />
+												<p:inputText id="tituloTarea" value="#{tareaMB.titulo}"
+													placeholder="Título" />
 											</p:column>
 											<p:column>
-												<h:outputLabel for="importante" value="¿Importante? "
-													style="font-weight:bold" />
+												<h:outputLabel for="importante" value="¿Importante? " />
 											</p:column>
 											<p:column>
 												<h:selectBooleanCheckbox id="importante"
@@ -41,13 +40,11 @@
 										</p:row>
 										<p:row>
 											<p:column>
-												<h:outputLabel for="descripcionTarea" value="Descripción: "
-													style="font-weight:bold" />
+												<h:outputLabel for="descripcionTarea" value="Descripción: " />
 											</p:column>
 											<p:column colspan="3">
 												<p:inputTextarea id="descripcionTarea"
-													value="#{tareaMB.descripcion}" autoResize="false"
-													styleClass="textArea" />
+													value="#{tareaMB.descripcion}" />
 											</p:column>
 										</p:row>
 									</p:panelGrid>
