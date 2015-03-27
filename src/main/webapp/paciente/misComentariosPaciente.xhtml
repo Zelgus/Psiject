@@ -15,17 +15,16 @@
 	<ui:include src="/dialogos/dialogoEditarComentario.xhtml" />
 	<ui:include src="/dialogos/dialogoBorrarComentario.xhtml" />
 	<ui:include src="/dialogos/dialogoComentarPaciente.xhtml" />
-	
+
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<h:form styleClass="tablaComentariosForm">
+				<h:form styleClass="tablaComentarios">
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
-						<p:dataTable id="comentariosDe#{campo.idCampo}"
-							emptyMessage="Ningún comentario enviado."
+						<p:dataTable id="comentariosDe#{campo.idCampo}" var="comentario"
 							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
-							var="comentario" styleClass="tablaComentarios">
-							<p:column headerText="#{campo.nombre}">
+							emptyMessage="Ningún comentario enviado." styleClass="tabla">
+							<p:column headerText="#{campo.nombre}" styleClass="columnaDatos">
 								<h:outputText value="#{comentario.comentario}"
 									title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
 								<p:commandButton id="editarComentario" icon="ui-icon-pencil"

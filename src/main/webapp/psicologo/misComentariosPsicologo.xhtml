@@ -15,20 +15,19 @@
 	<ui:include src="/dialogos/dialogoEditarComentario.xhtml" />
 	<ui:include src="/dialogos/dialogoBorrarComentario.xhtml" />
 	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
-	
+
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<h:form styleClass="tablaComentariosForm">
-					<p:dataTable id="comentariosDePsicologo"
-						emptyMessage="Ningún comentario enviado."
+				<h:form styleClass="tablaComentarios">
+					<p:dataTable id="comentariosDePsicologo" var="comentario"
 						value="#{comentarioMB.comentariosPsicologoDeLaTareaList}"
-						var="comentario" styleClass="tablaComentarios">
-						<p:column headerText="Comentarios" >
+						emptyMessage="Ningún comentario enviado." styleClass="tabla">
+						<p:column headerText="Comentarios" styleClass="columnaDatos">
 							<h:outputText value="#{comentario.comentario}"
 								title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
 						</p:column>
-						<p:column headerText="Editar" >
+						<p:column headerText="Editar" styleClass="columnaBoton">
 							<p:commandButton id="editarComentario" icon="ui-icon-pencil"
 								title="Editar Comentario"
 								oncomplete="PF('dialogoEditarComentario').show();"
@@ -38,7 +37,7 @@
 									target="#{sessionMB.comentarioSeleccionado}" />
 							</p:commandButton>
 						</p:column>
-						<p:column headerText="Borrar" >
+						<p:column headerText="Borrar" styleClass="columnaBoton">
 							<p:commandButton id="borrarComentario" icon="ui-icon-trash"
 								title="Borrar Comentario"
 								oncomplete="PF('dialogoBorrarComentario').show();"

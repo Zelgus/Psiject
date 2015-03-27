@@ -139,12 +139,14 @@
 			<p:column colspan="2">
 				<h:form>
 					<h:outputText value="Tareas del expediente" styleClass="titulo" />
-					<p:tabView styleClass="tablaTareas">
+					<p:tabView>
 						<p:tab title="En proceso">
-							<p:dataTable emptyMessage="Sin tareas pendientes." var="tarea"
+							<p:dataTable id="tareasExpEnProceso" var="tarea"
 								value="#{tareaMB.tareasPendientesDelExpedienteList}"
-								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título">
+								emptyMessage="Sin tareas pendientes."
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}"
+								styleClass="tabla">
+								<p:column headerText="Título" styleClass="columnaDatos">
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
@@ -152,10 +154,10 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador">
+								<p:column headerText="Creador" styleClass="columnaDatos columnaOcultaMovil">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
-								<p:column headerText="Editar">
+								<p:column headerText="Editar" styleClass="columnaBoton">
 									<p:commandButton id="editarTarea" icon="ui-icon-pencil"
 										title="Editar Tarea"
 										oncomplete="PF('dialogoEditarTarea').show();"
@@ -165,7 +167,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Completar">
+								<p:column headerText="Completar" styleClass="columnaBoton">
 									<p:commandButton id="completarTarea" icon="ui-icon-check"
 										title="Completar Tarea"
 										oncomplete="PF('dialogoCompletarTarea').show();"
@@ -175,7 +177,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Comentar">
+								<p:column headerText="Comentar" styleClass="columnaBoton">
 									<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
 										title="Añadir comentario"
 										oncomplete="PF('dialogoComentarPsicologo').show();"
@@ -185,7 +187,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver">
+								<p:column headerText="Ver" styleClass="columnaBoton">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{navegacionMB.toTareaPsicologo}"
@@ -198,10 +200,12 @@
 							</p:dataTable>
 						</p:tab>
 						<p:tab title="Concluidas">
-							<p:dataTable emptyMessage="Sin tareas concluidas." var="tarea"
+							<p:dataTable id="tareasExpConcluidas" var="tarea"
 								value="#{tareaMB.tareasCompletadasDelExpedienteList}"
-								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título">
+								emptyMessage="Sin tareas concluidas."
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}"
+								styleClass="tabla">
+								<p:column headerText="Título" styleClass="columnaDatos">
 									<h:graphicImage library="images" name="nuevoComentario.png"
 										title="Nuevo comentario"
 										rendered="#{renderingMB.iconoNuevoComentarioDePaciente(tarea)}"
@@ -209,10 +213,10 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador">
+								<p:column headerText="Creador" styleClass="columnaDatos columnaOcultaMovil">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
-								<p:column headerText="Reabrir">
+								<p:column headerText="Reabrir" styleClass="columnaBoton">
 									<p:commandButton id="reabrirTarea" icon="ui-icon-check"
 										title="Reabrir Tarea" onclick="mostrarMosca();"
 										action="#{tareaMB.reabrirTarea}"
@@ -222,7 +226,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver">
+								<p:column headerText="Ver" styleClass="columnaBoton">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{navegacionMB.toTareaPsicologo}"

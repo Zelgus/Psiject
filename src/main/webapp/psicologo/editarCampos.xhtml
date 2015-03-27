@@ -18,15 +18,15 @@
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:dataTable emptyMessage="Ningún campo añadido." id="camposCreados"
-						var="campo" value="#{campoMB.camposList}"
-						rowKey="#{campo.idCampo}"
-						selection="#{sessionMB.campoSeleccionado}">>
-						<p:column selectionMode="single"/>
-						<p:column headerText="Nombre">
+					<p:dataTable id="camposCreados" var="campo"
+						value="#{campoMB.camposList}" rowKey="#{campo.idCampo}"
+						selection="#{sessionMB.campoSeleccionado}"
+						emptyMessage="Ningún campo añadido." styleClass="tabla">
+						<p:column selectionMode="single" />
+						<p:column headerText="Nombre" styleClass="columnaDatos">
 							<h:outputText value="#{campo.nombre}" />
 						</p:column>
-						<p:column headerText="Descripción">
+						<p:column headerText="Descripción" styleClass="columnaDatos">
 							<h:outputText value="#{campo.descripcion}" />
 						</p:column>
 

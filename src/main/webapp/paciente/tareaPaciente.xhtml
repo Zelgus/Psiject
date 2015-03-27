@@ -71,12 +71,11 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="2">
-				<h:form styleClass="tablaComentariosForm">
-					<p:dataTable id="comentariosDePsicologo"
-						emptyMessage="Sin comentarios."
+				<h:form styleClass="tablaComentarios">
+					<p:dataTable id="comentariosDePsicologo" var="comentario"
 						value="#{comentarioMB.comentariosPsicologoDeLaTareaList}"
-						var="comentario" styleClass="tablaComentarios">
-						<p:column headerText="Comentarios">
+						emptyMessage="Sin comentarios." styleClass="tabla">
+						<p:column headerText="Comentarios" styleClass="columnaDatos">
 							<h:graphicImage library="images" name="nuevoComentario.png"
 								title="Nuevo comentario" rendered="#{!comentario.visto}"
 								styleClass="iconoNuevoComentarioTabla" />

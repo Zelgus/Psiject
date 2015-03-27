@@ -19,12 +19,14 @@
 			<p:column>
 				<h:form>
 					<h:outputText value="Tus tareas" styleClass="titulo" />
-					<p:tabView styleClass="tablaTareas">
+					<p:tabView>
 						<p:tab title="En proceso">
-							<p:dataTable emptyMessage="Sin tareas pendientes..." var="tarea"
+							<p:dataTable id="tareasEnProceso" var="tarea"
 								value="#{tareaMB.tareasPendientesDelExpedienteList}"
-								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título" styleClass="tablaTareasTitulo">
+								emptyMessage="Sin tareas pendientes..."
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}"
+								styleClass="tabla">
+								<p:column headerText="Título" styleClass="columnaDatos">
 									<h:graphicImage library="images" name="nuevaTarea.png"
 										title="Nueva tarea" rendered="#{!tarea.vista}"
 										styleClass="iconoNuevaTarea" />
@@ -37,10 +39,10 @@
 										value="#{tarea.titulo}" />
 								</p:column>
 								<p:column headerText="Descripción"
-									styleClass="tablaTareasDescripcion">
+									styleClass="columnaDatos columnaOcultaMovil">
 									<h:outputText value="#{tarea.descripcion}" />
 								</p:column>
-								<p:column headerText="Comentar">
+								<p:column headerText="Comentar" styleClass="columnaBoton">
 									<p:commandButton id="nuevoComentario" icon="ui-icon-comment"
 										title="Añadir comentarios"
 										oncomplete="PF('dialogoComentarPaciente').show();
@@ -51,7 +53,7 @@
 											target="#{sessionMB.tareaSeleccionada}" />
 									</p:commandButton>
 								</p:column>
-								<p:column headerText="Ver">
+								<p:column headerText="Ver" styleClass="columnaBoton">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{tareaMB.consultarTareaPaciente}"
@@ -64,10 +66,12 @@
 							</p:dataTable>
 						</p:tab>
 						<p:tab title="Concluidas">
-							<p:dataTable emptyMessage="Ninguna tarea concluida." var="tarea"
+							<p:dataTable id="tareasConcluidas" var="tarea"
 								value="#{tareaMB.tareasCompletadasDelExpedienteList}"
-								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}">
-								<p:column headerText="Título" styleClass="tablaTareasTitulo">
+								emptyMessage="Ninguna tarea concluida."
+								rowStyleClass="#{tarea.importante ? 'colorTareaImportante' : null}"
+								styleClass="tabla">
+								<p:column headerText="Título" styleClass="columnaDatos">
 									<h:graphicImage library="images" name="nuevaTarea.png"
 										title="Nueva tarea" rendered="#{!tarea.vista}"
 										styleClass="iconoNuevaTarea" />
@@ -80,10 +84,10 @@
 										value="#{tarea.titulo}" />
 								</p:column>
 								<p:column headerText="Descripción"
-									styleClass="tablaTareasDescripcion">
+									styleClass="columnaDatos columnaOcultaMovil">
 									<h:outputText value="#{tarea.descripcion}" />
 								</p:column>
-								<p:column headerText="Ver">
+								<p:column headerText="Ver" styleClass="columnaBoton">
 									<p:commandButton id="consultarTarea" icon="ui-icon-search"
 										title="Consultar Tarea" onclick="mostrarMosca();"
 										action="#{tareaMB.consultarTareaPaciente}"

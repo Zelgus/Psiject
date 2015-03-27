@@ -112,13 +112,12 @@
 		</p:row>
 		<p:row>
 			<p:column colspan="2">
-				<h:form styleClass="tablaComentariosForm">
+				<h:form styleClass="tablaComentarios">
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
-						<p:dataTable id="comentariosDe#{campo.idCampo}"
-							emptyMessage="Sin comentarios."
+						<p:dataTable id="comentariosDe#{campo.idCampo}" var="comentario"
 							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
-							var="comentario" styleClass="tablaComentarios">
-							<p:column headerText="#{campo.nombre}">
+							emptyMessage="Sin comentarios." styleClass="tabla">
+							<p:column headerText="#{campo.nombre}" styleClass="columnaDatos">
 								<h:graphicImage library="images" name="nuevoComentario.png"
 									title="Nuevo comentario" rendered="#{!comentario.visto}"
 									styleClass="iconoNuevoComentarioTabla" />
