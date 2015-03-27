@@ -14,8 +14,6 @@
 					<p:column>
 						<h:outputLabel for="tituloTarea" value="Título:" />
 					</p:column>
-				</p:row>
-				<p:row>
 					<p:column>
 						<p:inputText id="tituloTarea"
 							value="#{sessionMB.tareaSeleccionada.titulo}"
@@ -26,16 +24,17 @@
 					<p:column>
 						<h:outputLabel for="descripcionTarea" value="Descripción:" />
 					</p:column>
-				</p:row>
-				<p:row>
 					<p:column>
 						<p:inputTextarea id="descripcionTarea"
-							value="#{sessionMB.tareaSeleccionada.descripcion}" />
+							value="#{sessionMB.tareaSeleccionada.descripcion}"
+							placeholder="Descripción" />
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column>
 						<h:outputLabel for="importante" value="¿Importante?" />
+					</p:column>
+					<p:column>
 						<h:selectBooleanCheckbox id="importante"
 							value="#{sessionMB.tareaSeleccionada.importante}" />
 					</p:column>
