@@ -1,0 +1,69 @@
+/*
+---------------------------------------------------------------------------
+---------------------------- CABECERA -------------------------------------
+---------------------------------------------------------------------------
+*/
+.cabeceraForm {
+	margin: 0px;
+}
+
+.cabecera {
+	width: 100%;
+}
+
+.cabeceraImagen {
+	width: 300px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------ PANEL DE USUARIO ---------------------------------
+---------------------------------------------------------------------------
+*/
+.panelUsuarioForm {
+	margin: 0px;
+}
+
+.panelUsuario {
+	width: 100%;
+	margin: 0px;
+}
+
+.panelUsuario .ui-widget-content {
+	border: none;
+}
+
+.panelUsuarioHome {
+	float: left;
+}
+
+.panelUsuarioImagen {
+	width: 150px;
+}
+
+.panelUsuarioUser {
+	float: right;
+	width: 100px;
+	text-align: right;
+}
+
+.panelUsuarioUser a {
+	text-decoration: none;
+}
+
+.panelUsuarioTextoUser {
+	font-family: Georgia;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.panelUsuarioTextoNombre {
+	font-family: Georgia;
+	font-size: 12px;
+	font-style: oblique;
+}
+
+.panelUsuario .ui-widget-content, .panelUsuario .panelUsuarioUser,
+	.panelUsuario .panelUsuarioHome {
+	background-color: #E5FFBA !important;
+}

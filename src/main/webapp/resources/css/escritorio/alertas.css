@@ -1,0 +1,20 @@
+/*
+---------------------------------------------------------------------------
+------------------------------ ALERTAS ------------------------------------
+---------------------------------------------------------------------------
+*/
+.ui-growl {
+	text-align: center;
+}
+
+.ui-growl-item-container {
+	opacity: 1;
+	border: 2px solid;
+	box-shadow: 0 3px 7px;
+	background-color: #E5FFBA;
+	filter: none;
+}
+
+.ui-growl-title {
+	display: none;
+}

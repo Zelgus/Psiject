@@ -1,0 +1,41 @@
+/*
+---------------------------------------------------------------------------
+---------------------------- GENERAL --------------------------------------
+---------------------------------------------------------------------------
+*/
+body {
+	width: 100%;
+	text-align: center;
+	margin: 0px;
+}
+
+.ui-panelgrid .ui-panelgrid-cell {
+	border-style: hidden;
+	background-color: #ffffff;
+	padding: 5px 2px;
+}
+
+.ui-widget-content {
+	color: #000000 !important;
+	border: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default,
+	.ui-widget-header, .ui-widget-header .ui-state-default, .ui-menu,
+	.ui-menu .ui-menu-child {
+	background-color: #e5ffba !important;
+	border-color: #7f9e49 !important;
+	color: #000000 !important;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover,
+	.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+	{
+	background: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.6),
+		rgba(255, 255, 255, 0)) repeat scroll 0 0 #ffffff !important;
+	box-shadow: 0 0 8px #ffffff !important;
+}
+
+.ui-state-hover {
+	box-shadow: 0 0 8px #ffffff, 0 1px 0 #fff inset;
+}

@@ -1,0 +1,25 @@
+/*
+---------------------------------------------------------------------------
+------------------------------ ICONOS -------------------------------------
+---------------------------------------------------------------------------
+*/
+.iconoTareaImportante {
+	width: 20px;
+	height: 20px;
+}
+
+.iconoNuevaTarea {
+	width: 30px;
+	height: 30px;
+}
+
+.iconoNuevoComentario {
+	width: 30px;
+	height: 30px;
+}
+
+.iconoNuevoComentarioTabla {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
