@@ -72,6 +72,13 @@ textarea {
 .botonSinTexto {
 	width: 35px;
 	height: 35px;
+	background: transparent none repeat scroll 0% 0% !important;
+	border: medium none !important;
+	box-shadow: none !important;
+}
+
+.botonSinTexto span {
+	font-size: 20px;
 }
 
 /*

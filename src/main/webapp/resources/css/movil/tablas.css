@@ -70,6 +70,13 @@
 	border-right: none !important;
 }
 
+.tabla .ui-datatable-empty-message td {
+	border-top: 1px solid #7F9E49 !important;
+	border-bottom: 1px solid #7F9E49 !important;
+	border-left: none !important;
+	border-right: none !important;
+}
+
 /*
 ---------------------------------------------------------------------------
 ---------------------- TABLA DE COMENTARIOS -------------------------------

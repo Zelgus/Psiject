@@ -63,6 +63,10 @@
 	border: 1px solid #7F9E49 !important;
 }
 
+.tabla .ui-datatable-empty-message td {
+	border: 1px solid #7F9E49 !important;
+}
+
 /*
 ---------------------------------------------------------------------------
 ---------------------- TABLA DE COMENTARIOS -------------------------------
