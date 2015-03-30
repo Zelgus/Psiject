@@ -64,6 +64,7 @@
 
 .tabla .columnaBoton {
 	width: 25px;
+	min-width: 25px;
 	border-top: 1px solid #7F9E49 !important;
 	border-bottom: 1px solid #7F9E49 !important;
 	border-left: none !important;

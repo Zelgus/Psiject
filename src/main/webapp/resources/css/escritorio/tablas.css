@@ -60,6 +60,7 @@
 
 .tabla .columnaBoton {
 	width: 50px;
+	min-width: 50px;
 	border: 1px solid #7F9E49 !important;
 }
 
