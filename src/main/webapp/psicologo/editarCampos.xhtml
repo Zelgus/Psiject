@@ -22,7 +22,8 @@
 						value="#{campoMB.camposList}" rowKey="#{campo.idCampo}"
 						selection="#{sessionMB.campoSeleccionado}"
 						emptyMessage="Ningún campo añadido." styleClass="tabla">
-						<p:column selectionMode="single" />
+						<p:column headerText="Selección" selectionMode="single"
+							styleClass="columnaBoton" />
 						<p:column headerText="Nombre" styleClass="columnaDatos">
 							<h:outputText value="#{campo.nombre}" />
 						</p:column>
