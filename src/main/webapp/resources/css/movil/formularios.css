@@ -64,18 +64,23 @@ textarea {
 ------------------------------ BOTONES ------------------------------------
 ---------------------------------------------------------------------------
 */
+.botonera {
+	text-align: right;
+}
+
+.botonVolver {
+	float: left;
+}
+
 .botonConTexto {
-	width: 275px;
-	height: 35px;
+	font-size: 12px !important;
+    height: 35px;
+    width: 175px;
 }
 
 .botonSinTexto {
 	width: 35px;
 	height: 35px;
-}
-
-.botonSinTexto span {
-	font-size: 20px;
 }
 
 /*

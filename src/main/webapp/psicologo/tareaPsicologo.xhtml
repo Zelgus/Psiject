@@ -21,89 +21,52 @@
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<p:panelGrid>
-					<p:row>
-						<p:column colspan="3">
-							<h:graphicImage library="images" name="importante.png"
-								title="Tarea Importante"
-								rendered="#{sessionMB.tareaSeleccionada.importante}"
-								styleClass="iconoTareaImportante" />
-							<h:outputText value="#{sessionMB.tareaSeleccionada.titulo}"
-								styleClass="titulo" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="3">
-							<h:outputText value="#{sessionMB.tareaSeleccionada.descripcion}" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<h:outputText value="Creada por:" styleClass="subtitulo" />
-						</p:column>
-						<p:column colspan="2">
-							<h:outputText
-								value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<h:outputText value="Asignada a:" styleClass="subtitulo" />
-						</p:column>
-						<p:column colspan="2">
-							<h:outputText
-								value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="3">
-							<h:form>
-								<p:commandLink
-									oncomplete="PF('dialogoConclusionesPsicologo').show();"
-									value="Conclusiones"
-									rendered="#{renderingMB.botonConclusionesPsicologo}" />
-							</h:form>
-						</p:column>
-					</p:row>
-				</p:panelGrid>
-			</p:column>
-			<p:column>
 				<h:form>
 					<p:panelGrid>
 						<p:row>
-							<p:column>
+							<p:column colspan="2">
+								<h:graphicImage library="images" name="importante.png"
+									title="Tarea Importante"
+									rendered="#{sessionMB.tareaSeleccionada.importante}"
+									styleClass="iconoTareaImportante" />
+								<h:outputText value="#{sessionMB.tareaSeleccionada.titulo}"
+									styleClass="titulo" />
 								<p:commandButton id="editarTarea" icon="ui-icon-pencil"
-									value="Editar Tarea" title="Editar Tarea"
+									title="Editar Tarea"
 									oncomplete="PF('dialogoEditarTarea').show();"
 									rendered="#{renderingMB.botonEditarTarea}"
-									styleClass="botonConTexto" />
+									styleClass="botonSinTexto" />
 							</p:column>
-							<p:column>
-								<p:commandButton id="modificarCampos" icon="ui-icon-document-b"
-									value="Modificar Campos" title="Modificar Campos"
-									oncomplete="PF('dialogoModificarCampos').show();"
-									rendered="#{renderingMB.botonModificarCampos}"
-									styleClass="botonConTexto" />
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="#{sessionMB.tareaSeleccionada.descripcion}" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-								<p:commandButton id="completarTarea" icon="ui-icon-check"
-									value="Completar Tarea" title="Completar Tarea"
-									oncomplete="PF('dialogoCompletarTarea').show();"
-									rendered="#{renderingMB.botonCompletarTarea}"
-									styleClass="botonConTexto" />
-								<p:commandButton id="reabrirTarea" icon="ui-icon-check"
-									value="Reabrir Tarea" title="Reabrir Tarea"
-									onclick="mostrarMosca();" action="#{tareaMB.reabrirTarea}"
-									rendered="#{renderingMB.botonReabrirTarea}"
-									styleClass="botonConTexto" />
+								<h:outputText value="Creada por:" styleClass="subtitulo" />
 							</p:column>
 							<p:column>
-								<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-									value="Volver" title="Volver" onclick="mostrarMosca();"
-									action="#{navegacionMB.toExpediente}"
-									styleClass="botonConTexto" />
+								<h:outputText
+									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputText value="Asignada a:" styleClass="subtitulo" />
+							</p:column>
+							<p:column>
+								<h:outputText
+									value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:commandLink
+									oncomplete="PF('dialogoConclusionesPsicologo').show();"
+									value="Conclusiones"
+									rendered="#{renderingMB.botonConclusionesPsicologo}" />
 							</p:column>
 						</p:row>
 					</p:panelGrid>
@@ -111,7 +74,7 @@
 			</p:column>
 		</p:row>
 		<p:row>
-			<p:column colspan="2">
+			<p:column>
 				<h:form styleClass="tablaComentarios">
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
 						<p:dataTable id="comentariosDe#{campo.idCampo}" var="comentario"
@@ -126,6 +89,31 @@
 							</p:column>
 						</p:dataTable>
 					</c:forEach>
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toExpediente}"
+						styleClass="botonConTexto botonVolver" />
+					<p:commandButton id="modificarCampos" icon="ui-icon-document"
+						value="Modificar Campos" title="Modificar Campos"
+						oncomplete="PF('dialogoModificarCampos').show();"
+						rendered="#{renderingMB.botonModificarCampos}"
+						styleClass="botonConTexto" />
+					<p:commandButton id="completarTarea" icon="ui-icon-check"
+						value="Completar Tarea" title="Completar Tarea"
+						oncomplete="PF('dialogoCompletarTarea').show();"
+						rendered="#{renderingMB.botonCompletarTarea}"
+						styleClass="botonConTexto" />
+					<p:commandButton id="reabrirTarea" icon="ui-icon-check"
+						value="Reabrir Tarea" title="Reabrir Tarea"
+						onclick="mostrarMosca();" action="#{tareaMB.reabrirTarea}"
+						rendered="#{renderingMB.botonReabrirTarea}"
+						styleClass="botonConTexto" />
 					<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
 						value="Añadir comentario" title="Añadir comentario"
 						oncomplete="PF('dialogoComentarPsicologo').show();"

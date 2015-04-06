@@ -10,7 +10,7 @@ public class Validaciones {
       final Pattern pat = Pattern.compile("^[a-zA-Z0-9Ò—][a-zA-Z0-9Ò—]*$");
       final Matcher mat = pat.matcher(texto);
 
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_USUARIO_VACIO);
       } else if (texto.length() < 5) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_USUARIO_LONGITUD_CORTA);
@@ -27,7 +27,7 @@ public class Validaciones {
       final Pattern pat = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
       final Matcher mat = pat.matcher(texto);
 
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_CORREO_VACIO);
       }
       
@@ -40,7 +40,7 @@ public class Validaciones {
       final Pattern pat = Pattern.compile("^[a-zA-Z0-9Ò—][a-zA-Z0-9Ò—]*$");
       final Matcher mat = pat.matcher(texto);
 
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_CONTRASENA_VACIO);
       } else if (texto.length() < 5) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_CONTRASENA_LONGITUD_CORTA);
@@ -54,13 +54,13 @@ public class Validaciones {
    }
    
    public static void validarCodigoVerificacion(String texto) throws DataFormatException {
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_CODIGO_VERIFICACION_VACIO);
       }
    }
    
    public static void validarNombreExpediente(String texto) throws DataFormatException {
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_NOMBRE_EXPEDIENTE_VACIO);
       } else if (texto.length() > 250) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_NOMBRE_EXPEDIENTE_LARGO);
@@ -68,7 +68,7 @@ public class Validaciones {
    }
    
    public static void validarApellidosExpediente(String texto) throws DataFormatException {
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_APELLIDOS_EXPEDIENTE_VACIO);
       } else if (texto.length() > 250) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_APELLIDOS_EXPEDIENTE_LARGO);
@@ -76,7 +76,7 @@ public class Validaciones {
    }
    
    public static void validarTituloTarea(String texto) throws DataFormatException {
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_TITULO_TAREA_VACIO);
       } else if (texto.length() > 250) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_TITULO_TAREA_LARGO);
@@ -84,25 +84,25 @@ public class Validaciones {
    }
    
    public static void validarDescripcionTarea(String texto) throws DataFormatException {
-      if (texto.length() > 1000) {
+      if (texto != null && texto.length() > 1000) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_DESCRIPCION_TAREA_LARGO);
       }
    }
    
    public static void validarConclusionesPsicologoTarea(String texto) throws DataFormatException {
-      if (texto.length() > 1000) {
+      if (texto != null && texto.length() > 1000) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_CONCLUSIONES_PSICOLOGO_TAREA_LARGO);
       }
    }
    
    public static void validarConclusionesPacienteTarea(String texto) throws DataFormatException {
-      if (texto.length() > 1000) {
+      if (texto != null && texto.length() > 1000) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_CONCLUSIONES_PACIENTE_TAREA_LARGO);
       }
    }
 
    public static void validarNombreCampo(String texto) throws DataFormatException {
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_NOMBRE_CAMPO_VACIO);
       } else if (texto.length() > 250) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_NOMBRE_CAMPO_LARGO);
@@ -110,19 +110,19 @@ public class Validaciones {
    }
    
    public static void validarDescripcionCampo(String texto) throws DataFormatException {
-     if (texto.length() > 1000) {
+     if (texto != null && texto.length() > 1000) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_DESCRIPCION_CAMPO_LARGO);
       }
    }
    
    public static void validarComentarioPaciente(String texto) throws DataFormatException {
-      if (texto.length() > 1000) {
+      if (texto != null && texto.length() > 1000) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_COMENTARIO_LARGO);
       }
    }
 
    public static void validarComentarioPsicologo(String texto) throws DataFormatException {
-      if (texto.length() == 0) {
+      if (texto == null || texto.length() == 0) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_COMENTARIO_VACIO);
       } else if (texto.length() > 1000) {
          throw new DataFormatException(Mensajes.ALERTA_VALIDACION_COMENTARIO_LARGO);

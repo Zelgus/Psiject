@@ -21,7 +21,7 @@
 				<h:form>
 					<p:panelGrid>
 						<p:row>
-							<p:column colspan="3">
+							<p:column colspan="2">
 								<h:graphicImage library="images" name="importante.png"
 									title="Tarea Importante"
 									rendered="#{sessionMB.tareaSeleccionada.importante}"
@@ -31,7 +31,7 @@
 							</p:column>
 						</p:row>
 						<p:row>
-							<p:column colspan="3">
+							<p:column colspan="2">
 								<h:outputText value="#{sessionMB.tareaSeleccionada.descripcion}" />
 							</p:column>
 						</p:row>
@@ -39,30 +39,17 @@
 							<p:column>
 								<h:outputText value="Creada por:" styleClass="subtitulo" />
 							</p:column>
-							<p:column colspan="2">
+							<p:column>
 								<h:outputText
 									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
 							</p:column>
 						</p:row>
 						<p:row>
-							<p:column colspan="3">
+							<p:column colspan="2">
 								<p:commandLink
 									oncomplete="PF('dialogoConclusionesPaciente').show();"
 									value="Conclusiones"
 									rendered="#{renderingMB.botonConclusionesPaciente}" />
-							</p:column>
-						</p:row>
-					</p:panelGrid>
-				</h:form>
-			</p:column>
-			<p:column>
-				<h:form>
-					<p:panelGrid>
-						<p:row>
-							<p:column>
-								<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-									value="Volver" title="Volver" onclick="mostrarMosca();"
-									action="#{navegacionMB.toPaciente}" styleClass="botonConTexto" />
 							</p:column>
 						</p:row>
 					</p:panelGrid>
@@ -83,18 +70,28 @@
 								title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
 						</p:column>
 					</p:dataTable>
-					<p:commandButton id="nuevoComentario" icon="ui-icon-comment"
-						value="Añadir comentarios" title="Añadir comentarios"
-						oncomplete="PF('dialogoComentarPaciente').show();
-						PF('wiz').loadStep(PF('wiz').cfg.steps[0], true);"
-						rendered="#{renderingMB.botonComentarPaciente}"
-						update=":dialogoComentarPaciente" styleClass="botonConTexto" />
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toPaciente}"
+						styleClass="botonConTexto botonVolver" />
 					<p:commandButton id="verMisComentarios" icon="ui-icon-search"
 						value="Ver mis comentarios" title="Ver mis comentarios"
 						onclick="mostrarMosca();"
 						action="#{navegacionMB.toMisComentariosPaciente}"
 						rendered="#{renderingMB.botonMisComentariosPaciente}"
 						styleClass="botonConTexto" />
+					<p:commandButton id="nuevoComentario" icon="ui-icon-comment"
+						value="Añadir comentarios" title="Añadir comentarios"
+						oncomplete="PF('dialogoComentarPaciente').show();
+						PF('wiz').loadStep(PF('wiz').cfg.steps[0], true);"
+						rendered="#{renderingMB.botonComentarPaciente}"
+						update=":dialogoComentarPaciente" styleClass="botonConTexto" />
 				</h:form>
 			</p:column>
 		</p:row>

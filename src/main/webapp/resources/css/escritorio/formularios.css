@@ -18,7 +18,7 @@ form table {
 ---------------------------------------------------------------------------
 */
 input {
-	height: 35px;
+	height: 25px;
 	width: 300px;
 }
 
@@ -59,9 +59,18 @@ textarea {
 ------------------------------ BOTONES ------------------------------------
 ---------------------------------------------------------------------------
 */
+.botonera {
+	text-align: right;
+}
+
+.botonVolver {
+	float: left;
+}
+
 .botonConTexto {
-	width: 275px;
-	height: 35px;
+	font-size: 12px !important;
+    height: 35px;
+    width: 175px;
 }
 
 .botonSinTexto {

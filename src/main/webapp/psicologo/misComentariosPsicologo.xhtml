@@ -48,14 +48,20 @@
 							</p:commandButton>
 						</p:column>
 					</p:dataTable>
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toTareaPsicologo}"
+						styleClass="botonConTexto botonVolver" />
 					<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
 						value="Añadir comentario" title="Añadir comentario"
 						oncomplete="PF('dialogoComentarPsicologo').show();"
 						rendered="#{renderingMB.botonComentarPsicologo}"
-						styleClass="botonConTexto" />
-					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-						value="Volver" title="Volver" onclick="mostrarMosca();"
-						action="#{navegacionMB.toTareaPsicologo}"
 						styleClass="botonConTexto" />
 				</h:form>
 			</p:column>

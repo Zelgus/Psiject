@@ -25,110 +25,69 @@
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<p:panelGrid>
-					<p:row>
-						<p:column colspan="3">
-							<h:outputText value="Informacion Personal" styleClass="titulo" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="3">
-							<h:outputText
-								value="#{sessionMB.expedienteSeleccionado.apellidos}" />,
+				<h:form>
+					<p:panelGrid>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="Informacion Personal" styleClass="titulo" />
+								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
+									title="Editar Expediente" onclick="mostrarMosca();"
+									action="#{navegacionMB.toEditarExpediente}"
+									rendered="#{renderingMB.botonEditarExpediente}"
+									styleClass="botonSinTexto" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText
+									value="#{sessionMB.expedienteSeleccionado.apellidos}" />,
 					<h:outputText value="#{sessionMB.expedienteSeleccionado.nombre}" />
 					(<h:outputText
-								value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />)
+									value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />)
 						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="3">
-							<h:outputText
-								value="#{sessionMB.expedienteSeleccionado.usuario.correo}" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="3">
-							<h:outputText value="Psicologos" styleClass="titulo" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<h:outputText value="Creador:" styleClass="subtitulo" />
-						</p:column>
-						<p:column colspan="2">
-							<h:outputText
-								value="#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column>
-							<h:outputText value="Con acceso:" styleClass="subtitulo" />
-						</p:column>
-						<p:column>
-							<h:outputText value="#{expedienteMB.psicologosConAcceso}" />
-						</p:column>
-						<p:column>
-							<h:form>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText
+									value="#{sessionMB.expedienteSeleccionado.usuario.correo}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="Psicologos" styleClass="titulo" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputText value="Creador:" styleClass="subtitulo" />
+							</p:column>
+							<p:column>
+								<h:outputText
+									value="#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}" />
+								<p:commandButton id="transferirExpediente"
+									icon="ui-icon-arrowreturnthick-1-e"
+									title="Transferir Expediente"
+									oncomplete="PF('dialogoTransferirExpediente').show();"
+									rendered="#{renderingMB.botonTransferir}"
+									styleClass="botonSinTexto" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputText value="Con acceso:" styleClass="subtitulo" />
+							</p:column>
+							<p:column>
+								<h:outputText value="#{expedienteMB.psicologosConAcceso}" />
 								<p:commandButton id="modifPermisos" icon="ui-icon-person"
 									title="Modificar Permisos"
 									oncomplete="PF('dialogoModificarPermisos').show();"
 									rendered="#{renderingMB.botonModificarPermisos}"
 									styleClass="botonSinTexto" />
-							</h:form>
-						</p:column>
-					</p:row>
-				</p:panelGrid>
-			</p:column>
-			<p:column>
-				<h:form>
-					<p:panelGrid>
-						<p:row>
-							<p:column>
-								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
-									value="Editar Expediente" title="Editar Expediente"
-									onclick="mostrarMosca();"
-									action="#{navegacionMB.toEditarExpediente}"
-									rendered="#{renderingMB.botonEditarExpediente}"
-									styleClass="botonConTexto" />
-							</p:column>
-							<p:column>
-								<p:commandButton id="transferirExpediente"
-									icon="ui-icon-arrowreturnthick-1-e"
-									value="Transferir Expediente" title="Transferir Expediente"
-									oncomplete="PF('dialogoTransferirExpediente').show();"
-									rendered="#{renderingMB.botonTransferir}"
-									styleClass="botonConTexto" />
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:commandButton id="cerrarExpediente"
-									icon="ui-icon-folder-collapsed" value="Cerrar Expediente"
-									title="Cerrar Expediente"
-									oncomplete="PF('dialogoCerrarExpediente').show();"
-									rendered="#{renderingMB.botonCerrarExpediente}"
-									styleClass="botonConTexto" />
-								<p:commandButton id="reabrirExpediente"
-									icon="ui-icon-folder-open" value="Reabrir Expediente"
-									title="Reabrir Expediente"
-									oncomplete="PF('dialogoReabrirExpediente').show();"
-									rendered="#{renderingMB.botonReabrirExpediente}"
-									styleClass="botonConTexto" />
-							</p:column>
-							<p:column>
 								<p:commandButton id="abandonarExpediente"
-									icon="ui-icon-closethick" value="Abandonar Expediente"
-									title="Abandonar Expediente"
+									icon="ui-icon-closethick" title="Abandonar Expediente"
 									oncomplete="PF('dialogoAbandonarExpediente').show();"
 									rendered="#{renderingMB.botonAbandonar}"
-									styleClass="botonConTexto" />
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column colspan="3">
-								<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-									value="Volver" title="Volver" onclick="mostrarMosca();"
-									action="#{navegacionMB.toPsicologo}" styleClass="botonConTexto" />
+									styleClass="botonSinTexto" />
 							</p:column>
 						</p:row>
 					</p:panelGrid>
@@ -136,7 +95,7 @@
 			</p:column>
 		</p:row>
 		<p:row>
-			<p:column colspan="2">
+			<p:column>
 				<h:form>
 					<h:outputText value="Tareas del expediente" styleClass="titulo" />
 					<p:tabView>
@@ -154,7 +113,8 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador" styleClass="columnaDatos columnaOcultaMovil">
+								<p:column headerText="Creador"
+									styleClass="columnaDatos columnaOcultaMovil">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
 								<p:column headerText="Editar" styleClass="columnaBoton">
@@ -213,7 +173,8 @@
 									<h:outputText title="#{tarea.descripcion}"
 										value="#{tarea.titulo}" />
 								</p:column>
-								<p:column headerText="Creador" styleClass="columnaDatos columnaOcultaMovil">
+								<p:column headerText="Creador"
+									styleClass="columnaDatos columnaOcultaMovil">
 									<h:outputText value="#{tarea.usuarioCreador.usuario}" />
 								</p:column>
 								<p:column headerText="Reabrir" styleClass="columnaBoton">
@@ -239,6 +200,27 @@
 							</p:dataTable>
 						</p:tab>
 					</p:tabView>
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toPsicologo}"
+						styleClass="botonConTexto botonVolver" />
+					<p:commandButton id="cerrarExpediente"
+						icon="ui-icon-folder-collapsed" value="Cerrar Expediente"
+						title="Cerrar Expediente"
+						oncomplete="PF('dialogoCerrarExpediente').show();"
+						rendered="#{renderingMB.botonCerrarExpediente}"
+						styleClass="botonConTexto" />
+					<p:commandButton id="reabrirExpediente" icon="ui-icon-folder-open"
+						value="Reabrir Expediente" title="Reabrir Expediente"
+						oncomplete="PF('dialogoReabrirExpediente').show();"
+						rendered="#{renderingMB.botonReabrirExpediente}"
+						styleClass="botonConTexto" />
 					<p:commandButton id="nuevaTarea" icon="ui-icon-plusthick"
 						value="Añadir nueva Tarea" title="Añadir nueva Tarea"
 						onclick="mostrarMosca();" action="#{navegacionMB.toNuevaTarea}"

@@ -46,16 +46,22 @@
 							</p:column>
 						</p:dataTable>
 					</c:forEach>
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toTareaPaciente}"
+						styleClass="botonConTexto botonVolver" />
 					<p:commandButton id="nuevoComentario" icon="ui-icon-comment"
 						value="Añadir comentarios" title="Añadir comentarios"
 						oncomplete="PF('dialogoComentarPaciente').show();
 						PF('wiz').loadStep(PF('wiz').cfg.steps[0], true);"
 						rendered="#{renderingMB.botonComentarPaciente}"
 						update=":dialogoComentarPaciente" styleClass="botonConTexto" />
-					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-						value="Volver" title="Volver" onclick="mostrarMosca();"
-						action="#{navegacionMB.toTareaPaciente}"
-						styleClass="botonConTexto" />
 				</h:form>
 			</p:column>
 		</p:row>

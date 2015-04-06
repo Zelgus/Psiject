@@ -18,8 +18,8 @@
 			<p:column>
 				<h:form>
 					<h:outputText value="Expedientes" styleClass="titulo" />
-					<p:tabView id="tabView">
-						<p:tab id="tab0" title="Creados">
+					<p:tabView>
+						<p:tab title="Creados">
 							<p:dataTable id="expedientesCreados" var="expediente"
 								value="#{expedienteMB.expedientesCreadosList}"
 								emptyMessage="Ningún expediente creado." styleClass="tabla">
@@ -60,7 +60,7 @@
 							</p:dataTable>
 						</p:tab>
 
-						<p:tab id="tab1" title="Accesibles">
+						<p:tab title="Accesibles">
 							<p:dataTable id="expedientesAccesibles" var="expediente"
 								value="#{expedienteMB.expedientesAccesiblesList}"
 								emptyMessage="Ningún expediente accesible." styleClass="tabla">
@@ -95,7 +95,7 @@
 							</p:dataTable>
 						</p:tab>
 
-						<p:tab id="tab2" title="Cerrados">
+						<p:tab title="Cerrados">
 							<p:dataTable id="expedientesCerrados" var="expediente"
 								value="#{expedienteMB.expedientesCerradosList}"
 								emptyMessage="Ningún expediente cerrado." styleClass="tabla">
@@ -130,16 +130,22 @@
 							</p:dataTable>
 						</p:tab>
 					</p:tabView>
-					<p:commandButton id="altaExpediente" icon="ui-icon-document"
+				</h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
+					<p:commandButton id="altaCampo" icon="ui-icon-document"
+						value="Gestion de campos" title="Gestion de campos"
+						onclick="mostrarMosca();" action="#{navegacionMB.toEditarCampos}"
+						rendered="#{renderingMB.botonGestionCampos}"
+						styleClass="botonConTexto" />
+					<p:commandButton id="altaExpediente" icon="ui-icon-plus"
 						value="Crear nuevo Expediente" title="Crear nuevo Expediente"
 						onclick="mostrarMosca();"
 						action="#{navegacionMB.toAltaExpediente}"
 						rendered="#{renderingMB.botonAltaExpediente}"
-						styleClass="botonConTexto" />
-					<p:commandButton id="altaCampo" icon="ui-icon-document-b"
-						value="Gestion de campos" title="Gestion de campos"
-						onclick="mostrarMosca();" action="#{navegacionMB.toEditarCampos}"
-						rendered="#{renderingMB.botonGestionCampos}"
 						styleClass="botonConTexto" />
 				</h:form>
 			</p:column>
