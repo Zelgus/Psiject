@@ -73,9 +73,12 @@ textarea {
 }
 
 .botonConTexto {
-	font-size: 12px !important;
-    height: 35px;
-    width: 175px;
+	width: 35px;
+	height: 35px;
+}
+
+.botonConTexto .ui-button-text {
+	display: none;
 }
 
 .botonSinTexto {

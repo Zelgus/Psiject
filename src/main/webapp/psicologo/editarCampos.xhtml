@@ -18,6 +18,7 @@
 		<p:row>
 			<p:column>
 				<h:form>
+					<h:outputText value="Campos" styleClass="titulo" />
 					<p:dataTable id="camposCreados" var="campo"
 						value="#{campoMB.camposList}" rowKey="#{campo.idCampo}"
 						selection="#{sessionMB.campoSeleccionado}"
@@ -27,7 +28,7 @@
 						<p:column headerText="Nombre" styleClass="columnaDatos">
 							<h:outputText value="#{campo.nombre}" />
 						</p:column>
-						<p:column headerText="Descripción" styleClass="columnaDatos">
+						<p:column headerText="Descripción" styleClass="columnaDatos columnaOcultaMovil">
 							<h:outputText value="#{campo.descripcion}" />
 						</p:column>
 

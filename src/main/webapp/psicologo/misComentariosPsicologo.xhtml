@@ -20,6 +20,7 @@
 		<p:row>
 			<p:column>
 				<h:form styleClass="tablaComentarios">
+					<h:outputText value="Comentarios" styleClass="titulo" />
 					<p:dataTable id="comentariosDePsicologo" var="comentario"
 						value="#{comentarioMB.comentariosPsicologoDeLaTareaList}"
 						emptyMessage="Ningún comentario enviado." styleClass="tabla">
