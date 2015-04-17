@@ -19,8 +19,8 @@
 	<p:panelGrid>
 		<p:row>
 			<p:column>
+				<h:outputText value="Comentarios" styleClass="titulo" />
 				<h:form styleClass="tablaComentarios">
-					<h:outputText value="Comentarios" styleClass="titulo" />
 					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
 						<p:dataTable id="comentariosDe#{campo.idCampo}" var="comentario"
 							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"

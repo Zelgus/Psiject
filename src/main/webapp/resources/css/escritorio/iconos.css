@@ -11,14 +11,10 @@
 .iconoNuevaTarea {
 	width: 30px;
 	height: 30px;
+	float: left;
 }
 
 .iconoNuevoComentario {
-	width: 30px;
-	height: 30px;
-}
-
-.iconoNuevoComentarioTabla {
 	width: 30px;
 	height: 30px;
 	float: left;

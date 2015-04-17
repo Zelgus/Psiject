@@ -19,8 +19,8 @@
 	<p:panelGrid>
 		<p:row>
 			<p:column>
-				<h:form styleClass="tablaComentarios">
-					<h:outputText value="Comentarios" styleClass="titulo" />
+				<h:outputText value="Comentarios" styleClass="titulo" />
+				<h:form>
 					<p:dataTable id="comentariosDePsicologo" var="comentario"
 						value="#{comentarioMB.comentariosPsicologoDeLaTareaList}"
 						emptyMessage="Ningún comentario enviado." styleClass="tabla">

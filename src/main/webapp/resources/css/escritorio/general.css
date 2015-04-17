@@ -9,6 +9,10 @@ body {
 	margin: auto;
 }
 
+.ui-panelgrid {
+	width: 100%;
+}
+
 .ui-panelgrid .ui-panelgrid-cell {
 	border-style: hidden;
 	background-color: #ffffff;
