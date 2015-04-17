@@ -32,7 +32,7 @@
 									title="Editar Comentario"
 									oncomplete="PF('dialogoEditarComentario').show();"
 									rendered="#{renderingMB.botonEditarComentario(comentario)}"
-									update=":dialogoEditarComentario" styleClass="botonSinTexto">
+									update=":dialogoEditarComentario" styleClass="botonIcono">
 									<f:setPropertyActionListener value="#{comentario}"
 										target="#{sessionMB.comentarioSeleccionado}" />
 								</p:commandButton>
@@ -40,7 +40,7 @@
 									title="Borrar Comentario"
 									oncomplete="PF('dialogoBorrarComentario').show();"
 									rendered="#{renderingMB.botonBorrarComentario(comentario)}"
-									update=":dialogoBorrarComentario" styleClass="botonSinTexto">
+									update=":dialogoBorrarComentario" styleClass="botonIcono">
 									<f:setPropertyActionListener value="#{comentario}"
 										target="#{sessionMB.comentarioSeleccionado}" />
 								</p:commandButton>

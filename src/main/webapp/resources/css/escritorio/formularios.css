@@ -77,8 +77,8 @@ textarea {
 
 .botonConTexto {
 	font-size: 12px !important;
-    height: 35px;
-    width: 175px;
+	height: 35px;
+	width: 175px;
 }
 
 .botonConTexto span {
@@ -90,6 +90,15 @@ textarea {
 .botonSinTexto {
 	width: 35px;
 	height: 35px;
+}
+
+.botonIcono {
+	margin-left:5px;
+	width: 25px;
+	height: 25px;
+	border-radius: 50px;
+	line-height: 5px;
+	text-align: center;
 }
 
 /*
