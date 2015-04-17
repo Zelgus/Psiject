@@ -8,56 +8,47 @@
 	<p:dialog id="dialogoEditarExpediente" styleClass="dialogoPsiject"
 		header="Editar Expediente" widgetVar="dialogoEditarExpediente"
 		modal="true" resizable="false" draggable="true">
-		<p:panelGrid>
-			<p:row>
-				<p:column>
-					<h:form>
-						<p:panelGrid>
-							<p:row>
-								<p:column>
-									<p:panelGrid>
-										<p:row>
-											<p:column>
-												<h:outputLabel for="nombreExp" value="Nombre:" />
-											</p:column>
-											<p:column>
-												<p:inputText id="nombreExp"
-													value="#{sessionMB.expedienteSeleccionado.nombre}"
-													placeholder="Nombre" />
-											</p:column>
-										</p:row>
-										<p:row>
-											<p:column>
-												<h:outputLabel for="apellidoExp" value="Apellidos:" />
-											</p:column>
-											<p:column>
-												<p:inputText id="apellidoExp"
-													value="#{sessionMB.expedienteSeleccionado.apellidos}"
-													placeholder="Apellidos" />
-											</p:column>
-										</p:row>
-										<p:row>
-											<p:column>
-												<h:outputLabel for="correoExp" value="Correo:" />
-											</p:column>
-											<p:column>
-												<p:inputText id="correoExp"
-													value="#{sessionMB.expedienteSeleccionado.usuario.correo}"
-													placeholder="Correo" />
-											</p:column>
-										</p:row>
-									</p:panelGrid>
-								</p:column>
-							</p:row>
-						</p:panelGrid>
-						<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
-							value="Editar" title="Editar" onclick="mostrarMosca();"
-							action="#{expedienteMB.editarExpediente}"
-							rendered="#{renderingMB.botonEditarExpediente}"
-							styleClass="botonConTexto" />
-					</h:form>
-				</p:column>
-			</p:row>
-		</p:panelGrid>
+		<h:form>
+			<p:panelGrid>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="nombreExp" value="Nombre:" />
+					</p:column>
+					<p:column>
+						<p:inputText id="nombreExp"
+							value="#{sessionMB.expedienteSeleccionado.nombre}"
+							placeholder="Nombre" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="apellidoExp" value="Apellidos:" />
+					</p:column>
+					<p:column>
+						<p:inputText id="apellidoExp"
+							value="#{sessionMB.expedienteSeleccionado.apellidos}"
+							placeholder="Apellidos" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="correoExp" value="Correo:" />
+					</p:column>
+					<p:column>
+						<p:inputText id="correoExp"
+							value="#{sessionMB.expedienteSeleccionado.usuario.correo}"
+							placeholder="Correo" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
+			<br />
+			<br />
+			<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
+				value="Editar" title="Editar" onclick="mostrarMosca();"
+				action="#{expedienteMB.editarExpediente}"
+				rendered="#{renderingMB.botonEditarExpediente}"
+				styleClass="botonConTexto" />
+		</h:form>
 	</p:dialog>
+	
 </ui:composition>

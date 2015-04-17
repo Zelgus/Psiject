@@ -68,14 +68,29 @@ textarea {
 	text-align: right;
 }
 
-.botonVolver {
+.botonera .botonVolverAtras {
 	float: left;
+}
+
+.botonVolverFormulario {
+	float: left;
+	margin-top: -30px;
+}
+
+.botonEnviarFormulario {
+	float: right;
 }
 
 .botonConTexto {
 	font-size: 12px !important;
     height: 35px;
-    width: 150px;
+    width: 120px;
+}
+
+.botonConTexto span {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .botonSinTexto {

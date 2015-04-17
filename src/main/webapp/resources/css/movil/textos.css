@@ -5,22 +5,27 @@
 */
 .informacionPersonalExpediente {
 	width: 100%;
+	height: 130px;
 }
 
-.psicologosExpediente {
+.informacionPsicologosExpediente {
 	width: 100%;
+	height: 130px;
 }
 
 .informacionTarea {
 	width: 100%;
+	height: 170px;
 }
 
 .informacionDatosCuenta {
 	width: 100%;
+	height: 190px;
 }
 
 .informacionContrasenaCuenta {
 	width: 100%;
+	height: 190px;
 }
 
 /*

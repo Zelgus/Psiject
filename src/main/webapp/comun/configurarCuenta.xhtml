@@ -17,7 +17,7 @@
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:panelGrid>
+					<p:panelGrid styleClass="informacionDatosCuenta">
 						<p:row>
 							<p:column colspan="2">
 								<h:outputText value="Datos de la cuenta" styleClass="titulo" />
@@ -42,6 +42,8 @@
 									value="#{sessionMB.usuarioEnSesion.correo}" placeholder="Email" />
 							</p:column>
 						</p:row>
+					</p:panelGrid>
+					<p:panelGrid styleClass="informacionContrasenaCuenta">
 						<p:row>
 							<p:column colspan="2">
 								<h:outputText value="Modificar tu contraseña"
@@ -82,21 +84,17 @@
 									placeholder="Repita la contraseña" />
 							</p:column>
 						</p:row>
-						<p:row>
-							<p:column colspan="2">
-								<p:commandButton id="editarCuenta" icon="ui-icon-pencil"
-									value="Editar Cuenta" title="Editar Cuenta"
-									onclick="mostrarMosca();" action="#{usuarioMB.editarCuenta}"
-									styleClass="botonConTexto" />
-							</p:column>
-						</p:row>
 					</p:panelGrid>
+					<p:commandButton id="editarCuenta" icon="ui-icon-pencil"
+						value="Editar Cuenta" title="Editar Cuenta"
+						onclick="mostrarMosca();" action="#{usuarioMB.editarCuenta}"
+						styleClass="botonConTexto botonEnviarFormulario" />
 				</h:form>
 				<h:form>
 					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
 						value="Volver" title="Volver" onclick="mostrarMosca();"
-						action="#{usuarioMB.volverInicio}" styleClass="botonConTexto"
-						validateClient="true" />
+						action="#{usuarioMB.volverInicio}"
+						styleClass="botonConTexto botonVolverFormulario" />
 				</h:form>
 			</p:column>
 		</p:row>
