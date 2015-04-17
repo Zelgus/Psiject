@@ -36,6 +36,16 @@
 													placeholder="Apellidos" />
 											</p:column>
 										</p:row>
+										<p:row>
+											<p:column>
+												<h:outputLabel for="correoExp" value="Correo:" />
+											</p:column>
+											<p:column>
+												<p:inputText id="correoExp"
+													value="#{sessionMB.expedienteSeleccionado.usuario.correo}"
+													placeholder="Correo" />
+											</p:column>
+										</p:row>
 									</p:panelGrid>
 								</p:column>
 							</p:row>

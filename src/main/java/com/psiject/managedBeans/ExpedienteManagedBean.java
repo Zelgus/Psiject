@@ -328,7 +328,11 @@ public class ExpedienteManagedBean implements Serializable {
 						.getExpedienteSeleccionado().getNombre());
 				Validaciones.validarApellidosExpediente(this.sessionMB
 						.getExpedienteSeleccionado().getApellidos());
+				Validaciones.validarCorreo(this.sessionMB
+						.getExpedienteSeleccionado().getUsuario().getCorreo());
 				// Editamos el expediente
+				this.usuarioService.actualizarUsuario(this.sessionMB
+						.getExpedienteSeleccionado().getUsuario());
 				this.expedienteService.actualizarExpediente(this.sessionMB
 						.getExpedienteSeleccionado());
 				// Añadimos y quitamos los psicologos
