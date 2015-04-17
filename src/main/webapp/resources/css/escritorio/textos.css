@@ -32,6 +32,20 @@
 	height: 260px;
 }
 
+.panelNuevaTarea {
+	width: 100%;
+}
+
+.nuevaTareaInfo {
+	float: left;
+	width: 50%;
+}
+
+.nuevaTareaCampos {
+	float: right;
+	width: 50%;
+}
+
 /*
 ---------------------------------------------------------------------------
 ----------------------------- TÍTULOS -------------------------------------
@@ -42,6 +56,7 @@
 	font-size: 24px;
 	font-weight: bold;
 	text-decoration: underline;
+	font-family: Georgia, serif;
 }
 
 .subtitulo {

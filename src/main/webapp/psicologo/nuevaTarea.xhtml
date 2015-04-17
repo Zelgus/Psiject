@@ -12,24 +12,24 @@
 	#{sessionMB.nuevaTareaLoad()}
 	<ui:include src="/includes/bodyComun.xhtml" />
 	<ui:include src="/includes/panelUsuario.xhtml" />
-
-	<p:panelGrid>
-		<p:row>
-			<p:column>
-				<h:form>
-					<p:panelGrid>
+	<h:form>
+		<p:panelGrid styleClass="panelNuevaTarea">
+			<p:row>
+				<p:column>
+					<p:panelGrid styleClass="nuevaTareaInfo">
 						<p:row>
 							<p:column>
-								<p:fieldset legend="Datos de la tarea">
-									<p:panelGrid>
+								<h:outputText value="Datos de la tarea" styleClass="titulo" />
+								<p:panelGrid>
+									<p:row>
+										<p:column>
+											<h:outputLabel for="tituloTarea" value="Título:" />
+										</p:column>
+										<p:column>
+											<p:inputText id="tituloTarea" value="#{tareaMB.titulo}"
+												placeholder="Título" />
+										</p:column>
 										<p:row>
-											<p:column>
-												<h:outputLabel for="tituloTarea" value="Título:" />
-											</p:column>
-											<p:column>
-												<p:inputText id="tituloTarea" value="#{tareaMB.titulo}"
-													placeholder="Título" />
-											</p:column>
 											<p:column>
 												<h:outputLabel for="importante" value="¿Importante? " />
 											</p:column>
@@ -38,44 +38,46 @@
 													value="#{tareaMB.importante}" />
 											</p:column>
 										</p:row>
-										<p:row>
-											<p:column>
-												<h:outputLabel for="descripcionTarea" value="Descripción: " />
-											</p:column>
-											<p:column colspan="3">
-												<p:inputTextarea id="descripcionTarea"
-													value="#{tareaMB.descripcion}" placeholder="Descripción" />
-											</p:column>
-										</p:row>
-									</p:panelGrid>
-								</p:fieldset>
-							</p:column>
-						</p:row>
-						<p:row>
-							<p:column>
-								<p:fieldset legend="Campos de la tarea">
-									<p:pickList id="campos" value="#{tareaMB.camposEnNuevaTarea}"
-										var="campos" itemLabel="#{campos}" itemValue="#{campos}">
-										<f:facet name="sourceCaption">Campos Fuera</f:facet>
-										<f:facet name="targetCaption">Campos en Tarea</f:facet>
-									</p:pickList>
-								</p:fieldset>
+									</p:row>
+									<p:row>
+										<p:column>
+											<h:outputLabel for="descripcionTarea" value="Descripción: " />
+										</p:column>
+										<p:column colspan="3">
+											<p:inputTextarea id="descripcionTarea"
+												value="#{tareaMB.descripcion}" placeholder="Descripción" />
+										</p:column>
+									</p:row>
+								</p:panelGrid>
 							</p:column>
 						</p:row>
 					</p:panelGrid>
-					<p:commandButton id="crearTarea" icon="ui-icon-plusthick"
-						value="Crear Tarea" title="Crear Tarea" onclick="mostrarMosca();"
-						action="#{tareaMB.crearNuevaTarea}"
-						rendered="#{renderingMB.botonCrearNuevaTarea}"
-						styleClass="botonConTexto" />
-				</h:form>
-				<h:form>
-					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-						value="Volver" title="Volver" onclick="mostrarMosca();"
-						action="#{navegacionMB.toExpediente}" styleClass="botonConTexto" />
-				</h:form>
-			</p:column>
-		</p:row>
-	</p:panelGrid>
+					<p:panelGrid styleClass="nuevaTareaCampos">
+						<p:row>
+							<p:column>
+								<h:outputText value="Campos de la tarea" styleClass="titulo" />
+								<p:pickList id="campos" value="#{tareaMB.camposEnNuevaTarea}"
+									var="campos" itemLabel="#{campos}" itemValue="#{campos}">
+									<f:facet name="sourceCaption">Campos Fuera</f:facet>
+									<f:facet name="targetCaption">Campos en Tarea</f:facet>
+								</p:pickList>
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+	<h:form styleClass="botonera">
+		<p:commandButton id="crearTarea" icon="ui-icon-plusthick"
+			value="Crear Tarea" title="Crear Tarea" onclick="mostrarMosca();"
+			action="#{tareaMB.crearNuevaTarea}"
+			rendered="#{renderingMB.botonCrearNuevaTarea}"
+			styleClass="botonConTexto" />
+		<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+			value="Volver" title="Volver" onclick="mostrarMosca();"
+			action="#{navegacionMB.toExpediente}" styleClass="botonConTexto" />
+	</h:form>
+
 </h:body>
 </html>
