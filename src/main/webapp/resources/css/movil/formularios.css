@@ -115,5 +115,9 @@ textarea {
 a {
 	text-decoration: underline;
 	color: blue !important;
-	font-size: 20px !important;
+	font-size: 12px !important;
+}
+
+.hipervinculoLogin {
+	float: right;
 }

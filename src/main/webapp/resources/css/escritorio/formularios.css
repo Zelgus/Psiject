@@ -93,7 +93,7 @@ textarea {
 }
 
 .botonIcono {
-	margin-left:5px;
+	margin-left: 5px;
 	width: 25px;
 	height: 25px;
 	border-radius: 50px;
@@ -110,4 +110,9 @@ a {
 	text-decoration: underline;
 	color: blue !important;
 	font-size: 12px !important;
+}
+
+.hipervinculoLogin {
+	float: right;
+	
 }
