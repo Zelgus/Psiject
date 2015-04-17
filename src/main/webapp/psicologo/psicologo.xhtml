@@ -12,6 +12,7 @@
 	#{sessionMB.psicologoLoad()}
 	<ui:include src="/includes/bodyComun.xhtml" />
 	<ui:include src="/includes/panelUsuario.xhtml" />
+	<ui:include src="/dialogos/dialogoEditarExpediente.xhtml" />
 
 	<p:panelGrid>
 		<p:row>
@@ -39,8 +40,8 @@
 								</p:column>
 								<p:column headerText="Editar" styleClass="columnaBoton">
 									<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
-										title="Editar Expediente" onclick="mostrarMosca();"
-										action="#{navegacionMB.toEditarExpediente}"
+										title="Editar Expediente" update=":dialogoEditarExpediente"
+										oncomplete="PF('dialogoEditarExpediente').show();"
 										rendered="#{renderingMB.botonEditarExpediente(expediente)}"
 										styleClass="botonSinTexto">
 										<f:setPropertyActionListener value="#{expediente}"

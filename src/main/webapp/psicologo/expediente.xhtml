@@ -20,6 +20,7 @@
 	<ui:include src="/dialogos/dialogoAbandonarExpediente.xhtml" />
 	<ui:include src="/dialogos/dialogoCompletarTarea.xhtml" />
 	<ui:include src="/dialogos/dialogoEditarTarea.xhtml" />
+	<ui:include src="/dialogos/dialogoEditarExpediente.xhtml" />
 	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
 
 	<p:panelGrid>
@@ -31,8 +32,8 @@
 							<p:column>
 								<h:outputText value="Informacion Personal" styleClass="titulo" />
 								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
-									title="Editar Expediente" onclick="mostrarMosca();"
-									action="#{navegacionMB.toEditarExpediente}"
+									title="Editar Expediente"
+									oncomplete="PF('dialogoEditarExpediente').show();"
 									rendered="#{renderingMB.botonEditarExpediente}"
 									styleClass="botonSinTexto" />
 							</p:column>
