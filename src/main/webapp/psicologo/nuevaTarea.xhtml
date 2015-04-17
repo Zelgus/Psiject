@@ -12,10 +12,11 @@
 	#{sessionMB.nuevaTareaLoad()}
 	<ui:include src="/includes/bodyComun.xhtml" />
 	<ui:include src="/includes/panelUsuario.xhtml" />
-	<h:form>
-		<p:panelGrid styleClass="panelNuevaTarea">
-			<p:row>
-				<p:column>
+
+	<p:panelGrid styleClass="panelNuevaTarea">
+		<p:row>
+			<p:column>
+				<h:form>
 					<p:panelGrid styleClass="nuevaTareaInfo">
 						<p:row>
 							<p:column>
@@ -64,20 +65,22 @@
 							</p:column>
 						</p:row>
 					</p:panelGrid>
-				</p:column>
+					<p:commandButton id="crearTarea" icon="ui-icon-plusthick"
+						value="Crear Tarea" title="Crear Tarea" onclick="mostrarMosca();"
+						action="#{tareaMB.crearNuevaTarea}"
+						rendered="#{renderingMB.botonCrearNuevaTarea}"
+						styleClass="botonConTexto botonEnviarFormulario" />
+				</h:form>
+				<h:form >
+					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
+						value="Volver" title="Volver" onclick="mostrarMosca();"
+						action="#{navegacionMB.toExpediente}"
+						styleClass="botonConTexto botonVolverFormulario" />
+				</h:form>
+			</p:column>
 			</p:row>
-		</p:panelGrid>
-	</h:form>
-	<h:form styleClass="botonera">
-		<p:commandButton id="crearTarea" icon="ui-icon-plusthick"
-			value="Crear Tarea" title="Crear Tarea" onclick="mostrarMosca();"
-			action="#{tareaMB.crearNuevaTarea}"
-			rendered="#{renderingMB.botonCrearNuevaTarea}"
-			styleClass="botonConTexto" />
-		<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
-			value="Volver" title="Volver" onclick="mostrarMosca();"
-			action="#{navegacionMB.toExpediente}" styleClass="botonConTexto" />
-	</h:form>
+		</p:row>
+	</p:panelGrid>
 
 </h:body>
 </html>
