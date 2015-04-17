@@ -14,7 +14,7 @@
 	<ui:include src="/dialogos/dialogoRecuperarContrasena.xhtml" />
 
 	<h:form>
-		<p:panelGrid>
+		<p:panelGrid styleClass="panelLogin">
 			<p:row>
 				<p:column>
 					<h:outputLabel for="usuario" value="Usuario o Email:" />
@@ -38,7 +38,7 @@
 					<p:commandLink
 						oncomplete="PF('dialogoRecuperarContrasena').show();"
 						value="¿Has olvidado tu contraseña?" 
-						styleClass="hipervinculoLogin"/>
+						styleClass="hipervinculoLogin" />
 				</p:column>
 			</p:row>
 			<p:row>
