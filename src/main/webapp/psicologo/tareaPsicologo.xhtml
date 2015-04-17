@@ -36,6 +36,16 @@
 									oncomplete="PF('dialogoEditarTarea').show();"
 									rendered="#{renderingMB.botonEditarTarea}"
 									styleClass="botonIcono" />
+								<p:commandButton id="completarTarea" icon="ui-icon-check"
+									title="Completar Tarea"
+									oncomplete="PF('dialogoCompletarTarea').show();"
+									rendered="#{renderingMB.botonCompletarTarea}"
+									styleClass="botonIcono" />
+								<p:commandButton id="reabrirTarea" icon="ui-icon-check"
+									title="Reabrir Tarea" onclick="mostrarMosca();"
+									action="#{tareaMB.reabrirTarea}"
+									rendered="#{renderingMB.botonReabrirTarea}"
+									styleClass="botonIcono" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -46,13 +56,15 @@
 						<p:row>
 							<p:column>
 								<h:outputText value="Creada por:" styleClass="subtitulo" />
-								<h:outputText value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+								<h:outputText
+									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
 								<h:outputText value="Asignada a:" styleClass="subtitulo" />
-								<h:outputText value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}" />
+								<h:outputText
+									value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -98,16 +110,6 @@
 						value="Modificar Campos" title="Modificar Campos"
 						oncomplete="PF('dialogoModificarCampos').show();"
 						rendered="#{renderingMB.botonModificarCampos}"
-						styleClass="botonConTexto" />
-					<p:commandButton id="completarTarea" icon="ui-icon-check"
-						value="Completar Tarea" title="Completar Tarea"
-						oncomplete="PF('dialogoCompletarTarea').show();"
-						rendered="#{renderingMB.botonCompletarTarea}"
-						styleClass="botonConTexto" />
-					<p:commandButton id="reabrirTarea" icon="ui-icon-check"
-						value="Reabrir Tarea" title="Reabrir Tarea"
-						onclick="mostrarMosca();" action="#{tareaMB.reabrirTarea}"
-						rendered="#{renderingMB.botonReabrirTarea}"
 						styleClass="botonConTexto" />
 					<p:commandButton id="comentarPsicologo" icon="ui-icon-comment"
 						value="Añadir comentario" title="Añadir comentario"
