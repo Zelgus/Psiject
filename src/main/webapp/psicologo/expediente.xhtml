@@ -26,9 +26,9 @@
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:panelGrid>
+					<p:panelGrid styleClass="informacionPersonalExpediente">
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<h:outputText value="Informacion Personal" styleClass="titulo" />
 								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
 									title="Editar Expediente" onclick="mostrarMosca();"
@@ -38,30 +38,29 @@
 							</p:column>
 						</p:row>
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<h:outputText
 									value="#{sessionMB.expedienteSeleccionado.apellidos}" />,
-					<h:outputText value="#{sessionMB.expedienteSeleccionado.nombre}" />
-					(<h:outputText
-									value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />)
-						</p:column>
+								<h:outputText value="#{sessionMB.expedienteSeleccionado.nombre}" />
+								(<h:outputText value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />)
+							</p:column>
 						</p:row>
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<h:outputText
 									value="#{sessionMB.expedienteSeleccionado.usuario.correo}" />
 							</p:column>
 						</p:row>
+					</p:panelGrid>
+					<p:panelGrid class="informacionPsicologosExpediente">
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<h:outputText value="Psicologos" styleClass="titulo" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
 								<h:outputText value="Creador:" styleClass="subtitulo" />
-							</p:column>
-							<p:column>
 								<h:outputText
 									value="#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}" />
 								<p:commandButton id="transferirExpediente"
@@ -75,8 +74,6 @@
 						<p:row>
 							<p:column>
 								<h:outputText value="Con acceso:" styleClass="subtitulo" />
-							</p:column>
-							<p:column>
 								<h:outputText value="#{expedienteMB.psicologosConAcceso}" />
 								<p:commandButton id="modifPermisos" icon="ui-icon-person"
 									title="Modificar Permisos"

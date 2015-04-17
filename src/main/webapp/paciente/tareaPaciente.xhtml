@@ -19,9 +19,9 @@
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:panelGrid>
+					<p:panelGrid styleClass="informacionTarea">
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<h:graphicImage library="images" name="importante.png"
 									title="Tarea Importante"
 									rendered="#{sessionMB.tareaSeleccionada.importante}"
@@ -31,21 +31,18 @@
 							</p:column>
 						</p:row>
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<h:outputText value="#{sessionMB.tareaSeleccionada.descripcion}" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
 								<h:outputText value="Creada por:" styleClass="subtitulo" />
-							</p:column>
-							<p:column>
-								<h:outputText
-									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+								<h:outputText value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
 							</p:column>
 						</p:row>
 						<p:row>
-							<p:column colspan="2">
+							<p:column>
 								<p:commandLink
 									oncomplete="PF('dialogoConclusionesPaciente').show();"
 									value="Conclusiones"
