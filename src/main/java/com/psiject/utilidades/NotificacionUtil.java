@@ -15,8 +15,8 @@ import javax.mail.internet.MimeMessage;
  */
 public class NotificacionUtil {
 
-   private final static String USERNAME = "notificacionespsiject@gmail.com";
-   private final static String PASSWORD = "nqobwhopfkxyapon";
+   private final static String USERNAME = "notificacionesPsiject@aol.com";
+   private final static String PASSWORD = "psicologo123456";
 
    public static void notificacionNuevoRegistro(final String to, final String nombrePaciente, final String usuarioPsicologo, final String usuarioPaciente,
          final String contrasenaPaciente) throws MessagingException {
@@ -71,8 +71,8 @@ public class NotificacionUtil {
    private static void enviarEmail(final String to, final String subject, final String body) throws MessagingException {
       final Properties props = new Properties();
       props.put("mail.smtp.auth", "true");
-      props.put("mail.smtp.starttls.enable", "true");
-      props.put("mail.smtp.host", "smtp.gmail.com");
+      props.put("mail.smtp.starttls.enable", "false");
+      props.put("mail.smtp.host", "smtp.aol.com");
       props.put("mail.smtp.port", "587");
 
       final Session session = Session.getInstance(props, new javax.mail.Authenticator() {
