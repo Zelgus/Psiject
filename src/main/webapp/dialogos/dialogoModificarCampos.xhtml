@@ -5,8 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
-	<p:dialog id="dialogoModificarCampos" styleClass="dialogoPsiject" header="Modificar campos"
-		widgetVar="dialogoModificarCampos" modal="true" resizable="false" draggable="true">
+	<p:dialog id="dialogoModificarCampos" styleClass="dialogoPsiject"
+		header="Modificar campos" widgetVar="dialogoModificarCampos"
+		modal="true" resizable="false" draggable="true">
 		<h:form>
 			<p>Tarea '#{sessionMB.tareaSeleccionada.titulo}'</p>
 			<p>Modifica las listas para decidir los campos de esta tarea.</p>
@@ -22,7 +23,7 @@
 				value="Editar Tarea" title="Editar Tarea" onclick="mostrarMosca();"
 				action="#{tareaMB.editarCamposTarea}"
 				rendered="#{renderingMB.botonModificarCampos}"
-				styleClass="botonConTexto" />
+				styleClass="botonConTexto botonEnviarFormulario" />
 		</h:form>
 	</p:dialog>
 

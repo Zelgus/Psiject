@@ -9,9 +9,12 @@
 		header="Transferir Expediente" widgetVar="dialogoTransferirExpediente"
 		modal="true" resizable="false" draggable="true">
 		<h:form>
-			<p>Expediente de '#{sessionMB.expedienteSeleccionado.nombre} #{sessionMB.expedienteSeleccionado.apellidos}'.</p>
-			<p>Selecciona el psicologo al que desea transferirle el control total sobre este expediente:</p>
-			<p>Psicologo creador: '#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}'</p>
+			<p>Expediente de '#{sessionMB.expedienteSeleccionado.nombre}
+				#{sessionMB.expedienteSeleccionado.apellidos}'.</p>
+			<p>Selecciona el psicologo al que desea transferirle el control
+				total sobre este expediente:</p>
+			<p>Psicologo creador:
+				'#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}'</p>
 			<p>Psicologo al que transferir:</p>
 			<h:selectOneMenu id="psicologoCreador"
 				value="#{expedienteMB.nuevoPsicologoCreador}">
@@ -23,7 +26,8 @@
 			<p:commandButton id="transferir" icon="ui-icon-arrowreturnthick-1-e"
 				value="Transferir Expediente" title="Transferir Expediente"
 				onclick="mostrarMosca();" action="#{expedienteMB.transferir}"
-				rendered="#{renderingMB.botonTransferir}" styleClass="botonConTexto" />
+				rendered="#{renderingMB.botonTransferir}"
+				styleClass="botonConTexto botonEnviarFormulario" />
 		</h:form>
 	</p:dialog>
 
