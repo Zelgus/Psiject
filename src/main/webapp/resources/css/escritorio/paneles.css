@@ -1,0 +1,72 @@
+/*
+---------------------------------------------------------------------------
+---------------------------- EXPEDIENTE -----------------------------------
+---------------------------------------------------------------------------
+*/
+.panelExpedienteIzq {
+	float: left;
+	width: 50%;
+	height: 160px;
+}
+
+.panelExpedienteDer {
+	float: right;
+	width: 50%;
+	height: 160px;
+}
+
+.panelAltaExpedienteIzq {
+	float: left;
+	width: 50%;
+	height: 170px;
+}
+
+.panelAltaExpedienteDer {
+	float: right;
+	width: 50%;
+	height: 170px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------------- TAREA -------------------------------------
+---------------------------------------------------------------------------
+*/
+.panelTareaPsicologo {
+	width: 100%;
+	height: 200px;
+}
+
+.panelTareaPaciente {
+	width: 100%;
+	height: 200px;
+}
+
+.panelNuevaTareaIzq {
+	float: left;
+	width: 50%;
+	height: 320px;
+}
+
+.panelNuevaTareaDer {
+	float: right;
+	width: 50%;
+	height: 320px;
+}
+
+/*
+---------------------------------------------------------------------------
+------------------------- CONFIGURAR CUENTA -------------------------------
+---------------------------------------------------------------------------
+*/
+.panelConfigurarCuentaIzq {
+	float: left;
+	width: 50%;
+	height: 260px;
+}
+
+.panelConfigurarCuentaDer {
+	float: right;
+	width: 50%;
+	height: 260px;
+}

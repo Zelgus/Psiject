@@ -36,7 +36,10 @@
 					</p:column>
 					<p:column>
 						<h:selectBooleanCheckbox id="importante"
-							value="#{sessionMB.tareaSeleccionada.importante}" />
+							value="#{sessionMB.tareaSeleccionada.importante}"
+							styleClass="checkBox" />
+						<h:outputLabel for="importante" value="¿Importante?"
+							styleClass="checkBoxLabelMovil" />
 					</p:column>
 				</p:row>
 			</p:panelGrid>

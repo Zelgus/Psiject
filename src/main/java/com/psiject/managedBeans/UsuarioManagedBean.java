@@ -150,7 +150,7 @@ public class UsuarioManagedBean implements Serializable {
 					sessionMB.getSugerencia());
 			NotificacionUtil.notificacionNuevaSugerencia(
 					"ivanom90@hotmail.com", sessionMB.getSugerencia());
-			Mensajes.mostrarMensajeExito(Mensajes.EXITO_MENSAJE_ENVIADO);
+			Mensajes.mostrarMensajeExito(Mensajes.EXITO_MENSAJE_SUGERENCIA_ENVIADO);
 			navegacionMB.refrescar();
 		} catch (MessagingException e) {
 			Mensajes.mostrarMensajeError(Mensajes.ERROR_NOTIFICACION, e);

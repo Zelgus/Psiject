@@ -12,6 +12,10 @@
 	background-color: #FFFFFF !important;
 }
 
+.ui-tabs ul .ui-tabs-selected a {
+	cursor: default !important;
+}
+
 .ui-tabs ul .ui-state-default {
 	background-color: #E5FFBA !important;
 }

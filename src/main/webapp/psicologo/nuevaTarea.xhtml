@@ -13,50 +13,54 @@
 	<ui:include src="/includes/bodyComun.xhtml" />
 	<ui:include src="/includes/panelUsuario.xhtml" />
 
-	<p:panelGrid styleClass="panelNuevaTarea">
+	<p:panelGrid>
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:panelGrid styleClass="nuevaTareaInfo">
+					<p:panelGrid styleClass="panelNuevaTareaIzq">
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="Datos de la tarea" styleClass="titulo" />
+							</p:column>
+						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputText value="Datos de la tarea" styleClass="titulo" />
-								<p:panelGrid>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="tituloTarea" value="Título:" />
-										</p:column>
-										<p:column>
-											<p:inputText id="tituloTarea" value="#{tareaMB.titulo}"
-												placeholder="Título" />
-										</p:column>
-										<p:row>
-											<p:column>
-												<h:outputLabel for="importante" value="¿Importante? " />
-											</p:column>
-											<p:column>
-												<h:selectBooleanCheckbox id="importante"
-													value="#{tareaMB.importante}" />
-											</p:column>
-										</p:row>
-									</p:row>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="descripcionTarea" value="Descripción: " />
-										</p:column>
-										<p:column colspan="3">
-											<p:inputTextarea id="descripcionTarea"
-												value="#{tareaMB.descripcion}" placeholder="Descripción" />
-										</p:column>
-									</p:row>
-								</p:panelGrid>
+								<h:outputLabel for="tituloTarea" value="Título:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="tituloTarea" value="#{tareaMB.titulo}"
+									placeholder="Título" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="descripcionTarea" value="Descripción: " />
+							</p:column>
+							<p:column colspan="3">
+								<p:inputTextarea id="descripcionTarea"
+									value="#{tareaMB.descripcion}" placeholder="Descripción" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="importante" value="¿Importante?" />
+							</p:column>
+							<p:column>
+								<h:selectBooleanCheckbox id="importante"
+									value="#{tareaMB.importante}" styleClass="checkBox" />
+								<h:outputLabel for="importante" value="¿Importante?"
+									styleClass="checkBoxLabelMovil" />
 							</p:column>
 						</p:row>
 					</p:panelGrid>
-					<p:panelGrid styleClass="nuevaTareaCampos">
+					<p:panelGrid styleClass="panelNuevaTareaDer">
 						<p:row>
 							<p:column>
 								<h:outputText value="Campos de la tarea" styleClass="titulo" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
 								<p:pickList id="campos" value="#{tareaMB.camposEnNuevaTarea}"
 									var="campos" itemLabel="#{campos}" itemValue="#{campos}">
 									<f:facet name="sourceCaption">Campos Fuera</f:facet>
@@ -80,6 +84,6 @@
 			</p:column>
 		</p:row>
 	</p:panelGrid>
-
 </h:body>
+
 </html>

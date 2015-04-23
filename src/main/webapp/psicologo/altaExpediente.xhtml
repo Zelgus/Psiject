@@ -12,76 +12,76 @@
 	#{sessionMB.altaExpedienteLoad()}
 	<ui:include src="/includes/bodyComun.xhtml" />
 	<ui:include src="/includes/panelUsuario.xhtml" />
-	<ui:include src="/dialogos/dialogoModificarPermisos.xhtml" />
 
 	<p:panelGrid>
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:panelGrid>
+					<p:panelGrid styleClass="panelAltaExpedienteIzq">
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="Datos del expediente" styleClass="titulo" />
+							</p:column>
+						</p:row>
 						<p:row>
 							<p:column>
-								<p:panelGrid>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="nombreExp" value="Nombre:" />
-										</p:column>
-										<p:column>
-											<p:inputText id="nombreExp" value="#{expedienteMB.nombre}"
-												placeholder="Nombre" />
-										</p:column>
-									</p:row>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="apellidoExp" value="Apellidos:" />
-										</p:column>
-										<p:column>
-											<p:inputText id="apellidoExp"
-												value="#{expedienteMB.apellidos}" placeholder="Apellidos" />
-										</p:column>
-									</p:row>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="correo" value="Email:" />
-										</p:column>
-										<p:column>
-											<p:inputText id="correo" value="#{expedienteMB.correo}"
-												placeholder="Email" />
-										</p:column>
-									</p:row>
-								</p:panelGrid>
+								<h:outputLabel for="nombreExp" value="Nombre:" />
 							</p:column>
 							<p:column>
-								<p:panelGrid>
-									<p:row>
-										<p:column colspan="2">
-											<p:commandButton id="generarUsuario" icon="ui-icon-person"
-												value="Generar Usuario" title="Generar Usuario"
-												action="#{expedienteMB.generarUsuario}" update="@form"
-												rendered="#{renderingMB.botonAltaExpediente}"
-												styleClass="botonConTexto" />
-										</p:column>
-									</p:row>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="usuario" value="Usuario:" />
-										</p:column>
-										<p:column>
-											<p:inputText id="usuario" value="#{expedienteMB.usuario}"
-												placeholder="Usuario" />
-										</p:column>
-									</p:row>
-									<p:row>
-										<p:column>
-											<h:outputLabel for="contrasena" value="Contraseña:" />
-										</p:column>
-										<p:column>
-											<p:password id="contrasena"
-												value="#{expedienteMB.contrasena}" redisplay="true"
-												placeholder="Contraseña" />
-										</p:column>
-									</p:row>
-								</p:panelGrid>
+								<p:inputText id="nombreExp" value="#{expedienteMB.nombre}"
+									placeholder="Nombre" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="apellidoExp" value="Apellidos:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="apellidoExp" value="#{expedienteMB.apellidos}"
+									placeholder="Apellidos" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="correo" value="Email:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="correo" value="#{expedienteMB.correo}"
+									placeholder="Email" />
+							</p:column>
+						</p:row>
+					</p:panelGrid>
+					<p:panelGrid styleClass="panelAltaExpedienteDer">
+						<p:row>
+							<p:column colspan="2">
+								<h:outputText value="Datos de inicio de sesión" styleClass="titulo" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column colspan="2">
+								<p:commandButton id="generarUsuario" icon="ui-icon-person"
+									value="Generar Usuario" title="Generar Usuario"
+									action="#{expedienteMB.generarUsuario}" update="@form"
+									rendered="#{renderingMB.botonAltaExpediente}"
+									styleClass="botonConTexto" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="usuario" value="Usuario:" />
+							</p:column>
+							<p:column>
+								<p:inputText id="usuario" value="#{expedienteMB.usuario}"
+									placeholder="Usuario" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputLabel for="contrasena" value="Contraseña:" />
+							</p:column>
+							<p:column>
+								<p:password id="contrasena" value="#{expedienteMB.contrasena}"
+									redisplay="true" placeholder="Contraseña" />
 							</p:column>
 						</p:row>
 					</p:panelGrid>
@@ -89,7 +89,7 @@
 						value="Dar de Alta" title="Dar de Alta" onclick="mostrarMosca();"
 						action="#{expedienteMB.altaExpediente}"
 						rendered="#{renderingMB.botonAltaExpediente}"
-						styleClass="botonConTexto">
+						styleClass="botonConTexto botonEnviarFormulario">
 						<f:setPropertyActionListener value="#{expediente}"
 							target="#{sessionMB.expedienteSeleccionado}" />
 					</p:commandButton>
@@ -97,7 +97,8 @@
 				<h:form>
 					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
 						value="Volver" title="Volver" onclick="mostrarMosca();"
-						action="#{navegacionMB.toPsicologo}" styleClass="botonConTexto" />
+						action="#{navegacionMB.toPsicologo}"
+						styleClass="botonConTexto botonVolverFormulario" />
 				</h:form>
 			</p:column>
 		</p:row>

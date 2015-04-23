@@ -65,6 +65,25 @@ textarea {
 
 /*
 ---------------------------------------------------------------------------
+----------------------------- CHECK BOX -----------------------------------
+---------------------------------------------------------------------------
+*/
+.checkBox {
+	float: left;
+	width: 40px;
+	margin: 0px;
+}
+
+.checkBoxLabelMovil {
+	display: block;
+	color: #777777;
+	width: 110px;
+	margin-left: 40px;
+	line-height: 30px;
+}
+
+/*
+---------------------------------------------------------------------------
 ------------------------------ BOTONES ------------------------------------
 ---------------------------------------------------------------------------
 */
@@ -124,4 +143,30 @@ a {
 
 .hipervinculoLogin {
 	float: right;
+}
+
+/*
+---------------------------------------------------------------------------
+----------------------------- PICK LIST -----------------------------------
+---------------------------------------------------------------------------
+*/
+.ui-picklist .ui-picklist-caption {
+	padding: 0px;
+	font-size: 12px;
+	width: 125px;
+	line-height: 30px;
+}
+
+.ui-picklist .ui-picklist-list {
+	width: 125px;
+	max-width: 125px;
+	border: 1px solid #7F9E49;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.ui-picklist .ui-picklist-list .ui-picklist-item {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 15px;
 }

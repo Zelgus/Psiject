@@ -99,7 +99,7 @@ public class LoginManagedBean implements Serializable {
 				final String codigo = this.generarCodigo(usu);
 				NotificacionUtil.notificacionRecuperarContraseña(
 						usu.getCorreo(), usu.getUsuario(), codigo);
-				Mensajes.mostrarMensajeExito(Mensajes.EXITO_MENSAJE_ENVIADO);
+				Mensajes.mostrarMensajeExito(Mensajes.EXITO_MENSAJE_CONTRASENA_ENVIADO);
 			} else {
 				Mensajes.mostrarMensajeAlerta(Mensajes.ALERTA_USUARIO_NO_ENCONTRADO);
 			}

@@ -12,6 +12,10 @@
 	background-color: #FFFFFF !important;
 }
 
+.ui-tabs ul .ui-tabs-selected a {
+	cursor: default !important;
+}
+
 .ui-tabs ul .ui-state-default {
 	background-color: #E5FFBA !important;
 }
@@ -79,7 +83,7 @@
 ------------------------- TABLA DE TAREAS ---------------------------------
 ---------------------------------------------------------------------------
 */
-.colorTareaImportante{
+.colorTareaImportante {
 	background: none repeat scroll 0 0 #F5A9A9;
 }
 
@@ -91,36 +95,36 @@
 .tablaComentarios {
 	max-height: 500px;
 	max-width: 300px;
-    overflow: auto;
+	overflow: auto;
 }
 
 .tablaComentarios .tabla {
 	display: table-cell;
-    width: 220px;
+	width: 220px;
 }
 
-.tablaComentarios .tabla thead{
+.tablaComentarios .tabla thead {
 	display: table-header-group;
 }
 
 .tablaComentarios .iconoNuevoComentarioTabla {
 	float: left;
-    height: 20px;
-    margin-bottom: -15px;
-    margin-left: -12px;
-    margin-top: -5px;
-    width: 20px;
+	height: 20px;
+	margin-bottom: -15px;
+	margin-left: -12px;
+	margin-top: -5px;
+	width: 20px;
 }
 
-.tablaComentarios tbody span{
+.tablaComentarios tbody span {
 	display: inline-block;
-    height: 120px;
-    width: 100%;
-    margin: 5px;
-    overflow: hidden;
+	height: 120px;
+	width: 100%;
+	margin: 5px;
+	overflow: hidden;
 }
 
-.tablaComentarios tbody button span{
+.tablaComentarios tbody button span {
 	height: 16px;
 	width: 16px;
 }

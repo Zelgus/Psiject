@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Arrays;
 import java.util.Calendar;
 
 import javax.faces.application.FacesMessage;
@@ -69,7 +68,8 @@ public class Mensajes {
 			final StringWriter sw = new StringWriter();
 			final PrintWriter pw = new PrintWriter(sw, true);
 			excep.printStackTrace(pw);
-			String texto = Utilidades.formatearFecha(fecha.getTime()) + ": " +sw.getBuffer().toString().concat("\n\n");
+			String texto = Utilidades.formatearFecha(fecha.getTime()) + ": "
+					+ sw.getBuffer().toString().concat("\n\n");
 			Files.write(path, texto.getBytes(), StandardOpenOption.APPEND);
 		} catch (IOException e1) {
 		}
@@ -79,7 +79,8 @@ public class Mensajes {
 	 * Notificaciones
 	 */
 	public static final String ERROR_NOTIFICACION = "Ocurrió un error al enviar la notificación.";
-	public static final String EXITO_MENSAJE_ENVIADO = "El mensaje se ha enviado con éxito. Compruebe su correo electrónico.";
+	public static final String EXITO_MENSAJE_CONTRASENA_ENVIADO = "El mensaje se ha enviado con éxito. Compruebe su correo electrónico.";
+	public static final String EXITO_MENSAJE_SUGERENCIA_ENVIADO = "El mensaje se ha enviado con éxito.";
 
 	/*
 	 * Validaciones

@@ -17,7 +17,7 @@
 		<p:row>
 			<p:column>
 				<h:form>
-					<p:panelGrid styleClass="informacionDatosCuenta">
+					<p:panelGrid styleClass="panelConfigurarCuentaIzq">
 						<p:row>
 							<p:column colspan="2">
 								<h:outputText value="Datos de la cuenta" styleClass="titulo" />
@@ -43,7 +43,7 @@
 							</p:column>
 						</p:row>
 					</p:panelGrid>
-					<p:panelGrid styleClass="informacionContrasenaCuenta">
+					<p:panelGrid styleClass="panelConfigurarCuentaDer">
 						<p:row>
 							<p:column colspan="2">
 								<h:outputText value="Modificar tu contraseña"
@@ -88,6 +88,7 @@
 					<p:commandButton id="editarCuenta" icon="ui-icon-pencil"
 						value="Editar Cuenta" title="Editar Cuenta"
 						onclick="mostrarMosca();" action="#{usuarioMB.editarCuenta}"
+						rendered="#{renderingMB.botonEditarCuenta}"
 						styleClass="botonConTexto botonEnviarFormulario" />
 				</h:form>
 				<h:form>
