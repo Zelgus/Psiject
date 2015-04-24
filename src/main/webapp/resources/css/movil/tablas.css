@@ -98,6 +98,10 @@
 	overflow: auto;
 }
 
+.tablaComentarios .tablaFecha {
+	width: 100px;
+}
+
 .tablaComentarios .tabla {
 	display: table-cell;
 	width: 220px;
@@ -107,9 +111,9 @@
 	display: table-header-group;
 }
 
-.tablaComentarios tbody {
-	min-height: 160px;
-	height: 160px;
+.tablaComentarios tbody tr {
+	min-height: 175px;
+	height: 175px;
 }
 
 .tablaComentarios tbody span {
@@ -138,13 +142,4 @@
 	margin-left: -12px;
 	margin-top: -5px;
 	width: 20px;
-}
-
-.tablaComentarios .tablaFecha {
-	width: 100px;
-}
-
-.tablaComentarios .tablaFecha tbody {
-	min-height: 170px;
-	height: 170px;
 }

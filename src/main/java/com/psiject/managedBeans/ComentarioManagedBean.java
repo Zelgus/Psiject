@@ -24,7 +24,6 @@ import com.psiject.services.interfaces.ITareaCampoService;
 import com.psiject.services.interfaces.ITareaService;
 import com.psiject.utilidades.Mensajes;
 import com.psiject.utilidades.NotificacionUtil;
-import com.psiject.utilidades.Utilidades;
 import com.psiject.utilidades.Validaciones;
 
 @ManagedBean(name = "comentarioMB")
