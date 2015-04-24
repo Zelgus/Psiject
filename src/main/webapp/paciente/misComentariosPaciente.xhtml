@@ -28,7 +28,7 @@
 							emptyMessage="Ningún comentario enviado." styleClass="tabla">
 							<p:column headerText="#{campo.nombre}" styleClass="columnaDatos">
 								<h:outputText value="#{comentario.comentario}"
-									title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
+									title="#{comentario.horaString} por #{comentario.usuarioCreador.usuario}" />
 								<p:commandButton id="consultarComentario" icon="ui-icon-search"
 									title="Consultar Comentario"
 									oncomplete="PF('dialogoComentario').show();"
