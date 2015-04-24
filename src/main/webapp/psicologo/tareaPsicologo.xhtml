@@ -104,6 +104,12 @@
 							</p:column>
 						</p:dataTable>
 					</c:forEach>
+					<p:dataTable id="columnaFechas" var="fecha"
+						value="#{comentarioMB.columnaFecha}">
+						<p:column headerText="Fecha" styleClass="columnaDatos">
+							<h:outputText value="#{fecha}" />
+						</p:column>
+					</p:dataTable>
 				</h:form>
 			</p:column>
 		</p:row>

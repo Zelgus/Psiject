@@ -1,9 +1,13 @@
 package com.psiject.managedBeans;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.zip.DataFormatException;
 
 import javax.faces.bean.ManagedBean;
@@ -51,6 +55,8 @@ public class ComentarioManagedBean implements Serializable {
 
 	@ManagedProperty(value = "#{ExpedientePsicologoService}")
 	private IExpedientePsicologoService expedientePsicologoService;
+	
+	private Map<Integer, List<Comentario>> mapa = new HashMap<Integer, List<Comentario>>();
 
 	public ComentarioManagedBean() {
 		super();
@@ -117,12 +123,46 @@ public class ComentarioManagedBean implements Serializable {
 					}
 				}
 			}
+			comentarioPorFila(res);
 		} catch (final Exception e) {
 			Mensajes.mostrarMensajeError(
 					Mensajes.ERROR_GET_COMENTARIOS_PACIENTE_DE_LA_TAREA_CAMPO_LIST,
 					e);
 		}
 		return res;
+	}
+
+	private void comentarioPorFila(List<Comentario> lista) {
+
+		for (int i = 0; i < lista.size(); i++) {
+			if (mapa.containsKey(i)) {
+				mapa.get(i).add(lista.get(i));
+			} else {
+				List<Comentario> l = new ArrayList<Comentario>();
+				l.add(lista.get(i));
+				mapa.put(i, l);
+			}
+		}
+	}
+	public List<String> getColumnaFecha(){
+		List<Date> res = new ArrayList<Date>();
+		List<String> resString = new ArrayList<String>();
+		for(int i=0;i<mapa.size();i++){
+			List<Comentario> lista = mapa.get(i);
+			Comparator<Comentario> comp = new Comparator<Comentario>() {
+
+				@Override
+				public int compare(Comentario arg0, Comentario arg1) {
+					return arg0.getHora().compareTo(arg1.getHora());
+				}
+			};
+			res.add(lista.stream().max(comp).get().getHora());
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("'Escrito el 'dd/MM/yyyy 'a las ' HH:mm ' horas.'");
+		for(Date d : res){
+			resString.add(sdf.format(d));
+		}
+		return resString;
 	}
 
 	public void comentarPaciente(final Campo campo) {
@@ -350,4 +390,9 @@ public class ComentarioManagedBean implements Serializable {
 	public void setComentarioService(final IComentarioService comentarioService) {
 		this.comentarioService = comentarioService;
 	}
+
+	public Map<Integer, List<Comentario>> getMapa() {
+		return mapa;
+	}
+	
 }
