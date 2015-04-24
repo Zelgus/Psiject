@@ -56,7 +56,7 @@ public class ComentarioManagedBean implements Serializable {
 
 	@ManagedProperty(value = "#{ExpedientePsicologoService}")
 	private IExpedientePsicologoService expedientePsicologoService;
-	
+
 	private Map<Integer, List<Comentario>> mapa = new HashMap<Integer, List<Comentario>>();
 
 	public ComentarioManagedBean() {
@@ -134,7 +134,6 @@ public class ComentarioManagedBean implements Serializable {
 	}
 
 	private void comentarioPorFila(List<Comentario> lista) {
-
 		for (int i = 0; i < lista.size(); i++) {
 			if (mapa.containsKey(i)) {
 				mapa.get(i).add(lista.get(i));
@@ -145,13 +144,13 @@ public class ComentarioManagedBean implements Serializable {
 			}
 		}
 	}
-	public List<String> getColumnaFecha(){
+
+	public List<String> getColumnaFecha() {
 		List<Date> res = new ArrayList<Date>();
 		List<String> resString = new ArrayList<String>();
-		for(int i=0;i<mapa.size();i++){
+		for (int i = 0; i < mapa.size(); i++) {
 			List<Comentario> lista = mapa.get(i);
 			Comparator<Comentario> comp = new Comparator<Comentario>() {
-
 				@Override
 				public int compare(Comentario arg0, Comentario arg1) {
 					return arg0.getHora().compareTo(arg1.getHora());
@@ -159,8 +158,9 @@ public class ComentarioManagedBean implements Serializable {
 			};
 			res.add(lista.stream().max(comp).get().getHora());
 		}
-		SimpleDateFormat sdf = new SimpleDateFormat("'Escrito el 'dd/MM/yyyy 'a las ' HH:mm ' horas.'");
-		for(Date d : res){
+		SimpleDateFormat sdf = new SimpleDateFormat(
+				"'Comentarios escritos el 'dd/MM/yyyy 'a las ' HH:mm ' horas.'");
+		for (Date d : res) {
 			resString.add(sdf.format(d));
 		}
 		return resString;
@@ -395,5 +395,5 @@ public class ComentarioManagedBean implements Serializable {
 	public Map<Integer, List<Comentario>> getMapa() {
 		return mapa;
 	}
-	
+
 }

@@ -125,3 +125,12 @@
 	margin-top: -5px;
 	width: 20px;
 }
+
+.tablaComentarios .tablaFecha {
+	width: 100px;
+}
+
+.tablaComentarios .tablaFecha tbody {
+	min-height: 175px;
+	height: 175px;
+}
