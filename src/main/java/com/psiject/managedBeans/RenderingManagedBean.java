@@ -157,7 +157,7 @@ public class RenderingManagedBean implements Serializable {
 	      Expediente expedienteSeleccionado = this.sessionMB.getExpedienteSeleccionado();
 	      Tarea tareaSeleccionada = this.sessionMB.getTareaSeleccionada();
 	      if (usuarioEnSesion != null && expedienteSeleccionado != null && tareaSeleccionada != null && comentario != null
-	            && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado)) {
+	            && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado) && !comentario.getComentario().equals("-")) {
 	         res = true;
 	      }
 	      return res;
