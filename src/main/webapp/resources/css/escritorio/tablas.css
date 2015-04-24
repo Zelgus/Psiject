@@ -73,7 +73,7 @@
 ------------------------- TABLA DE TAREAS ---------------------------------
 ---------------------------------------------------------------------------
 */
-.colorTareaImportante{
+.colorTareaImportante {
 	background: none repeat scroll 0 0 #F5A9A9;
 }
 
@@ -85,32 +85,43 @@
 .tablaComentarios {
 	max-height: 1000px;
 	max-width: 1000px;
-    overflow: auto;
+	overflow: auto;
 }
 
 .tablaComentarios .tabla {
 	display: table-cell;
-    width: 220px;
+	width: 220px;
+}
+
+.tablaComentarios tbody {
+	min-height: 160px;
+	height: 160px;
+}
+
+.tablaComentarios tbody span {
+	cursor: default;
+	display: inline-block;
+	min-height: 120px;
+	height: 120px;
+	width: 100%;
+	margin: 5px 5px 0;
+	overflow: hidden;
+	text-align: justify;
+	word-wrap: break-word;
+}
+
+.tablaComentarios tbody button span {
+	height: 16px;
+	width: 16px;
+	min-height: 16px;
+	min-width: 16px;
 }
 
 .tablaComentarios .iconoNuevoComentarioTabla {
 	float: left;
-    height: 20px;
-    margin-bottom: -15px;
-    margin-left: -12px;
-    margin-top: -5px;
-    width: 20px;
-}
-
-.tablaComentarios tbody span{
-	display: inline-block;
-    height: 120px;
-    width: 100%;
-    margin: 5px;
-    overflow: hidden;
-}
-
-.tablaComentarios tbody button span{
-	height: 16px;
-	width: 16px;
+	height: 20px;
+	margin-bottom: -15px;
+	margin-left: -12px;
+	margin-top: -5px;
+	width: 20px;
 }

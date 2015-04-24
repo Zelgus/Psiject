@@ -38,14 +38,14 @@
 						<p:row>
 							<p:column>
 								<h:outputText value="Creada por:" styleClass="subtitulo" />
-								<h:outputText value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+								<h:outputText
+									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-								<p:commandLink
+								<p:commandLink id="conclusionesPaciente" value="Conclusiones"
 									oncomplete="PF('dialogoConclusionesPaciente').show();"
-									value="Conclusiones"
 									rendered="#{renderingMB.botonConclusionesPaciente}" />
 							</p:column>
 						</p:row>

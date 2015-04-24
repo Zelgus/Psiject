@@ -150,6 +150,18 @@ public class RenderingManagedBean implements Serializable {
       }
       return res;
    }
+   
+   public Boolean botonConsultarComentario(Comentario comentario) {
+	      Boolean res = false;
+	      Usuario usuarioEnSesion = this.sessionMB.getUsuarioEnSesion();
+	      Expediente expedienteSeleccionado = this.sessionMB.getExpedienteSeleccionado();
+	      Tarea tareaSeleccionada = this.sessionMB.getTareaSeleccionada();
+	      if (usuarioEnSesion != null && expedienteSeleccionado != null && tareaSeleccionada != null && comentario != null
+	            && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado)) {
+	         res = true;
+	      }
+	      return res;
+	   }
 
    public Boolean getBotonEditarComentario() {
       Boolean res = false;

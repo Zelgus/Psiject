@@ -17,6 +17,7 @@
 	<ui:include src="/dialogos/dialogoEditarTarea.xhtml" />
 	<ui:include src="/dialogos/dialogoConclusionesPsicologo.xhtml" />
 	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
+	<ui:include src="/dialogos/dialogoComentario.xhtml" />
 
 	<p:panelGrid>
 		<p:row>
@@ -69,9 +70,8 @@
 						</p:row>
 						<p:row>
 							<p:column>
-								<p:commandLink
+								<p:commandLink id="conclusionesPsicologo" value="Conclusiones"
 									oncomplete="PF('dialogoConclusionesPsicologo').show();"
-									value="Conclusiones"
 									rendered="#{renderingMB.botonConclusionesPsicologo}" />
 							</p:column>
 						</p:row>
@@ -93,6 +93,14 @@
 									styleClass="iconoNuevoComentarioTabla" />
 								<h:outputText value="#{comentario.comentario}"
 									title="Escrito por: #{comentario.usuarioCreador.usuario}, el #{comentario.hora.toGMTString()}" />
+								<p:commandButton id="consultarComentario" icon="ui-icon-search"
+									title="Consultar Comentario"
+									oncomplete="PF('dialogoComentario').show();"
+									rendered="#{renderingMB.botonConsultarComentario(comentario)}"
+									update=":dialogoComentario" styleClass="botonIcono">
+									<f:setPropertyActionListener value="#{comentario}"
+										target="#{sessionMB.comentarioSeleccionado}" />
+								</p:commandButton>
 							</p:column>
 						</p:dataTable>
 					</c:forEach>

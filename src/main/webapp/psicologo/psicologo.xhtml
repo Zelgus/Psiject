@@ -40,10 +40,10 @@
 								</p:column>
 								<p:column headerText="Editar" styleClass="columnaBoton">
 									<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
-										title="Editar Expediente" update=":dialogoEditarExpediente"
+										title="Editar Expediente"
 										oncomplete="PF('dialogoEditarExpediente').show();"
 										rendered="#{renderingMB.botonEditarExpediente(expediente)}"
-										styleClass="botonSinTexto">
+										update=":dialogoEditarExpediente" styleClass="botonSinTexto">
 										<f:setPropertyActionListener value="#{expediente}"
 											target="#{sessionMB.expedienteSeleccionado}" />
 									</p:commandButton>
