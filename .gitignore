@@ -48,3 +48,4 @@ Temporary Items
 .settings/org.eclipse.wst.common.project.facet.core.xml
 *.class
 target/
+src/main/java/com/psiject/utilidades/test.java

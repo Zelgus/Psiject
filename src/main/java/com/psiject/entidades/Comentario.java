@@ -1,5 +1,6 @@
 package com.psiject.entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -236,5 +237,10 @@ public class Comentario {
       }
       return true;
    }
+   
+   public String getHoraString(){
+		SimpleDateFormat sdf = new SimpleDateFormat("'Escrito el 'dd/MM/yyyy 'a las ' HH:mm ' horas'");
+		return sdf.format(this.getHora());
+	}
 
 }
