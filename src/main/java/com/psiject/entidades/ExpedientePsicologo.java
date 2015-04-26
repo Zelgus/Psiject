@@ -1,5 +1,7 @@
 package com.psiject.entidades;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "expedientes_psicologos")
-public class ExpedientePsicologo {
+public class ExpedientePsicologo implements Serializable{
 
    // PrimaryKey
    /** The id expediente psicologo. */

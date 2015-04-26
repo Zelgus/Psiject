@@ -1,5 +1,6 @@
 package com.psiject.entidades;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "comentarios")
-public class Comentario {
+public class Comentario implements Serializable{
 
    // PrimaryKey
    /** The id comentario. */

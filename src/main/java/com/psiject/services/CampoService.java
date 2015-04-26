@@ -1,5 +1,6 @@
 package com.psiject.services;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedProperty;
@@ -14,7 +15,7 @@ import com.psiject.services.interfaces.ITareaCampoService;
 import com.psiject.utilidades.Constantes;
 
 @Transactional(readOnly = true)
-public class CampoService implements ICampoService {
+public class CampoService implements ICampoService, Serializable {
 
    ICampoDAO campoDAO;
 

@@ -1,5 +1,6 @@
 package com.psiject.services;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ import com.psiject.services.interfaces.ITareaCampoService;
 import com.psiject.utilidades.Constantes;
 
 @Transactional(readOnly = true)
-public class TareaCampoService implements ITareaCampoService {
+public class TareaCampoService implements ITareaCampoService, Serializable {
 
    ITareaCampoDAO tareaCampoDAO;
 

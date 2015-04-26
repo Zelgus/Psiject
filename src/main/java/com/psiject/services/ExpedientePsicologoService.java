@@ -1,5 +1,6 @@
 package com.psiject.services;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +12,7 @@ import com.psiject.entidades.Usuario;
 import com.psiject.services.interfaces.IExpedientePsicologoService;
 
 @Transactional(readOnly = true)
-public class ExpedientePsicologoService implements IExpedientePsicologoService {
+public class ExpedientePsicologoService implements IExpedientePsicologoService, Serializable {
 
    IExpedientePsicologoDAO expedientePsicologoDAO;
 

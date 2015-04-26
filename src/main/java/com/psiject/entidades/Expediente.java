@@ -1,5 +1,6 @@
 package com.psiject.entidades;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,9 +20,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "expedientes")
-public class Expediente {
+public class Expediente implements Serializable{
 
-   // PrimaryKey
+// PrimaryKey
    /** The id expediente. */
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)

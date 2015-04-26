@@ -1,5 +1,6 @@
 package com.psiject.services;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +11,7 @@ import com.psiject.services.interfaces.IUsuarioService;
 import com.psiject.utilidades.Utilidades;
 
 @Transactional(readOnly = true)
-public class UsuarioService implements IUsuarioService {
+public class UsuarioService implements IUsuarioService, Serializable {
 
    IUsuarioDAO usuarioDAO;
 

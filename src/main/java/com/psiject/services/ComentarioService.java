@@ -1,5 +1,6 @@
 package com.psiject.services;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +21,7 @@ import com.psiject.services.interfaces.ITareaCampoService;
 import com.psiject.utilidades.Constantes;
 
 @Transactional(readOnly = true)
-public class ComentarioService implements IComentarioService {
+public class ComentarioService implements IComentarioService, Serializable {
 
    IComentarioDAO comentarioDAO;
 

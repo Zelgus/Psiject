@@ -1,5 +1,6 @@
 package com.psiject.entidades;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "campos")
-public class Campo {
+public class Campo implements Serializable{
 
    // PrimaryKey
    /** The id campo. */
