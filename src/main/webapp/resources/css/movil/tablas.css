@@ -63,7 +63,7 @@
 }
 
 .tabla .columnaBoton {
-	width: 25px;
+	width: 15%;
 	min-width: 25px;
 	border-top: 1px solid #7F9E49 !important;
 	border-bottom: 1px solid #7F9E49 !important;
@@ -94,7 +94,7 @@
 */
 .tablaComentarios {
 	max-height: 500px;
-	max-width: 300px;
+	max-width: 100%;
 	overflow: auto;
 }
 
