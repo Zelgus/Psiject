@@ -30,19 +30,8 @@
 									emptyMessage="Ningún comentario enviado." styleClass="tabla">
 									<p:column headerText="#{campo.nombre}"
 										styleClass="columnaDatos">
-										<h:graphicImage library="images" name="nuevoComentario.png"
-											title="Nuevo comentario" rendered="#{!comentario.visto}"
-											styleClass="iconoNuevoComentarioTabla" />
 										<h:outputText value="#{comentario.comentario}"
 											title="#{comentario.horaString} por #{comentario.usuarioCreador.usuario}" />
-										<p:commandButton id="consultarComentario"
-											icon="ui-icon-search" title="Consultar Comentario"
-											oncomplete="PF('dialogoComentario').show();"
-											rendered="#{renderingMB.botonConsultarComentario(comentario)}"
-											update=":dialogoComentario" styleClass="botonIcono">
-											<f:setPropertyActionListener value="#{comentario}"
-												target="#{sessionMB.comentarioSeleccionado}" />
-										</p:commandButton>
 										<p:commandButton id="editarComentario" icon="ui-icon-pencil"
 											title="Editar Comentario"
 											oncomplete="PF('dialogoEditarComentario').show();"
@@ -56,6 +45,14 @@
 											oncomplete="PF('dialogoBorrarComentario').show();"
 											rendered="#{renderingMB.botonBorrarComentario(comentario)}"
 											update=":dialogoBorrarComentario" styleClass="botonIcono">
+											<f:setPropertyActionListener value="#{comentario}"
+												target="#{sessionMB.comentarioSeleccionado}" />
+										</p:commandButton>
+										<p:commandButton id="consultarComentario"
+											icon="ui-icon-search" title="Consultar Comentario"
+											oncomplete="PF('dialogoComentario').show();"
+											rendered="#{renderingMB.botonConsultarComentario(comentario)}"
+											update=":dialogoComentario" styleClass="botonIcono">
 											<f:setPropertyActionListener value="#{comentario}"
 												target="#{sessionMB.comentarioSeleccionado}" />
 										</p:commandButton>

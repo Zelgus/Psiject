@@ -15,6 +15,7 @@
 	<ui:include src="/dialogos/dialogoEditarComentario.xhtml" />
 	<ui:include src="/dialogos/dialogoBorrarComentario.xhtml" />
 	<ui:include src="/dialogos/dialogoComentarPsicologo.xhtml" />
+	<ui:include src="/dialogos/dialogoComentario.xhtml" />
 
 	<p:panelGrid>
 		<p:row>
@@ -44,6 +45,16 @@
 								oncomplete="PF('dialogoBorrarComentario').show();"
 								rendered="#{renderingMB.botonBorrarComentario(comentario)}"
 								update=":dialogoBorrarComentario" styleClass="botonSinTexto">
+								<f:setPropertyActionListener value="#{comentario}"
+									target="#{sessionMB.comentarioSeleccionado}" />
+							</p:commandButton>
+						</p:column>
+						<p:column headerText="Consultar" styleClass="columnaBoton">
+							<p:commandButton id="consultarComentario" icon="ui-icon-search"
+								title="Consultar Comentario"
+								oncomplete="PF('dialogoComentario').show();"
+								rendered="#{renderingMB.botonConsultarComentario(comentario)}"
+								update=":dialogoComentario" styleClass="botonSinTexto">
 								<f:setPropertyActionListener value="#{comentario}"
 									target="#{sessionMB.comentarioSeleccionado}" />
 							</p:commandButton>

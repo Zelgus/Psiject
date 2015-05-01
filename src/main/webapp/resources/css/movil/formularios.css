@@ -132,6 +132,35 @@ textarea {
 
 /*
 ---------------------------------------------------------------------------
+-------------------------- BOTONES WIZARD ---------------------------------
+---------------------------------------------------------------------------
+*/
+.ui-wizard-nav-back {
+	font-size: 12px !important;
+	height: 35px;
+	width: 120px;
+}
+
+.ui-wizard-nav-back span {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.ui-wizard-nav-next {
+	font-size: 12px !important;
+	height: 35px;
+	width: 120px;
+}
+
+.ui-wizard-nav-next span {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/*
+---------------------------------------------------------------------------
 ------------------------------- LINKS -------------------------------------
 ---------------------------------------------------------------------------
 */
