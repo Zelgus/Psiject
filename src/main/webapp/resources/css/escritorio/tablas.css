@@ -108,6 +108,7 @@
 	display: inline-block;
 	min-height: 20px;
 	height: 20px;
+	min-width: 150px;
 	width: 150px;
 	overflow: hidden;
 	word-wrap: break-word;
@@ -123,10 +124,11 @@
 	display: inline-block;
 	min-height: 120px;
 	height: 120px;
+	min-width: 150px;
 	width: 150px;
 	margin: 5px 5px 0;
 	overflow: hidden;
-	text-align: justify;
+	text-align: center;
 	word-wrap: break-word;
 }
 
