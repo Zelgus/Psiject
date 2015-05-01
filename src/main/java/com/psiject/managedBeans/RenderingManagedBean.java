@@ -196,7 +196,7 @@ public class RenderingManagedBean implements Serializable {
       Tarea tareaSeleccionada = this.sessionMB.getTareaSeleccionada();
       Comentario comentario = this.sessionMB.getComentarioSeleccionado();
       if (usuarioEnSesion != null && expedienteSeleccionado != null && tareaSeleccionada != null && comentario != null && !expedienteSeleccionado.getCerrado()
-            && !tareaSeleccionada.getCompletada() && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado) && comentario.getUsuarioCreador().equals(usuarioEnSesion)) {
+            && !tareaSeleccionada.getCompletada() && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado) && comentario.getUsuarioCreador().equals(usuarioEnSesion) && !comentario.getComentario().equals("-")) {
          res = true;
       }
       return res;
@@ -208,7 +208,7 @@ public class RenderingManagedBean implements Serializable {
       Expediente expedienteSeleccionado = this.sessionMB.getExpedienteSeleccionado();
       Tarea tareaSeleccionada = this.sessionMB.getTareaSeleccionada();
       if (usuarioEnSesion != null && expedienteSeleccionado != null && tareaSeleccionada != null && comentario != null && !expedienteSeleccionado.getCerrado()
-            && !tareaSeleccionada.getCompletada() && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado) && comentario.getUsuarioCreador().equals(usuarioEnSesion)) {
+            && !tareaSeleccionada.getCompletada() && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado) && comentario.getUsuarioCreador().equals(usuarioEnSesion) && !comentario.getComentario().equals("-")) {
          res = true;
       }
       return res;

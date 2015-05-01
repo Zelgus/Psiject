@@ -21,49 +21,57 @@
 		<p:row>
 			<p:column>
 				<h:outputText value="Comentarios" styleClass="titulo" />
-				<h:form styleClass="tablaComentarios">
-					<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
-						<p:dataTable id="comentariosDe#{campo.idCampo}" var="comentario"
-							value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
-							emptyMessage="Ningún comentario enviado." styleClass="tabla">
-							<p:column headerText="#{campo.nombre}" styleClass="columnaDatos">
-								<h:outputText value="#{comentario.comentario}"
-									title="#{comentario.horaString} por #{comentario.usuarioCreador.usuario}" />
-								<p:commandButton id="consultarComentario" icon="ui-icon-search"
-									title="Consultar Comentario"
-									oncomplete="PF('dialogoComentario').show();"
-									rendered="#{renderingMB.botonConsultarComentario(comentario)}"
-									update=":dialogoComentario" styleClass="botonIcono">
-									<f:setPropertyActionListener value="#{comentario}"
-										target="#{sessionMB.comentarioSeleccionado}" />
-								</p:commandButton>
-								<p:commandButton id="editarComentario" icon="ui-icon-pencil"
-									title="Editar Comentario"
-									oncomplete="PF('dialogoEditarComentario').show();"
-									rendered="#{renderingMB.botonEditarComentario(comentario)}"
-									update=":dialogoEditarComentario" styleClass="botonIcono">
-									<f:setPropertyActionListener value="#{comentario}"
-										target="#{sessionMB.comentarioSeleccionado}" />
-								</p:commandButton>
-								<p:commandButton id="borrarComentario" icon="ui-icon-trash"
-									title="Borrar Comentario"
-									oncomplete="PF('dialogoBorrarComentario').show();"
-									rendered="#{renderingMB.botonBorrarComentario(comentario)}"
-									update=":dialogoBorrarComentario" styleClass="botonIcono">
-									<f:setPropertyActionListener value="#{comentario}"
-										target="#{sessionMB.comentarioSeleccionado}" />
-								</p:commandButton>
-							</p:column>
-						</p:dataTable>
-					</c:forEach>
-					<p:dataTable id="columnaFechas" var="fecha"
-						value="#{comentarioMB.columnaFecha}"
-						emptyMessage="Sin comentarios." styleClass="tabla tablaFecha">
-						<p:column headerText="Fecha" styleClass="columnaDatos">
-							<h:outputText value="#{fecha}" />
-						</p:column>
-					</p:dataTable>
-				</h:form>
+				<div class="tablaComentarios">
+					<div class="tablaComentariosIn">
+						<h:form>
+							<c:forEach var="campo" items="#{tareaMB.camposDeLaTareaList}">
+								<p:dataTable id="comentariosDe#{campo.idCampo}" var="comentario"
+									value="#{comentarioMB.getComentariosPacienteDeLaTareaCampoList(campo)}"
+									emptyMessage="Ningún comentario enviado." styleClass="tabla">
+									<p:column headerText="#{campo.nombre}"
+										styleClass="columnaDatos">
+										<h:graphicImage library="images" name="nuevoComentario.png"
+											title="Nuevo comentario" rendered="#{!comentario.visto}"
+											styleClass="iconoNuevoComentarioTabla" />
+										<h:outputText value="#{comentario.comentario}"
+											title="#{comentario.horaString} por #{comentario.usuarioCreador.usuario}" />
+										<p:commandButton id="consultarComentario"
+											icon="ui-icon-search" title="Consultar Comentario"
+											oncomplete="PF('dialogoComentario').show();"
+											rendered="#{renderingMB.botonConsultarComentario(comentario)}"
+											update=":dialogoComentario" styleClass="botonIcono">
+											<f:setPropertyActionListener value="#{comentario}"
+												target="#{sessionMB.comentarioSeleccionado}" />
+										</p:commandButton>
+										<p:commandButton id="editarComentario" icon="ui-icon-pencil"
+											title="Editar Comentario"
+											oncomplete="PF('dialogoEditarComentario').show();"
+											rendered="#{renderingMB.botonEditarComentario(comentario)}"
+											update=":dialogoEditarComentario" styleClass="botonIcono">
+											<f:setPropertyActionListener value="#{comentario}"
+												target="#{sessionMB.comentarioSeleccionado}" />
+										</p:commandButton>
+										<p:commandButton id="borrarComentario" icon="ui-icon-trash"
+											title="Borrar Comentario"
+											oncomplete="PF('dialogoBorrarComentario').show();"
+											rendered="#{renderingMB.botonBorrarComentario(comentario)}"
+											update=":dialogoBorrarComentario" styleClass="botonIcono">
+											<f:setPropertyActionListener value="#{comentario}"
+												target="#{sessionMB.comentarioSeleccionado}" />
+										</p:commandButton>
+									</p:column>
+								</p:dataTable>
+							</c:forEach>
+							<p:dataTable id="columnaFechas" var="fecha"
+								value="#{comentarioMB.columnaFecha}"
+								emptyMessage="Sin comentarios." styleClass="tabla">
+								<p:column headerText="Fecha" styleClass="columnaDatos">
+									<h:outputText value="#{fecha}" />
+								</p:column>
+							</p:dataTable>
+						</h:form>
+					</div>
+				</div>
 			</p:column>
 		</p:row>
 		<p:row>
