@@ -2,7 +2,6 @@ package com.psiject.managedBeans;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,7 +66,8 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void pacienteLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null) {
+		if (this.usuarioEnSesion != null && !this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null) {
 			this.tareaSeleccionada = null;
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
@@ -79,7 +79,8 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void tareaPacienteLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null
+		if (this.usuarioEnSesion != null && !this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null
 				&& this.tareaSeleccionada != null) {
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
@@ -91,7 +92,8 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void misComentariosPacienteLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null
+		if (this.usuarioEnSesion != null && !this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null
 				&& this.tareaSeleccionada != null) {
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
@@ -103,7 +105,7 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void altaExpedienteLoad() {
-		if (this.usuarioEnSesion != null) {
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()) {
 			this.expedienteSeleccionado = null;
 			this.tareaSeleccionada = null;
 			this.campoSeleccionado = null;
@@ -116,7 +118,7 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void editarCamposLoad() {
-		if (this.usuarioEnSesion != null) {
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()) {
 			this.expedienteSeleccionado = null;
 			this.tareaSeleccionada = null;
 			this.campoSeleccionado = null;
@@ -128,8 +130,9 @@ public class SessionManagedBean implements Serializable {
 		}
 	}
 
-	public void editarExpedienteLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null) {
+	public void expedienteLoad() {
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null) {
 			this.tareaSeleccionada = null;
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
@@ -140,9 +143,10 @@ public class SessionManagedBean implements Serializable {
 		}
 	}
 
-	public void expedienteLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null) {
-			this.tareaSeleccionada = null;
+	public void misComentariosPsicologoLoad() {
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null
+				&& this.tareaSeleccionada != null) {
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
 			this.comentariosPorCampo.clear();
@@ -153,7 +157,8 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void nuevaTareaLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null) {
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null) {
 			this.tareaSeleccionada = null;
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
@@ -165,7 +170,7 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void psicologoLoad() {
-		if (this.usuarioEnSesion != null) {
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()) {
 			this.expedienteSeleccionado = null;
 			this.tareaSeleccionada = null;
 			this.campoSeleccionado = null;
@@ -178,19 +183,8 @@ public class SessionManagedBean implements Serializable {
 	}
 
 	public void tareaPsicologoLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null
-				&& this.tareaSeleccionada != null) {
-			this.campoSeleccionado = null;
-			this.comentarioSeleccionado = null;
-			this.comentariosPorCampo.clear();
-			this.sugerencia = null;
-		} else {
-			this.cerrarSesion();
-		}
-	}
-
-	public void misComentariosPsicologoLoad() {
-		if (this.usuarioEnSesion != null && this.expedienteSeleccionado != null
+		if (this.usuarioEnSesion != null && this.usuarioEnSesion.getPermiso()
+				&& this.expedienteSeleccionado != null
 				&& this.tareaSeleccionada != null) {
 			this.campoSeleccionado = null;
 			this.comentarioSeleccionado = null;
