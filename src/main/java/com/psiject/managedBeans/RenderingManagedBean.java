@@ -644,25 +644,20 @@ public class RenderingManagedBean implements Serializable {
       return res;
    }
    
-   public Boolean getTablaFechasPaciente(){
-	   return this.getBotonComentarPaciente();
-   }
-   
-   public Boolean getTablaFechas(){
-	   Boolean res = false;
-	      Usuario usuarioEnSesion = this.sessionMB.getUsuarioEnSesion();
-	      Expediente expedienteSeleccionado = this.sessionMB.getExpedienteSeleccionado();
-	      Tarea tareaSeleccionada = this.sessionMB.getTareaSeleccionada();
-	      try {
-	         if (usuarioEnSesion != null && expedienteSeleccionado != null && tareaSeleccionada != null && usuarioEnSesion.getPermiso() && !expedienteSeleccionado.getCerrado()
-	               && !tareaSeleccionada.getCompletada() && !tareaCampoService.obtenerCamposPorTarea(tareaSeleccionada).isEmpty()
-	               && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado)) {
-	            res = true;
-	         }
-	      } catch (Exception e) {
-	         Mensajes.mostrarLog(e);
-	      }
-	      return res;
+   public Boolean getTablaComentariosPaciente() {
+      Boolean res = false;
+      final Usuario usuarioEnSesion = this.sessionMB.getUsuarioEnSesion();
+      final Expediente expedienteSeleccionado = this.sessionMB.getExpedienteSeleccionado();
+      final Tarea tareaSeleccionada = this.sessionMB.getTareaSeleccionada();
+      try {
+         if (usuarioEnSesion != null && expedienteSeleccionado != null && tareaSeleccionada != null
+               && !tareaCampoService.obtenerCamposPorTarea(tareaSeleccionada).isEmpty() && tareaSeleccionada.getExpediente().equals(expedienteSeleccionado)) {
+            res = true;
+         }
+      } catch (Exception e) {
+         Mensajes.mostrarLog(e);
+      }
+      return res;
    }
 
    /*

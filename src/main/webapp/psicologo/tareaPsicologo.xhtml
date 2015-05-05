@@ -79,9 +79,9 @@
 				</h:form>
 			</p:column>
 		</p:row>
-		<p:row>
+		<p:row rendered="#{renderingMB.tablaComentariosPaciente}">
 			<p:column>
-				<h:outputText value="Comentarios del paciente" rendered="#{renderingMB.tablaFechas}" styleClass="titulo" />
+				<h:outputText value="Comentarios del paciente" styleClass="titulo" />
 				<div class="tablaComentarios">
 					<div class="tablaComentariosIn">
 						<h:form>
@@ -107,9 +107,9 @@
 									</p:column>
 								</p:dataTable>
 							</c:forEach>
-							<p:dataTable id="columnaFechas" rendered="#{renderingMB.tablaFechas}" var="fecha"
+							<p:dataTable id="columnaFechas" var="fecha"
 								value="#{comentarioMB.columnaFecha}"
-								emptyMessage="Sin comentarios." styleClass="tabla">
+								emptyMessage="-" styleClass="tabla">
 								<p:column headerText="Fecha" styleClass="columnaDatos">
 									<h:outputText value="#{fecha}" />
 								</p:column>
