@@ -37,9 +37,9 @@
 						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputText value="Creada por:" styleClass="subtitulo" />
+								<h:outputText value="Creada por: " styleClass="subtitulo" />
 								<h:outputText
-									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}." />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -55,7 +55,7 @@
 		</p:row>
 		<p:row>
 			<p:column>
-				<h:outputText value="Comentarios" styleClass="titulo" />
+				<h:outputText value="Comentarios del psicólogo" styleClass="titulo" />
 				<h:form>
 					<p:dataTable id="comentariosDePsicologo" var="comentario"
 						value="#{comentarioMB.comentariosPsicologoDeLaTareaList}"

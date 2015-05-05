@@ -56,16 +56,16 @@
 						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputText value="Creada por:" styleClass="subtitulo" />
+								<h:outputText value="Creada por: " styleClass="subtitulo" />
 								<h:outputText
-									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}" />
+									value="#{sessionMB.tareaSeleccionada.usuarioCreador.usuario}." />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputText value="Asignada a:" styleClass="subtitulo" />
+								<h:outputText value="Asignada a: " styleClass="subtitulo" />
 								<h:outputText
-									value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}" />
+									value="#{sessionMB.tareaSeleccionada.expediente.nombre} #{sessionMB.tareaSeleccionada.expediente.apellidos}." />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -81,7 +81,7 @@
 		</p:row>
 		<p:row>
 			<p:column>
-				<h:outputText value="Comentarios" rendered="#{renderingMB.tablaFechas}" styleClass="titulo" />
+				<h:outputText value="Comentarios del paciente" rendered="#{renderingMB.tablaFechas}" styleClass="titulo" />
 				<div class="tablaComentarios">
 					<div class="tablaComentariosIn">
 						<h:form>

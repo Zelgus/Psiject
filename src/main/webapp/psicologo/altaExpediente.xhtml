@@ -54,7 +54,8 @@
 					<p:panelGrid styleClass="panelAltaExpedienteDer">
 						<p:row>
 							<p:column colspan="2">
-								<h:outputText value="Datos de inicio de sesión" styleClass="titulo" />
+								<h:outputText value="Datos de inicio de sesión"
+									styleClass="titulo" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -94,11 +95,15 @@
 							target="#{sessionMB.expedienteSeleccionado}" />
 					</p:commandButton>
 				</h:form>
-				<h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
 					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
 						value="Volver" title="Volver" onclick="mostrarMosca();"
 						action="#{navegacionMB.toPsicologo}"
-						styleClass="botonConTexto botonVolverFormulario" />
+						styleClass="botonConTexto botonVolverAtras" />
 				</h:form>
 			</p:column>
 		</p:row>

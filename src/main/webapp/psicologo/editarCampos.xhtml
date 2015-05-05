@@ -22,13 +22,14 @@
 					<p:dataTable id="camposCreados" var="campo"
 						value="#{campoMB.camposList}" rowKey="#{campo.idCampo}"
 						selection="#{sessionMB.campoSeleccionado}"
-						emptyMessage="Ningún campo añadido." styleClass="tabla">
+						emptyMessage="Ningún campo añadido." styleClass="tabla tablaCampos">
 						<p:column headerText="Selección" selectionMode="single"
 							styleClass="columnaBoton" />
 						<p:column headerText="Nombre" styleClass="columnaDatos">
 							<h:outputText value="#{campo.nombre}" />
 						</p:column>
-						<p:column headerText="Descripción" styleClass="columnaDatos columnaOcultaMovil">
+						<p:column headerText="Descripción"
+							styleClass="columnaDatos columnaOcultaMovil">
 							<h:outputText value="#{campo.descripcion}" />
 						</p:column>
 
@@ -47,10 +48,15 @@
 						</f:facet>
 					</p:dataTable>
 				</h:form>
-				<h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
 					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
 						value="Volver" title="Volver" onclick="mostrarMosca();"
-						action="#{navegacionMB.toPsicologo}" styleClass="botonConTexto" />
+						action="#{navegacionMB.toPsicologo}"
+						styleClass="botonConTexto botonVolverAtras" />
 				</h:form>
 			</p:column>
 		</p:row>

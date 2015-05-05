@@ -30,7 +30,7 @@
 					<p:panelGrid styleClass="panelExpedienteIzq">
 						<p:row>
 							<p:column>
-								<h:outputText value="Informacion Personal" styleClass="titulo" />
+								<h:outputText value="Información Personal" styleClass="titulo" />
 								<p:commandButton id="editarExpediente" icon="ui-icon-pencil"
 									title="Editar Expediente"
 									oncomplete="PF('dialogoEditarExpediente').show();"
@@ -40,14 +40,21 @@
 						</p:row>
 						<p:row>
 							<p:column>
+								<h:outputText value="Apellidos, nombre: " styleClass="subtitulo" />
 								<h:outputText
-									value="#{sessionMB.expedienteSeleccionado.apellidos}" />,
-								<h:outputText value="#{sessionMB.expedienteSeleccionado.nombre}" />
-								(<h:outputText value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />)
+									value="#{sessionMB.expedienteSeleccionado.apellidos}, #{sessionMB.expedienteSeleccionado.nombre}" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
+								<h:outputText value="Usuario: " styleClass="subtitulo" />
+								<h:outputText
+									value="#{sessionMB.expedienteSeleccionado.usuario.usuario}" />
+							</p:column>
+						</p:row>
+						<p:row>
+							<p:column>
+								<h:outputText value="Email: " styleClass="subtitulo" />
 								<h:outputText
 									value="#{sessionMB.expedienteSeleccionado.usuario.correo}" />
 							</p:column>
@@ -56,14 +63,16 @@
 					<p:panelGrid class="panelExpedienteDer">
 						<p:row>
 							<p:column>
-								<h:outputText value="Psicologos" styleClass="titulo" />
+								<h:outputText value="Información sobre los psicólogos"
+									styleClass="titulo" />
 							</p:column>
 						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputText value="Creador:" styleClass="subtitulo" />
+								<h:outputText value="Expediente creado por: "
+									styleClass="subtitulo" />
 								<h:outputText
-									value="#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}" />
+									value="#{sessionMB.expedienteSeleccionado.usuarioCreador.usuario}." />
 								<p:commandButton id="transferirExpediente"
 									icon="ui-icon-arrowreturnthick-1-e"
 									title="Transferir Expediente"
@@ -74,7 +83,8 @@
 						</p:row>
 						<p:row>
 							<p:column>
-								<h:outputText value="Con acceso:" styleClass="subtitulo" />
+								<h:outputText value="Psicólogos con acceso: "
+									styleClass="subtitulo" />
 								<h:outputText value="#{expedienteMB.psicologosConAcceso}" />
 								<p:commandButton id="modifPermisos" icon="ui-icon-person"
 									title="Modificar Permisos"

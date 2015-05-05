@@ -80,18 +80,21 @@ textarea {
 ---------------------------------------------------------------------------
 */
 .botonera {
+	margin: 0px;
 	text-align: right;
 }
 
-.botonera .botonVolverAtras {
-	float: left;
-}
-
-.botonVolverFormulario {
+.botonVolverAtras {
 	float: left;
 }
 
 .botonEnviarFormulario {
+	margin-top: 30px;
+	margin-bottom: -55px;
+	float: right;
+}
+
+.botonDialogo {
 	float: right;
 }
 
@@ -158,11 +161,12 @@ textarea {
 a {
 	text-decoration: underline;
 	color: blue !important;
-	font-size: 12px !important;
+	font-size: 1em !important;
 }
 
 .hipervinculoLogin {
 	float: right;
+	font-size: 12px !important;
 }
 
 /*

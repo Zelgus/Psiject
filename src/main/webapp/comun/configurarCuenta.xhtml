@@ -20,7 +20,7 @@
 					<p:panelGrid styleClass="panelConfigurarCuentaIzq">
 						<p:row>
 							<p:column colspan="2">
-								<h:outputText value="Datos de la cuenta" styleClass="titulo" />
+								<h:outputText value="Datos de tu cuenta" styleClass="titulo" />
 							</p:column>
 						</p:row>
 						<p:row>
@@ -91,11 +91,15 @@
 						rendered="#{renderingMB.botonEditarCuenta}"
 						styleClass="botonConTexto botonEnviarFormulario" />
 				</h:form>
-				<h:form>
+			</p:column>
+		</p:row>
+		<p:row>
+			<p:column>
+				<h:form styleClass="botonera">
 					<p:commandButton id="volver" icon="ui-icon-arrowthick-1-w"
 						value="Volver" title="Volver" onclick="mostrarMosca();"
 						action="#{usuarioMB.volverInicio}"
-						styleClass="botonConTexto botonVolverFormulario" />
+						styleClass="botonConTexto botonVolverAtras" />
 				</h:form>
 			</p:column>
 		</p:row>
