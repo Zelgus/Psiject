@@ -28,13 +28,8 @@
 	width: 100%;
 }
 
-.panelUsuario .ui-widget-content {
-	border: none;
-}
-
 .panelUsuarioHome {
 	float: left;
-	height: 160px;
 }
 
 .panelUsuarioImagen {
@@ -44,7 +39,6 @@
 .panelUsuarioUser {
 	float: right;
 	text-align: right;
-	height: 160px;
 }
 
 .panelUsuarioTextoUser {
