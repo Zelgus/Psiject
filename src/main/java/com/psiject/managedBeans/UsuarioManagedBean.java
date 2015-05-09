@@ -146,7 +146,7 @@ public class UsuarioManagedBean implements Serializable {
 
 	public void enviarSugerencia() {
 		try {
-			NotificacionUtil.notificacionNuevaSugerencia("jukin4@gmail.com",
+			NotificacionUtil.notificacionNuevaSugerencia("joaquin_casart@hotmail.com",
 					sessionMB.getSugerencia());
 			NotificacionUtil.notificacionNuevaSugerencia(
 					"ivanom90@hotmail.com", sessionMB.getSugerencia());
