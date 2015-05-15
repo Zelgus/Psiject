@@ -12,7 +12,8 @@
 	#{sessionMB.nuevaTareaLoad()}
 	<ui:include src="/includes/bodyComun.xhtml" />
 	<ui:include src="/includes/panelUsuario.xhtml" />
-
+	<ui:include src="/dialogos/dialogoNuevoCampo.xhtml" />
+	
 	<p:panelGrid>
 		<p:row>
 			<p:column>
@@ -61,6 +62,11 @@
 						</p:row>
 						<p:row>
 							<p:column>
+								<p:commandButton id="nuevoCampo" icon="ui-icon-plusthick"
+									value="Nuevo Campo" title="Nuevo Campo"
+									oncomplete="PF('dialogoNuevoCampo').show()"
+									rendered="#{renderingMB.botonGestionCampos}"
+									styleClass="botonConTexto" />
 								<p:pickList id="campos" value="#{tareaMB.camposEnNuevaTarea}"
 									var="campos" itemLabel="#{campos}" itemValue="#{campos}">
 									<f:facet name="sourceCaption">Campos Fuera</f:facet>
